@@ -1,11 +1,8 @@
-/* -------------------- */
-/*         FONTS        */
-/* -------------------- */
+revisa:
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-/* -------------------- */
-/*     ROOT VARIABLES   */
-/* -------------------- */
+/* Root Variables */
 :root {
   --width: 1000px;
   --font-main: 'Special Elite', monospace;
@@ -18,6 +15,7 @@
   --visited-color: #333;
   --code-background-color: #161616;
   --code-color: #ededed;
+  --blockquote-color: #fbfbf6;
   --code-border: 1px solid rgba(255, 255, 255, 0.15);
   --code-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   --code-blur: blur(20px) saturate(0.8);
@@ -38,13 +36,7 @@
   }
 }
 
-/* -------------------- */
-/*         BASE         */
-/* -------------------- */
-body, html {
-  scroll-padding-top: 72px;
-}
-
+/* Body */
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
@@ -59,6 +51,7 @@ body {
   color: var(--text-color);
 }
 
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
@@ -66,26 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-strong, b {
-  color: var(--heading-color);
-}
-
-main {
-  line-height: 1.6;
-}
-
-hr {
-  border: 0;
-  border-top: 1px dashed;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* -------------------- */
-/*        LINKS         */
-/* -------------------- */
+/* Links */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -103,27 +77,39 @@ a:hover {
   transform: scale(1.05);
 }
 
-a:focus, button:focus {
-  outline: 2px solid #4d90fe;
-  outline-offset: 2px;
-}
-
 li a {
   display: inline-block;
   margin-bottom: 0.5em;
 }
 
-/* -------------------- */
-/*       BUTTONS        */
-/* -------------------- */
+/* Bold */
+strong, b {
+  color: var(--heading-color);
+}
+
+/* Buttons */
 button {
   margin: 0;
   cursor: pointer;
 }
 
-/* -------------------- */
-/*      CODE INLINE     */
-/* -------------------- */
+/* Main */
+main {
+  line-height: 1.6;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px dashed;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+}
+
+/* Inline code */
 code {
   font-family: monospace;
   padding: 2px 6px;
@@ -140,53 +126,7 @@ code {
   }
 }
 
-/* -------------------- */
-/*     CODE BLOCKS      */
-/* -------------------- */
-.highlight, .code {
-  padding: 1em 1.5em;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  border-radius: 12px;
-  margin-block: 1em;
-  overflow-x: auto !important;
-  white-space: pre !important;
-  border: var(--code-border);
-  box-shadow: var(--code-shadow);
-  backdrop-filter: var(--code-blur);
-  -webkit-backdrop-filter: var(--code-blur);
-  user-select: all;
-  cursor: text;
-  font-size: 0.7em;
-}
-
-.highlight::-webkit-scrollbar,
-.code::-webkit-scrollbar {
-  height: 8px;
-}
-
-.highlight::-webkit-scrollbar-thumb,
-.code::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 4px;
-}
-
-.highlight::-webkit-scrollbar-track,
-.code::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.code a,
-.highlight a {
-  color: inherit;
-  text-decoration: none;
-  pointer-events: none;
-  cursor: default;
-}
-
-/* -------------------- */
-/*     BLOCKQUOTES      */
-/* -------------------- */
+/* Blockquotes */
 blockquote {
   position: relative;
   margin: 1.5em 0;
@@ -198,9 +138,7 @@ blockquote {
   background: transparent;
 }
 
-/* -------------------- */
-/*       TABLES         */
-/* -------------------- */
+/* Tables */
 table {
   width: auto;
   max-width: 600px;
@@ -219,32 +157,106 @@ th, td {
   color: var(--text-color);
 }
 
-/* -------------------- */
-/*     RESPONSIVE       */
-/* -------------------- */
-@media (max-width: 900px) {
-  aside#toc {
-    display: none;
-  }
+/* Code boxes */
+.highlight, .code {
+  padding: 1em 1.5em;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 12px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre !important;
+  border: var(--code-border);
+  box-shadow: var(--code-shadow);
+  backdrop-filter: var(--code-blur);
+  -webkit-backdrop-filter: var(--code-blur);
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+  cursor: text;
+  font-size: 0.7em;
 }
 
+/* Scrollbar for code blocks */
+.highlight::-webkit-scrollbar,
+.code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.highlight::-webkit-scrollbar-thumb,
+.code::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-track,
+.code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   body {
     font-size: 0.7em;
   }
-
+    aside#toc {
+        display: none;
+    }
   .highlight, .code {
     font-size: 0.7em;
     display: block;
     max-width: 100%;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
     max-height: 75vh;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
   }
 }
 
-/* -------------------- */
-/*     NAVIGATION BAR   */
-/* -------------------- */
+/* Neutralize links in code */
+.code a,
+.highlight a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Blog post list */
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--visited-color);
+}
+
+/* Inline override */
+.inline {
+  width: auto !important;
+}
+
+/* Footer */
+footer {
+  padding: 25px 0;
+  text-align: center;
+}
+
+/* -------- NAVIGATION BAR -------- */
 header {
   position: sticky;
   top: 0;
@@ -273,6 +285,7 @@ nav {
   gap: 0.75rem;
   max-width: 100%;
   padding: 0.2rem 0;
+  line-height: 1;
   margin: 0 auto;
 }
 
@@ -293,13 +306,19 @@ nav p a {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.05);
   color: #161616;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
   transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 nav p a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
+}
+
+/* Evitar que la barra de navegación cubra los enlaces de anclaje */
+body, html {
+  scroll-padding-top: 72px; /* Ajusta este valor según la altura de tu barra de navegación */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -319,126 +338,128 @@ nav p a:hover {
   }
 }
 
-/* -------------------- */
-/*     TOC STYLES       */
-/* -------------------- */
+/* TOC Styles */
+
 aside#toc {
-  position: fixed;
-  top: 60px;
-  left: 20px;
-  width: 210px;
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 12px 15px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  border-radius: 6px;
-  z-index: 999;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    width: 210px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    z-index: 999;
 }
 
-@media (prefers-color-scheme: dark) {
-  aside#toc {
-    background-color: #2a2a2e;
-    border-color: #555;
-    color: #ededed;
-  }
-
-  aside#toc li a,
-  aside#toc > div:first-child a {
-    color: #ededed;
-  }
-}
-
+/* TOC home link */
 aside#toc > div:first-child a {
-  font-weight: bold;
-  font-size: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--link-color);
 }
 
+/* TOC list styles */
 aside#toc ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 aside#toc li {
-  margin-bottom: 6px;
-  cursor: pointer;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+aside#toc li a {
+    color: var(--link-color);
+    text-decoration: none;
 }
 
 aside#toc li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
+/* Indent H2 and H3 items */
 aside#toc li[data-level="h2"] {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 aside#toc li[data-level="h3"] {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
+/* Collapsible styling */
 aside#toc li .toggle-icon {
-  font-weight: bold;
-  margin-right: 6px;
-  user-select: none;
+    font-weight: bold;
+    margin-right: 6px;
+    user-select: none;
 }
 
+/* Hide nested lists by default (collapsed) */
 aside#toc ul ul {
-  display: none;
-  margin-left: 15px;
+    display: none;
+    margin-left: 15px;
 }
 
+/* Show nested lists when parent is expanded */
 aside#toc li.expanded > ul {
-  display: block;
+    display: block;
 }
-
-/* -------------------- */
-/*     BLOG POSTS       */
-/* -------------------- */
-ul.blog-posts {
-  list-style-type: none;
-  padding: unset;
-}
-
-ul.blog-posts li {
-  display: flex;
-}
-
-ul.blog-posts li span {
-  flex: 0 0 130px;
-}
-
-ul.blog-posts li a:visited {
-  color: var(--visited-color);
-}
-
-/* -------------------- */
-/*       INLINE         */
-/* -------------------- */
-.inline {
-  width: auto !important;
-}
-
-/* -------------------- */
-/*       FOOTER         */
-/* -------------------- */
-footer {
-  padding: 25px 0;
-  text-align: center;
-}
-
-/* -------------------- */
-/*      MATH STYLES     */
-/* -------------------- */
+/* Estilo general para fórmulas MathML */
 math {
   font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.4;
-  margin: 0 0.2em;
+  margin: 0 2px;
   vertical-align: middle;
+}
+
+/* Asegura que las etiquetas <mi>, <mo>, <mn> usen buen espaciado */
+math mi, math mo, math mn {
+  padding: 0 0.1em;
+}
+
+/* Estilo para fórmulas en bloque (si usas display="block") */
+math[display="block"] {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Si estás usando MathJax, mejora el tamaño también */
+mjx-container {
+  font-size: 1.2em !important;
+  line-height: 1.6;
+}
+
+/* Evita que fórmulas inline se vean tan pequeñas */
+mjx-container[jax="CHTML"][display="inline"] {
+  font-size: 1.1em !important;
+}
+
+/* Asegura buen espaciado alrededor de fórmulas */
+.math-inline, .math-display {
+  margin: 0.5em 0;
+}
+
+/* Alinea verticalmente las inline */
+.math-inline {
+  vertical-align: middle;
+}
+/* Ajustes para MathML (etiquetas <math>) */
+math {
+  font-size: 1.3em;
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
+  line-height: 1.4;
+  vertical-align: middle;
+  margin: 0 0.2em;
 }
 
 math[display="block"] {
@@ -448,10 +469,7 @@ math[display="block"] {
   font-size: 1.5em;
 }
 
-math mi, math mo, math mn {
-  padding: 0 0.1em;
-}
-
+/* Ajustes específicos para MathJax versión 3 */
 mjx-container {
   font-size: 1.3em !important;
   line-height: 1.5;
@@ -466,32 +484,4 @@ mjx-container[jax="CHTML"][display="inline"] {
 mjx-container[jax="CHTML"][display="block"] {
   margin: 1.5em auto;
   text-align: center;
-}
-
-.math-inline, .math-display {
-  margin: 0.5em 0;
-}
-
-.math-inline {
-  vertical-align: middle;
-}
-
-/* -------------------- */
-/*     PRINT STYLES     */
-/* -------------------- */
-@media print {
-  header, nav, footer, aside#toc {
-    display: none;
-  }
-
-  body {
-    font-size: 12pt;
-    background: white;
-    color: black;
-  }
-
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 0.9em;
-  }
 }
