@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Estilos principales -->
   <link rel="stylesheet" href="/css/styles.css" />
+  <!-- Prism CSS -->
+  <link rel="stylesheet" href="/css/prism.css" />
 
   <!-- MathJax para fórmulas matemáticas -->
   <script>
@@ -19,19 +21,20 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-<script>
-  if (window.innerWidth <= 768 && !window.location.hostname.includes("blogbear.dev")) {
-    window.location.href = "https://reconocer.bearblog.dev/tedio/";
-  }
-</script>
+  <script src="/js/tex-mml-chtml.js" async></script>
+
+  <script>
+    if (window.innerWidth <= 168 && !window.location.hostname.includes("blogbear.dev")) {
+      window.location.href = "https://reconocer.bearblog.dev/tedio/";
+    }
+  </script>
 </head>
 
 <body class="{% if page.url == '/' %}home{% else %}subpage{% endif %}">
 
   <!-- TOC Lateral (se oculta en index.md vía JS) -->
   <aside id="toc">
- <div style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; margin-bottom: 10px;">
+    <div style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; margin-bottom: 10px;">
       🏠 <a href="/" style="text-decoration: none; color: inherit;">Τεδ¡ο</a>
     </div>
     <!-- El contenido se genera dinámicamente con toc.js -->
@@ -44,7 +47,8 @@
 
   <!-- Script para generar TOC lateral -->
   <script src="/js/toc.js"></script>
+  <!-- Prism JS -->
+  <script src="/js/prism.js"></script>
 
 </body>
 </html>
-
