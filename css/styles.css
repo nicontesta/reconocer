@@ -287,49 +287,6 @@ aside#toc ul ul {
 aside#toc li.expanded > ul {
     display: block;
 }
-/* Estilo general para fórmulas MathML */
-math {
-  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
-  font-size: 1.1em;
-  line-height: 1.4;
-  margin: 0 2px;
-  vertical-align: middle;
-}
-
-/* Asegura que las etiquetas <mi>, <mo>, <mn> usen buen espaciado */
-math mi, math mo, math mn {
-  padding: 0 0.1em;
-}
-
-/* Estilo para fórmulas en bloque (si usas display="block") */
-math[display="block"] {
-  display: block;
-  margin: 1em auto;
-  text-align: center;
-  font-size: 1.3em;
-}
-
-/* Si estás usando MathJax, mejora el tamaño también */
-mjx-container {
-  font-size: 1.2em !important;
-  line-height: 1.6;
-}
-
-/* Evita que fórmulas inline se vean tan pequeñas */
-mjx-container[jax="CHTML"][display="inline"] {
-  font-size: 1.1em !important;
-}
-
-/* Asegura buen espaciado alrededor de fórmulas */
-.math-inline, .math-display {
-  margin: 0.5em 0;
-}
-
-/* Alinea verticalmente las inline */
-.math-inline {
-  vertical-align: middle;
-}
-
 
 /* Responsive - hide TOC on small screens */
 @media (max-width: 768px) {
@@ -343,7 +300,6 @@ li a {
   display: inline-block;
   margin-bottom: 0.5em;
 }
-
   .highlight, .code {
     font-size: 0.7em;
     display: block;
@@ -369,35 +325,4 @@ li a {
   cursor: default;
 }
 
-/* Ajustes para MathML (etiquetas <math>) */
-math {
-  font-size: 1.3em;
-  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
-  line-height: 1.4;
-  vertical-align: middle;
-  margin: 0 0.2em;
-}
 
-math[display="block"] {
-  display: block;
-  margin: 1.5em auto;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-/* Ajustes específicos para MathJax versión 3 */
-mjx-container {
-  font-size: 1.3em !important;
-  line-height: 1.5;
-  margin: 1em 0;
-}
-
-mjx-container[jax="CHTML"][display="inline"] {
-  font-size: 1.2em !important;
-  vertical-align: middle;
-}
-
-mjx-container[jax="CHTML"][display="block"] {
-  margin: 1.5em auto;
-  text-align: center;
-}
