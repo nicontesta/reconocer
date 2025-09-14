@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
+
+
 :root {
   --width: 1000px;
   --font-main: 'Special Elite', monospace;
@@ -17,6 +19,7 @@
   --code-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   --code-blur: blur(20px) saturate(0.8);
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #1f1d25;
@@ -152,10 +155,6 @@ th, td {
   color: var(--text-color);
 }
 
-footer {
-    padding: 25px 0;
-    text-align: center;
-}
 /* Code boxes */
 .highlight, .code {
   padding: 1em 1.5em;
@@ -196,23 +195,6 @@ footer {
   background: transparent;
 }
 
-/* Blog post list (can remove if not needed) */
-ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-}
-
-ul.blog-posts li {
-    display: flex;
-}
-
-ul.blog-posts li span {
-    flex: 0 0 130px;
-}
-
-ul.blog-posts li a:visited {
-    color: var(--visited-color);
-}
 
 /* TOC Styles */
 
@@ -287,19 +269,16 @@ aside#toc ul ul {
 aside#toc li.expanded > ul {
     display: block;
 }
-
 /* Responsive - hide TOC on small screens */
 @media (max-width: 768px) {
-    aside#toc {
-        display: none;
-    }
- body {
+  body {
     font-size: 0.7em;
   }
-li a {
+  li a {
   display: inline-block;
   margin-bottom: 0.5em;
 }
+
   .highlight, .code {
     font-size: 0.7em;
     display: block;
@@ -315,6 +294,9 @@ li a {
         margin-left: 0 !important;
         padding: 10px;
     }
+  aside#toc {
+        display: none;
+  }
 }
 /* Neutralize links in code */
 .code a,
@@ -325,4 +307,8 @@ li a {
   cursor: default;
 }
 
-
+/* Footer */
+footer {
+  padding: 25px 0;
+  text-align: center;
+}
