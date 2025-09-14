@@ -38,7 +38,7 @@
 /* Body */
 body {
   font-family: var(--font-secondary);
-  font-size: var(--font-scale);
+font-size: 20px; /* directamente */
   margin: auto;
   padding: 20px;
   max-width: var(--width);
@@ -311,4 +311,5 @@ aside#toc li.expanded > ul {
 footer {
   padding: 25px 0;
   text-align: center;
+
 }
