@@ -38,7 +38,7 @@
 /* Body */
 body {
   font-family: var(--font-secondary);
-font-size: 20px; /* directamente */
+  font-size: var(--font-scale);
   margin: auto;
   padding: 20px;
   max-width: var(--width);
@@ -313,3 +313,8 @@ footer {
   text-align: center;
 
 }
+.highlight, .code, .highlight code, pre code {
+  font-size: 14px !important;
+  font-family: monospace !important;
+}
+
