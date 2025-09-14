@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+:root {
+    --width: 1000px;
+    --font-main: 'Special Elite', monospace;
+    --font-secondary: 'Special Elite', monospace;
+    --font-scale: 20px;
+    --background-color: #fbfbf6;
+    --heading-color: #333;
+    --text-color: #333;
+    --link-color: #333;
+    --visited-color: #333;
+    --code-background-color: #fbfbf6;
+    --code-color: #333;
+    --blockquote-color: #fbfbf6;
+}
+
+/* Body and general text */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+    font-size: var(--font-scale);
+    font-weight: 400;
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+strong, b {
+    color: var(--heading-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+main {
+    line-height: 1.6;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+    margin: 1em 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px 4px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.highlight, .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/* Blog post list (can remove if not needed) */
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+/* TOC Styles */
+
+aside#toc {
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    width: 210px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    z-index: 999;
+}
+
+/* TOC home link */
+aside#toc > div:first-child a {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--link-color);
+}
+
+/* TOC list styles */
+aside#toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+aside#toc li {
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+aside#toc li a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+aside#toc li a:hover {
+    text-decoration: underline;
+}
+
+/* Indent H2 and H3 items */
+aside#toc li[data-level="h2"] {
+    margin-left: 10px;
+}
+
+aside#toc li[data-level="h3"] {
+    margin-left: 20px;
+}
+
+/* Collapsible styling */
+aside#toc li .toggle-icon {
+    font-weight: bold;
+    margin-right: 6px;
+    user-select: none;
+}
+
+/* Hide nested lists by default (collapsed) */
+aside#toc ul ul {
+    display: none;
+    margin-left: 15px;
+}
+
+/* Show nested lists when parent is expanded */
+aside#toc li.expanded > ul {
+    display: block;
+}
+/* Estilo general para fórmulas MathML */
+math {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
+  font-size: 1.1em;
+  line-height: 1.4;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+/* Asegura que las etiquetas <mi>, <mo>, <mn> usen buen espaciado */
+math mi, math mo, math mn {
+  padding: 0 0.1em;
+}
+
+/* Estilo para fórmulas en bloque (si usas display="block") */
+math[display="block"] {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Si estás usando MathJax, mejora el tamaño también */
+mjx-container {
+  font-size: 1.2em !important;
+  line-height: 1.6;
+}
+
+/* Evita que fórmulas inline se vean tan pequeñas */
+mjx-container[jax="CHTML"][display="inline"] {
+  font-size: 1.1em !important;
+}
+
+/* Asegura buen espaciado alrededor de fórmulas */
+.math-inline, .math-display {
+  margin: 0.5em 0;
+}
+
+/* Alinea verticalmente las inline */
+.math-inline {
+  vertical-align: middle;
+}
+
+
+/* Responsive - hide TOC on small screens */
+@media (max-width: 768px) {
+    aside#toc {
+        display: none;
+    }
+
+    main {
+        margin-left: 0 !important;
+        padding: 10px;
+    }
+}
+
+/* Ajustes para MathML (etiquetas <math>) */
+math {
+  font-size: 1.3em;
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
+  line-height: 1.4;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}
+
+math[display="block"] {
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Ajustes específicos para MathJax versión 3 */
+mjx-container {
+  font-size: 1.3em !important;
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="inline"] {
+  font-size: 1.2em !important;
+  vertical-align: middle;
+}
+
+mjx-container[jax="CHTML"][display="block"] {
+  margin: 1.5em auto;
+  text-align: center;
+}
