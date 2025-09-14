@@ -1,7 +1,5 @@
-/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-/* Root Variables */
 :root {
   --width: 1000px;
   --font-main: 'Special Elite', monospace;
@@ -19,7 +17,6 @@
   --code-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   --code-blur: blur(20px) saturate(0.8);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #1f1d25;
@@ -76,9 +73,8 @@ a:hover {
   transform: scale(1.05);
 }
 
-li a {
-  display: inline-block;
-  margin-bottom: 0.5em;
+nav a {
+    margin-right: 8px;
 }
 
 /* Bold */
@@ -156,6 +152,10 @@ th, td {
   color: var(--text-color);
 }
 
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
 /* Code boxes */
 .highlight, .code {
   padding: 1em 1.5em;
@@ -196,145 +196,22 @@ th, td {
   background: transparent;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  body {
-    font-size: 0.7em;
-  }
-    aside#toc {
-        display: none;
-    }
-  .highlight, .code {
-    font-size: 0.7em;
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 75vh;
-    white-space: pre;
-    -webkit-overflow-scrolling: touch;
-    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
-  }
-}
-
-/* Neutralize links in code */
-.code a,
-.highlight a {
-  color: inherit;
-  text-decoration: none;
-  pointer-events: none;
-  cursor: default;
-}
-
-/* Blog post list */
+/* Blog post list (can remove if not needed) */
 ul.blog-posts {
-  list-style-type: none;
-  padding: unset;
+    list-style-type: none;
+    padding: unset;
 }
 
 ul.blog-posts li {
-  display: flex;
+    display: flex;
 }
 
 ul.blog-posts li span {
-  flex: 0 0 130px;
+    flex: 0 0 130px;
 }
 
 ul.blog-posts li a:visited {
-  color: var(--visited-color);
-}
-
-/* Inline override */
-.inline {
-  width: auto !important;
-}
-
-/* Footer */
-footer {
-  padding: 25px 0;
-  text-align: center;
-}
-
-/* -------- NAVIGATION BAR -------- */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px) saturate(0.8);
-  -webkit-backdrop-filter: blur(20px) saturate(0.8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0.3rem 0.5rem;
-  max-width: var(--width);
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40px;
-}
-
-.title {
-  display: none !important;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 100%;
-  padding: 0.2rem 0;
-  line-height: 1;
-  margin: 0 auto;
-}
-
-nav p {
-  display: flex;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav p a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  font-size: 1.4rem;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #161616;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-nav p a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(1.1);
-}
-
-/* Evitar que la barra de navegación cubra los enlaces de anclaje */
-body, html {
-  scroll-padding-top: 72px; /* Ajusta este valor según la altura de tu barra de navegación */
-}
-
-@media (prefers-color-scheme: dark) {
-  header {
-    background-color: rgba(29, 29, 33, 0.75);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  nav p a {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ededed;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  nav p a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+    color: var(--visited-color);
 }
 
 /* TOC Styles */
@@ -452,6 +329,46 @@ mjx-container[jax="CHTML"][display="inline"] {
 .math-inline {
   vertical-align: middle;
 }
+
+
+/* Responsive - hide TOC on small screens */
+@media (max-width: 768px) {
+    aside#toc {
+        display: none;
+    }
+ body {
+    font-size: 0.7em;
+  }
+li a {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+  .highlight, .code {
+    font-size: 0.7em;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 75vh;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
+  }
+    main {
+        margin-left: 0 !important;
+        padding: 10px;
+    }
+}
+/* Neutralize links in code */
+.code a,
+.highlight a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* Ajustes para MathML (etiquetas <math>) */
 math {
   font-size: 1.3em;
@@ -484,4 +401,3 @@ mjx-container[jax="CHTML"][display="block"] {
   margin: 1.5em auto;
   text-align: center;
 }
-
