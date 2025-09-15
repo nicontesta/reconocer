@@ -52,9 +52,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
-  font-size: 20px; /* var(--font-scale); */
+  font-size: var(--font-scale); /* Corregido: usando variable en lugar de valor fijo */
   font-weight: 400;
 }
+
+/* Ajuste de tamaños para diferentes encabezados */
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
 
 /* Links */
 a {
@@ -72,6 +80,12 @@ a {
 a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 nav a {
@@ -98,33 +112,36 @@ main {
 hr {
   border: 0;
   border-top: 1px dashed;
+  color: inherit;
+  opacity: 0.5;
 }
 
 /* Images */
 img {
   max-width: 100%;
+  height: auto;
 }
 
 /* Inline code */
 code {
   font-family: monospace;
-  padding: 0 3px;  /* Reducido el padding para hacerlo más delgado y suave */
-  background-color: rgba(0, 0, 0, 0.05);  /* Fondo tenue para que no sobresalga */
+  padding: 0 3px;
+  background-color: rgba(0, 0, 0, 0.05);
   color: var(--text-color);
-  border-radius: 4px;  /* Bordes ligeramente redondeados */
-  border: 1px solid rgba(0, 0, 0, 0.1);  /* Borde más sutil */
-  display: inline;  /* Se mantiene en línea con el texto */
-  vertical-align: baseline;  /* Alineación en la línea base del texto */
-  line-height: 1.2;  /* Ajustamos la altura de línea para reducir el espacio */
-  word-wrap: break-word;  /* Permite que el texto se divida si es necesario */
-  white-space: pre-wrap;  /* Asegura que el código se ajuste correctamente */
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline;
+  vertical-align: baseline;
+  line-height: 1.2;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 @media (prefers-color-scheme: dark) {
   code {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #c9d1d9;  /* Texto más claro en modo oscuro */
+    color: #c9d1d9;
   }
 }
 
@@ -135,18 +152,16 @@ blockquote {
   padding-left: 1.5em;
   border-left: 2px solid #aaa;
   color: var(--text-color);
-  font-size: 0.7em;
   font-style: italic;
   background: transparent;
 }
 
 /* Tables */
 table {
-  width: auto;
-  max-width: 600px;
+  width: 100%; /* Cambiado a 100% para mejor responsividad */
+  max-width: 100%; /* Aseguramos que no exceda el contenedor */
   margin: 1em 0;
   border-collapse: collapse;
-  font-size: 0.7em;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -158,64 +173,58 @@ th, td {
   border: 1px solid #ccc;
   color: var(--text-color);
 }
-/* Cajas de código sin bordes */
-/* ------------------- */
-/* Estilos generales */
-code, pre {
-  font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
-  font-size: 14px;  /* Tamaño adecuado */
-  padding: 0.5em;
-  border-radius: 6px;  /* Bordes redondeados */
-  white-space: pre-wrap;  /* Permitir que el texto se divida si es necesario */
-  word-wrap: break-word;  /* Envolver texto largo */
-  overflow-x: auto !important;  /* Desplazamiento horizontal si es necesario */
-  -webkit-overflow-scrolling: touch;  /* Desplazamiento suave en dispositivos táctiles */
-  user-select: all;
-  cursor: text;
+
+/* Cajas de código (bloques) */
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  padding: 1em;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border: var(--code-border);
+  box-shadow: var(--code-shadow);
+  backdrop-filter: var(--code-blur);
+  margin: 1.5em 0;
 }
 
-/* Modo claro - Cajas de código claras */
-code, pre {
-  background-color: #2a2a2e;  /* Fondo oscuro */
-  color: #c9d1d9;  /* Texto claro */
+/* Aseguramos que el código dentro de pre herede los estilos */
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  display: block;
+  line-height: 1.5;
 }
 
-/* Modo oscuro - Cajas de código oscuras */
+/* Modo oscuro para bloques de código */
 @media (prefers-color-scheme: dark) {
-  code, pre {
-    background-color: #f6f8fa;  /* Fondo claro */
-    color: #161616;  /* Texto oscuro */
+  pre {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
   }
-}
-
-/* Modo móvil - Cajas de código para móviles */
-@media (max-width: 768px) {
-  code, pre {
-    background-color: #2a2a2e;  /* Fondo oscuro */
-    color: #c9d1d9;  /* Texto claro */
-  }
-  /* En modo oscuro: Cajas de código claras */
-  @media (prefers-color-scheme: dark) {
-    code, pre {
-      background-color: #f6f8fa;  /* Fondo claro */
-      color: #161616;  /* Texto oscuro */
-    }
 }
 
 /* Scrollbar for code blocks */
 .highlight::-webkit-scrollbar,
-.code::-webkit-scrollbar {
+pre::-webkit-scrollbar {
   height: 8px;
 }
 
 .highlight::-webkit-scrollbar-thumb,
-.code::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb {
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 4px;
 }
 
 .highlight::-webkit-scrollbar-track,
-.code::-webkit-scrollbar-track {
+pre::-webkit-scrollbar-track {
   background: transparent;
 }
 
@@ -231,58 +240,57 @@ aside#toc {
   overflow-y: auto;
   font-family: Arial, sans-serif;
   font-size: 12px;
-  background-color: transparent; /* Fondo transparente */
-  border: none;  /* Sin bordes */
-  padding: 0; /* Quitar relleno */
-  box-shadow: none; /* Eliminar sombra */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
   z-index: 999;
 }
 
 @media (prefers-color-scheme: dark) {
   aside#toc {
-    background-color: transparent; /* Fondo transparente en modo oscuro */
-    color: #ededed; /* Texto claro en modo oscuro */
+    background-color: transparent;
   }
 
   aside#toc li a,
   aside#toc > div:first-child a {
-    color: #ededed; /* Enlaces claros */
+    color: var(--text-color);
   }
 }
 
 aside#toc > div:first-child a {
   font-weight: bold;
   font-size: 16px;
-  padding: 5px 0; /* Relleno para la primera entrada */
+  padding: 5px 0;
 }
 
 aside#toc ul {
-  list-style: none; /* Sin estilo de lista */
+  list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
 aside#toc li {
-  margin-bottom: 6px; /* Espaciado entre los items */
+  margin-bottom: 6px;
   cursor: pointer;
 }
 
 aside#toc li a {
-  text-decoration: none; /* Sin subrayado */
-  color: var(--text-color); /* Color de texto del tema */
-  transition: color 0.3s ease; /* Transición suave */
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 aside#toc li a:hover {
-  text-decoration: underline; /* Subrayado al pasar el cursor */
+  text-decoration: underline;
 }
 
 aside#toc li[data-level="h2"] {
-  margin-left: 10px; /* Sangría para los subniveles */
+  margin-left: 10px;
 }
 
 aside#toc li[data-level="h3"] {
-  margin-left: 20px; /* Más sangría para los subniveles de h3 */
+  margin-left: 20px;
 }
 
 aside#toc li .toggle-icon {
@@ -301,9 +309,15 @@ aside#toc li.expanded > ul {
 }
 
 /* Responsive - hide TOC on small screens */
+@media (max-width: 1024px) {
+  aside#toc {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   body {
-    font-size: 0.7em;
+    font-size: 16px; /* Tamaño de fuente más apropiado para móviles */
   }
 
   li a {
@@ -311,28 +325,19 @@ aside#toc li.expanded > ul {
     margin-bottom: 0.5em;
   }
 
-  .highlight, .code {
-    font-size: 0.7em;
-    display: block;
+  .highlight, pre {
+    font-size: 0.9em;
     max-width: 100%;
     overflow-x: auto;
-    overflow-y: auto;
-    max-height: 75vh;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
-    touch-action: auto;
   }
 
   main {
     margin-left: 0 !important;
     padding: 10px;
   }
-
-  aside#toc {
-    display: none; /* Ocultar TOC en pantallas pequeñas */
-  }
 }
-
 
 /* Neutralize links in code */
 .code a,
@@ -361,11 +366,18 @@ footer {
     background: white;
     color: black;
   }
+  a {
+    color: black;
+    text-decoration: underline;
+    background: none;
+    padding: 0;
+  }
   a::after {
     content: " (" attr(href) ")";
     font-size: 0.9em;
   }
 }
+
 /* -------------------- */
 /*      MATH STYLES     */
 /* -------------------- */
@@ -412,22 +424,11 @@ mjx-container[jax="CHTML"][display="block"] {
   vertical-align: middle;
 }
 
+/* Transiciones suaves */
 html {
-  transition: background-color 0.3s, color 0.3s; /* Transición suave de color */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 code, pre {
-  transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
+  transition: background-color 0.3s, color 0.3s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
