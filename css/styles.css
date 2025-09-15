@@ -1,3 +1,4 @@
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 /* Root Variables */
@@ -44,7 +45,7 @@
   box-sizing: border-box;
 }
 
-/* Estilos base */
+/* Body */
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
@@ -59,15 +60,7 @@ body {
   color: var(--text-color);
 }
 
-html {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body, html {
-  scroll-padding-top: 72px;
-}
-
-/* Tipografía */
+/* Headings - Solo tamaño unificado, sin otras modificaciones */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
@@ -78,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em 0;
 }
 
-/* Enlaces */
+/* Links */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -101,33 +94,36 @@ li a {
   margin-bottom: 0.5em;
 }
 
-/* Elementos de formato */
+/* Bold */
 strong, b {
   color: var(--heading-color);
 }
 
+/* Buttons */
 button {
   margin: 0;
   cursor: pointer;
 }
 
-hr {
-  border: 0;
-  border-top: 1px dashed;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* Estructura principal */
+/* Main */
 main {
   line-height: 1.6;
   margin-left: calc(var(--toc-width) + 20px);
   transition: margin-left 0.3s ease;
 }
 
-/* Código */
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px dashed;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+}
+
+/* Inline code */
 code {
   font-family: monospace;
   padding: 2px 6px;
@@ -137,6 +133,45 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+@media (prefers-color-scheme: dark) {
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  position: relative;
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 2px solid #aaa;
+  color: var(--text-color);
+  font-size: 0.7em;
+  font-style: italic;
+  background: transparent;
+}
+
+/* Tables */
+table {
+  width: auto;
+  max-width: 600px;
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-size: 0.7em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+}
+
+th, td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  color: var(--text-color);
+}
+
+/* Code boxes */
 .highlight, .code {
   padding: 1em 1.5em;
   background-color: var(--code-background-color);
@@ -159,6 +194,7 @@ code {
   font-size: 0.7em;
 }
 
+/* Scrollbar for code blocks */
 .highlight::-webkit-scrollbar,
 .code::-webkit-scrollbar {
   height: 8px;
@@ -175,42 +211,17 @@ code {
   background: transparent;
 }
 
-code, pre {
-  transition: background-color 0.3s, color 0.3s;
+/* Neutralize links in code */
+.code a,
+.highlight a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
 }
 
-/* Blockquotes */
-blockquote {
-  position: relative;
-  margin: 1.5em 0;
-  padding-left: 1.5em;
-  border-left: 2px solid #aaa;
-  color: var(--text-color);
-  font-size: 0.7em;
-  font-style: italic;
-  background: transparent;
-}
-
-/* Tablas */
-table {
-  width: auto;
-  max-width: 600px;
-  margin: 1em 0;
-  border-collapse: collapse;
-  font-size: 0.7em;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
-}
-
-th, td {
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  color: var(--text-color);
-}
-
-/* TOC Escritorio */
+/* -------- TOC STYLES -------- */
+/* TOC para escritorio */
 aside#toc {
   position: fixed;
   top: 80px;
@@ -485,20 +496,6 @@ mjx-container[jax="CHTML"][display="true"] {
   nav p a:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
-  
-  /* Forzar contraste en code boxes en modo oscuro */
-  .highlight, .code {
-    background-color: #ededed !important;
-    color: #161616 !important;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  /* Forzar contraste en code boxes en modo claro */
-  .highlight, .code {
-    background-color: #161616 !important;
-    color: #ededed !important;
-  }
 }
 
 /* Media Queries Responsivas */
@@ -583,30 +580,21 @@ mjx-container[jax="CHTML"][display="true"] {
     border: none;
     padding: 0;
   }
-/* Asegurar que el encabezado de la TOC sea visible */
-aside#toc .toc-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--toc-bg-color);
-  padding: 10px;
-  margin: -10px -10px 10px -10px;
-  border-radius: 8px 8px 0 0;
+  
+  main {
+    margin-left: 0 !important;
+  }
 }
 
-/* Contenedor para la lista de la TOC */
-.toc-list-container {
-  margin-top: 10px;
+/* Transiciones suaves */
+html {
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Asegurar que los enlaces de navegación en el encabezado sean visibles */
-.toc-nav a {
-  padding: 5px 8px !important;
-  font-size: 14px !important;
-  background-color: rgba(0, 0, 0, 0.05) !important;
-  border-radius: 50% !important;
+code, pre {
+  transition: background-color 0.3s, color 0.3s;
 }
-
-.toc-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+/* Asegurar que la barra de navegación no cubra enlaces de anclaje */
+body, html {
+  scroll-padding-top: 72px;
 }
