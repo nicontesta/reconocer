@@ -139,15 +139,17 @@ code {
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
-
-.highlight, .code {
-  padding: 1em 1.5em;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  border-radius: 12px;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  overflow-x: auto !important;
+/* Cajas de código sin bordes */
+/* ------------------- */
+/* Estilos generales */
+code, pre {
+  font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
+  font-size: 14px;  /* Tamaño adecuado */
+  padding: 0.5em;
+  border-radius: 6px;  /* Bordes redondeados */
+  white-space: pre-wrap;  /* Permitir que el texto se divida si es necesario */
+  word-wrap: break-word;  /* Envolver texto largo */
+  overflow-x: auto !important;  /* Desplazamiento horizontal si es necesario */
   -webkit-overflow-scrolling: touch;
   white-space: pre !important;
   border: var(--code-border);
@@ -159,7 +161,35 @@ code {
   -ms-user-select: all;
   user-select: all;
   cursor: text;
-  font-size: 0.7em;
+  -webkit-overflow-scrolling: touch;  /* Desplazamiento suave en dispositivos táctiles */
+ }
+
+/* Modo claro - Cajas de código claras */
+code, pre {
+  background-color: #2a2a2e;  /* Fondo oscuro */
+  color: #c9d1d9;  /* Texto claro */
+}
+
+/* Modo oscuro - Cajas de código oscuras */
+@media (prefers-color-scheme: dark) {
+  code, pre {
+    background-color: #f6f8fa;  /* Fondo claro */
+    color: #161616;  /* Texto oscuro */
+  }
+}
+
+/* Modo móvil - Cajas de código para móviles */
+@media (max-width: 768px) {
+  code, pre {
+    background-color: #2a2a2e;  /* Fondo oscuro */
+    color: #c9d1d9;  /* Texto claro */
+  }
+  /* En modo oscuro: Cajas de código claras */
+  @media (prefers-color-scheme: dark) {
+    code, pre {
+      background-color: #f6f8fa;  /* Fondo claro */
+      color: #161616;  /* Texto oscuro */
+    }
 }
 
 .highlight::-webkit-scrollbar,
@@ -619,3 +649,4 @@ aside#toc .toc-header {
   background-color: var(--code-background-color) !important;
   color: var(--code-color) !important;
 }
+
