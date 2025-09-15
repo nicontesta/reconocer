@@ -167,17 +167,17 @@ code, pre {
 }
 
 /* Modo claro - Cajas de código claras */
-code, pre {
-  background-color: #f6f8fa;  /* Fondo claro */
-  color: #161616;  /* Texto oscuro */
-}
-
-/* Modo oscuro - Cajas de código oscuras */
-@media (prefers-color-scheme: dark) {
   code, pre {
     background-color: #2a2a2e;  /* Fondo oscuro */
     color: #c9d1d9;  /* Texto claro */
   }
+
+/* Modo oscuro - Cajas de código oscuras */
+@media (prefers-color-scheme: dark) {
+code, pre {
+  background-color: #f6f8fa;  /* Fondo claro */
+  color: #161616;  /* Texto oscuro */
+}
 }
 
 /* Scrollbar for code blocks */
@@ -295,6 +295,7 @@ aside#toc li.expanded > ul {
     touch-action: auto;
   }
 
+  
   main {
     margin-left: 0 !important;
     padding: 10px;
@@ -343,4 +344,5 @@ mjx-container {
   font-size: 1.2em;  /* Ajusta el tamaño de la fuente de las fórmulas */
   line-height: 1.6;
 }
+
 
