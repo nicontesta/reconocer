@@ -41,7 +41,6 @@
   }
 }
 
-
 /* Reset básico */
 * {
   box-sizing: border-box;
@@ -139,6 +138,7 @@ code {
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 /* Cajas de código sin bordes */
 /* ------------------- */
 /* Estilos generales */
@@ -162,7 +162,7 @@ code, pre {
   user-select: all;
   cursor: text;
   -webkit-overflow-scrolling: touch;  /* Desplazamiento suave en dispositivos táctiles */
- }
+}
 
 /* Modo claro - Cajas de código claras */
 code, pre {
@@ -190,6 +190,7 @@ code, pre {
       background-color: #f6f8fa;  /* Fondo claro */
       color: #161616;  /* Texto oscuro */
     }
+  } /* Falta esta llave de cierre */
 }
 
 .highlight::-webkit-scrollbar,
@@ -616,6 +617,8 @@ mjx-container[jax="CHTML"][display="true"] {
     border: none;
     padding: 0;
   }
+} /* Falta esta llave de cierre */
+
 /* Asegurar que el encabezado de la TOC sea visible */
 aside#toc .toc-header {
   position: sticky;
@@ -649,4 +652,3 @@ aside#toc .toc-header {
   background-color: var(--code-background-color) !important;
   color: var(--code-color) !important;
 }
-
