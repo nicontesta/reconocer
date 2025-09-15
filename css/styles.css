@@ -20,6 +20,7 @@
   --code-blur: blur(20px) saturate(0.8);
   --toc-bg-color: rgba(251, 251, 246, 0.95);
   --toc-border: 1px solid #ccc;
+  --toc-width: 200px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,14 +60,16 @@ body {
   color: var(--text-color);
 }
 
-/* Headings - Todos del mismo tamaño como solicitado */
+/* Headings - Solo tamaño unificado, sin otras modificaciones */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
   font-size: var(--font-scale);
   font-weight: 400;
-  text-transform: none; /* Evita transformación a mayúsculas */
-  letter-spacing: normal; /* Elimina espaciado especial */
+  /* Se eliminan transformaciones de texto no deseadas */
+  text-transform: none;
+  letter-spacing: normal;
+  margin: 1em 0;
 }
 
 /* Links */
@@ -106,7 +109,8 @@ button {
 /* Main */
 main {
   line-height: 1.6;
-  margin-left: 0; /* Eliminamos el margen izquierdo fijo */
+  margin-left: calc(var(--toc-width) + 20px);
+  transition: margin-left 0.3s ease;
 }
 
 /* Horizontal rule */
@@ -168,7 +172,7 @@ th, td {
   color: var(--text-color);
 }
 
-/* Code boxes */
+/* Code boxes - Corregido para móvil */
 .highlight, .code {
   padding: 1em 1.5em;
   background-color: var(--code-background-color);
@@ -212,9 +216,9 @@ th, td {
 /* TOC para escritorio */
 aside#toc {
   position: fixed;
-  top: 80px; /* Ajustado para estar debajo de la nav bar */
+  top: 80px;
   left: 20px;
-  width: 210px;
+  width: var(--toc-width);
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   font-family: Arial, sans-serif;
@@ -228,14 +232,28 @@ aside#toc {
   backdrop-filter: blur(10px);
 }
 
-aside#toc > div:first-child a {
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: bold;
-  font-size: 16px;
-  padding: 5px 0;
-  color: var(--heading-color);
-  display: block;
+  font-size: 14px;
   margin-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--heading-color);
+}
+
+.toc-nav {
+  display: flex;
+  gap: 5px;
+}
+
+.toc-nav a {
+  padding: 2px 5px;
+  margin: 0;
+  font-size: 12px;
+  background: transparent;
+  border: none;
 }
 
 aside#toc ul {
@@ -260,6 +278,9 @@ aside#toc li a {
   margin: 0;
   border-radius: 3px;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 aside#toc li a:hover {
@@ -269,12 +290,10 @@ aside#toc li a:hover {
 
 aside#toc li[data-level="h2"] {
   margin-left: 10px;
-  font-weight: bold;
 }
 
 aside#toc li[data-level="h3"] {
   margin-left: 20px;
-  font-style: italic;
 }
 
 aside#toc li .toggle-icon {
@@ -292,103 +311,6 @@ aside#toc ul ul {
 
 aside#toc li.expanded > ul {
   display: block;
-}
-
-/* TOC para móviles - Integrada como encabezado */
-.mobile-toc {
-  display: none;
-  font-family: var(--font-main);
-  background-color: var(--toc-bg-color);
-  border-bottom: var(--toc-border);
-  margin: 0 -20px 20px -20px;
-  position: sticky;
-  top: 0;
-  z-index: 998;
-  backdrop-filter: blur(10px);
-  width: calc(100% + 40px);
-}
-
-.mobile-toc-header {
-  padding: 15px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.1em;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom-color 0.3s ease;
-  margin: 0;
-  text-transform: none; /* Evita mayúsculas */
-  letter-spacing: normal; /* Espaciado normal */
-}
-
-.mobile-toc-header:hover {
-  border-bottom-color: var(--heading-color);
-}
-
-.mobile-toc-header::after {
-  content: "▼";
-  font-size: 0.8em;
-  transition: transform 0.3s ease;
-}
-
-.mobile-toc-header.toc-collapsed::after {
-  transform: rotate(-90deg);
-}
-
-.mobile-toc-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: var(--toc-bg-color);
-  width: 100%;
-}
-
-.mobile-toc-content.expanded {
-  max-height: 60vh;
-  overflow-y: auto;
-  border-top: var(--toc-border);
-}
-
-.mobile-toc-content ul {
-  list-style: none;
-  padding: 10px 15px;
-  margin: 0;
-  width: 100%;
-}
-
-.mobile-toc-content li {
-  margin-bottom: 10px;
-  line-height: 1.4;
-  width: 100%;
-}
-
-.mobile-toc-content li a {
-  text-decoration: none;
-  color: var(--text-color);
-  background: transparent;
-  border: none;
-  padding: 5px;
-  margin: 0;
-  display: block;
-  border-radius: 3px;
-  transition: background-color 0.2s ease;
-  width: 100%;
-}
-
-.mobile-toc-content li a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.mobile-toc-content li[data-level="h2"] {
-  margin-left: 15px;
-  font-weight: bold;
-}
-
-.mobile-toc-content li[data-level="h3"] {
-  margin-left: 30px;
-  font-style: italic;
 }
 
 /* -------- NAVIGATION BAR -------- */
@@ -453,7 +375,7 @@ nav p a:hover {
 
 /* Evitar que la barra de navegación cubra los enlaces de anclaje */
 body, html {
-  scroll-padding-top: 72px; /* Ajusta este valor según la altura de tu barra de navegación */
+  scroll-padding-top: 72px;
 }
 
 /* Blog post list */
@@ -491,10 +413,6 @@ footer {
     display: none;
   }
   
-  .mobile-toc {
-    display: block;
-  }
-  
   main {
     margin-left: 0 !important;
   }
@@ -504,8 +422,6 @@ footer {
   body {
     font-size: 16px;
     padding: 15px;
-    width: 100%;
-    max-width: 100%;
   }
   
   .highlight, .code {
@@ -517,12 +433,13 @@ footer {
     max-height: 75vh;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
-    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
+    touch-action: auto;
   }
   
-  .mobile-toc {
-    margin: 0 -15px 15px -15px;
-    width: calc(100% + 30px);
+  /* Asegurar que las codeboxes se vean bien en móvil */
+  .highlight, .code {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
   }
   
   /* Nav bar en móvil */
@@ -541,16 +458,6 @@ footer {
     width: 2rem;
     height: 2rem;
     font-size: 1.2rem;
-  }
-  
-  /* Asegurar que todos los elementos tengan un ancho adecuado */
-  main, header, footer, article, section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
   }
 }
 
@@ -573,7 +480,7 @@ footer {
 
 /* Estilos de impresión */
 @media print {
-  .mobile-toc, aside#toc {
+  aside#toc {
     display: none;
   }
   
@@ -581,8 +488,6 @@ footer {
     background: white;
     color: black;
     font-size: 12pt;
-    width: 100%;
-    max-width: 100%;
   }
   
   a {
@@ -595,6 +500,10 @@ footer {
 
   header {
     display: none;
+  }
+  
+  main {
+    margin-left: 0 !important;
   }
 }
 
