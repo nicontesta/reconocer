@@ -155,7 +155,7 @@ th, td {
 /* Cajas de código sin bordes */
 code, pre {
   font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
-  font-size: 0.7em;  /* Tamaño de la fuente adecuado */
+  font-size: 0.5em;  /* Tamaño de la fuente adecuado */
   padding: 0.5em;
   border-radius: 6px;  /* Bordes redondeados */
   white-space: pre !important;  /* Permitir saltos de línea */
@@ -338,11 +338,52 @@ footer {
     font-size: 0.9em;
   }
 }
-
-/* Aumentar el tamaño de las fórmulas */
-mjx-container {
-  font-size: 1.2em;  /* Ajusta el tamaño de la fuente de las fórmulas */
-  line-height: 1.6;
+/* -------------------- */
+/*      MATH STYLES     */
+/* -------------------- */
+math {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
+  font-size: 1.3em;
+  line-height: 1.4;
+  margin: 0 0.2em;
+  vertical-align: middle;
 }
+
+math[display="block"] {
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+math mi, math mo, math mn {
+  padding: 0 0.1em;
+}
+
+mjx-container {
+  font-size: 1.3em !important;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="inline"] {
+  font-size: 1.2em !important;
+  vertical-align: middle;
+}
+
+mjx-container[jax="CHTML"][display="block"] {
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.math-inline, .math-display {
+  margin: 0.5em 0;
+}
+
+.math-inline {
+  vertical-align: middle;
+}
+
+
 
 
