@@ -378,15 +378,19 @@ math mi, math mo, math mn, math msup, math msub, math mfrac {
     font-size: 0.9em;
   }
 }
-.highlight, .code, .highlight code, pre code {
-  font-size: 14px !important;
-  font-family: monospace !important;
-  background-color: var(--code-background-color) !important;
-  border: var(--code-border) !important;
-  box-shadow: var(--code-shadow) !important;
-  backdrop-filter: var(--code-blur) !important;
-  -webkit-backdrop-filter: var(--code-blur) !important;
- }
+.highlight, .code {
+  background-color: var(--code-background-color);
+  color: var(--code-color); /* <-- ¡necesario! */
+  font-size: 14px;
+  border-radius: 12px;
+  padding: 1em 1.5em;
+  overflow-x: auto;
+  white-space: pre;
+  border: var(--code-border);
+  box-shadow: var(--code-shadow);
+  backdrop-filter: var(--code-blur);
+  -webkit-backdrop-filter: var(--code-blur);
+}
 
 /* Code blocks (pre + code) estilo GitHub */
 pre, code, .highlight, .code {
@@ -424,3 +428,4 @@ code {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+
