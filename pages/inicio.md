@@ -4,7 +4,7 @@ title: RE(O∩O)∃Я
 permalink: /inicio/
 ---
 
-<div align="center">RE(O∩O)∃Я&nbsp;&nbsp;&nbsp;</div> 
+<div align="center">[RE(O∩O)∃Я&nbsp;&nbsp;&nbsp;](/)</div> 
 
 ---
 
