@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  // Buscar o crear contenedor para la lista de la TOC
+  let tocListContainer = toc.querySelector('.toc-list-container');
+  if (!tocListContainer) {
+    tocListContainer = document.createElement('div');
+    tocListContainer.className = 'toc-list-container';
+    toc.appendChild(tocListContainer);
+  }
+
   const ul = document.createElement("ul");
 
   let currentH1 = null;
@@ -31,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     li.setAttribute("data-level", header.tagName.toLowerCase());
     const a = document.createElement("a");
     a.href = `#${header.id}`;
-    a.textContent = header.textContent;
+    a.textContent = header.textContent; // Mantiene el texto original
 
     li.appendChild(a);
 
@@ -74,12 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Eliminar solo las listas UL existentes, no el encabezado
-  const existingUls = toc.querySelectorAll('ul');
-  existingUls.forEach(existingUl => toc.removeChild(existingUl));
-  
-  // Agregar la nueva lista
-  toc.appendChild(ul);
+  // Limpiar contenido anterior y agregar la nueva lista
+  tocListContainer.innerHTML = '';
+  tocListContainer.appendChild(ul);
 
   // Añadir comportamiento de plegado/desplegado
   const topLevelItems = ul.querySelectorAll("li");
@@ -110,5 +115,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       li.insertBefore(toggleBtn, li.firstChild);
     }
+  });
+
+  // Recordar posición de scroll del TOC
+  const tocScrollPosition = localStorage.getItem('tocScrollPosition');
+  if (tocScrollPosition) {
+    toc.scrollTop = tocScrollPosition;
+  }
+
+  toc.addEventListener('scroll', function() {
+    localStorage.setItem('tocScrollPosition', toc.scrollTop);
   });
 });
