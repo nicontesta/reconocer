@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para crear la estructura de la TOC
   function createTOCStructure(container) {
+    // Limpiar contenedor existente
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+    
     const ul = document.createElement("ul");
     let currentH1 = null;
     let currentH2 = null;
@@ -42,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       a.textContent = header.textContent;
       a.addEventListener("click", function(e) {
         // Cerrar TOC móvil después de hacer clic en un enlace
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= 1024 && mobileTocContent && mobileTocHeader) {
           mobileTocContent.classList.remove("expanded");
           mobileTocHeader.classList.add("toc-collapsed");
         }
@@ -142,4 +147,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
