@@ -108,21 +108,22 @@ img {
 /* Inline code */
 code {
   font-family: monospace;
-  padding: 2px 4px;  /* Reducir padding para hacerlo más delgado */
-  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0 3px;  /* Reducido el padding para hacerlo más delgado y suave */
+  background-color: rgba(0, 0, 0, 0.05);  /* Fondo tenue para que no sobresalga */
   color: var(--text-color);
-  border-radius: 4px;  /* Bordes más redondeados para un look más sutil */
-  border: 1px solid rgba(0, 0, 0, 0.1);  /* Borde más tenue */
-  display: inline-block;  /* Para evitar que se solape y manejar el cambio de línea */
-  word-wrap: break-word;  /* Permite el salto de línea si es necesario */
-  white-space: pre-wrap;  /* Asegura que se pueda hacer wrap en el código */
+  border-radius: 4px;  /* Bordes ligeramente redondeados */
+  border: 1px solid rgba(0, 0, 0, 0.1);  /* Borde más sutil */
+  display: inline;  /* Se mantiene en línea con el texto */
+  vertical-align: baseline;  /* Alineación en la línea base del texto */
+  word-wrap: break-word;  /* Permite que el texto se divida si es necesario */
+  white-space: pre-wrap;  /* Asegura que el código se ajuste correctamente */
 }
 
 @media (prefers-color-scheme: dark) {
   code {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #c9d1d9;  /* Texto claro en modo oscuro */
+    color: #c9d1d9;  /* Texto más claro en modo oscuro */
   }
 }
 
@@ -387,6 +388,7 @@ mjx-container[jax="CHTML"][display="block"] {
 .math-inline {
   vertical-align: middle;
 }
+
 
 
 
