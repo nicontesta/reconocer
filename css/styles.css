@@ -438,8 +438,8 @@ footer {
   
   /* Asegurar que las codeboxes se vean bien en móvil */
   .highlight, .code {
-    background-color: var(--code-color);
-    color: var(--code-background-color);
+    background-color: var(--code-background-color);
+    color: var(--code-color);
   }
   
   /* Nav bar en móvil */
@@ -584,15 +584,15 @@ code, pre {
 /* ===== CORRECCIÓN PARA FÓRMULAS MATEMÁTICAS ===== */
 /* Aumentar tamaño de fórmulas matemáticas */
 math {
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
 }
 
 mjx-container {
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
 }
 
 mjx-container[jax="CHTML"][display="true"] {
-  font-size: 1.8em !important;
+  font-size: 1.5em !important;
   margin: 1em 0;
 }
 
@@ -606,6 +606,26 @@ mjx-container[jax="CHTML"][display="true"] {
   
   body {
     padding-top: 5px;
+  }
+}
+/* Asegurar que las code boxes usen los colores correctos */
+.highlight, .code {
+  background-color: var(--code-background-color) !important;
+  color: var(--code-color) !important;
+}
+
+/* Forzar contraste en modo claro y oscuro */
+@media (prefers-color-scheme: light) {
+  .highlight, .code {
+    background-color: #161616 !important;
+    color: #ededed !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight, .code {
+    background-color: #ededed !important;
+    color: #161616 !important;
   }
 }
 
