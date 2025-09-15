@@ -126,7 +126,7 @@ main {
 }
 
 /* Inline code - más delgado */
-code {
+code:not(pre code) {
   font-family: monospace;
   padding: 1px 5px;
   background-color: rgba(0, 0, 0, 0.05);
@@ -138,7 +138,7 @@ code {
 }
 
 @media (prefers-color-scheme: dark) {
-  code {
+  code:not(pre code) {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -161,8 +161,30 @@ pre {
   line-height: 1.4;
 }
 
-code, pre {
-  transition: background-color 0.3s, color 0.3s;
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.highlight::-webkit-scrollbar,
+.code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.highlight::-webkit-scrollbar-thumb,
+.code::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-track,
+.code::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Blockquotes */
