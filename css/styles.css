@@ -52,7 +52,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
-  font-size: var(--font-scale);
+  font-size: 20px; /* var(--font-scale); */
   font-weight: 400;
 }
 
@@ -108,17 +108,21 @@ img {
 /* Inline code */
 code {
   font-family: monospace;
-  padding: 2px 6px;
+  padding: 2px 4px;  /* Reducir padding para hacerlo más delgado */
   background-color: rgba(0, 0, 0, 0.05);
   color: var(--text-color);
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;  /* Bordes más redondeados para un look más sutil */
+  border: 1px solid rgba(0, 0, 0, 0.1);  /* Borde más tenue */
+  display: inline-block;  /* Para evitar que se solape y manejar el cambio de línea */
+  word-wrap: break-word;  /* Permite el salto de línea si es necesario */
+  white-space: pre-wrap;  /* Asegura que se pueda hacer wrap en el código */
 }
 
 @media (prefers-color-scheme: dark) {
   code {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c9d1d9;  /* Texto claro en modo oscuro */
   }
 }
 
@@ -155,7 +159,7 @@ th, td {
 /* Cajas de código sin bordes */
 code, pre {
   font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
-  font-size: 12px;  /* Tamaño de la fuente adecuado */
+  font-size: 14px;  /* Tamaño de la fuente adecuado */
   padding: 0.5em;
   border-radius: 6px;  /* Bordes redondeados */
   white-space: pre !important;  /* Permitir saltos de línea */
@@ -383,6 +387,7 @@ mjx-container[jax="CHTML"][display="block"] {
 .math-inline {
   vertical-align: middle;
 }
+
 
 
 
