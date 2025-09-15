@@ -25,7 +25,7 @@ Interior de la cúpula del Teatre-Museu Dalí, flotant dins un cub de Menger inc
 
 ---
 
-### PART I
+## PART I
 
 DALÍ  
 (assegut a una butaca que es fon)  
