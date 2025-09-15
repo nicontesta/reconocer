@@ -647,8 +647,3 @@ aside#toc .toc-header {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Asegurar que las code boxes usen los colores correctos */
-.highlight, .code {
-  background-color: var(--code-background-color) !important;
-  color: var(--code-color) !important;
-}
