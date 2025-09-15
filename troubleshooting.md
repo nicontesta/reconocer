@@ -230,7 +230,7 @@ pandoc math.md -o math.html --mathml --standalone
 
 #### Archivo: `Convert-MdToHtml.ps1`
 
-```PowerShell
+```html
 param (
 \[string]\$InputFile = "entrada.md",
 \[string]\$OutputFile = "salida.html"
@@ -252,7 +252,7 @@ Write-Output "✅ Conversión completada: \$OutputFile"
 
 #### Cómo usar en PowerShell:
 
-```PowerShell
+```
 .\Convert-MdToHtml.ps1 -InputFile "post.md" -OutputFile "post.html"
 ```
 
@@ -262,7 +262,7 @@ Write-Output "✅ Conversión completada: \$OutputFile"
 
 #### Archivo: `convert_md_to_html.sh`
 
-```Bash
+```
 \#!/bin/bash
 
 INPUT=\${1:-entrada.md}
