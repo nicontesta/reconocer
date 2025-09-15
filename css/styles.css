@@ -220,7 +220,7 @@ aside#toc {
   position: fixed;
   top: 60px;
   left: 20px;
-  width: 210px;
+  width: 270px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
   font-family: Arial, sans-serif;
@@ -413,6 +413,7 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
 }
+
 
 
 
