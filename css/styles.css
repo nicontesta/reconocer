@@ -191,9 +191,15 @@ code, pre {
 /* Modo móvil - Cajas de código para móviles */
 @media (max-width: 768px) {
   code, pre {
-    font-size: 12px;  /* Ajuste de tamaño de fuente para pantallas pequeñas */
-    padding: 0.3em;  /* Menor relleno */
+    background-color: #2a2a2e;  /* Fondo oscuro */
+    color: #c9d1d9;  /* Texto claro */
   }
+  /* En modo oscuro: Cajas de código claras */
+  @media (prefers-color-scheme: dark) {
+    code, pre {
+      background-color: #f6f8fa;  /* Fondo claro */
+      color: #161616;  /* Texto oscuro */
+    }
 }
 
 /* Scrollbar for code blocks */
@@ -413,6 +419,7 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
 }
+
 
 
 
