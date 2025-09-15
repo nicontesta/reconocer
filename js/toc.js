@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Verificar que todos los elementos necesarios existan
   const toc = document.getElementById("toc");
   const mobileToc = document.querySelector(".mobile-toc");
   const mobileTocHeader = document.querySelector(".mobile-toc-header");
   const mobileTocContent = document.querySelector(".mobile-toc-content");
   
-  // Salir si no hay elementos TOC
-  if ((!toc && !mobileToc) || (!mobileTocHeader && !mobileTocContent)) return;
-  
-  // Oculta TOC si estamos en index.md o página principal
-  const path = window.location.pathname;
-  const isHomePage = path === "/" || path.endsWith("index.html") || path.endsWith("index.md");
-  
-  if (isHomePage) {
+  // Oculta TOC si estamos en index.md
+  if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("index.md")) {
     if (toc) toc.style.display = "none";
     if (mobileToc) mobileToc.style.display = "none";
     return;
@@ -46,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       li.setAttribute("data-level", header.tagName.toLowerCase());
       const a = document.createElement("a");
       a.href = `#${header.id}`;
-      a.textContent = header.textContent; // Mantener el formato original
+      a.textContent = header.textContent; // Mantiene el texto original sin modificar
       a.addEventListener("click", function(e) {
         // Cerrar TOC móvil después de hacer clic en un enlace
         if (window.innerWidth <= 1024 && mobileTocContent && mobileTocHeader) {
