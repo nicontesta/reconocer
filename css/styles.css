@@ -152,25 +152,32 @@ th, td {
   border: 1px solid #ccc;
   color: var(--text-color);
 }
-
-/* Code blocks */
-.highlight, .code {
-  padding: 1em 1.5em;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  border-radius: 12px;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch;
-  white-space: pre !important;
-  border: var(--code-border);
-  box-shadow: var(--code-shadow);
-  backdrop-filter: var(--code-blur);
-  -webkit-backdrop-filter: var(--code-blur);
+/* Cajas de código sin bordes */
+code, pre {
+  font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
+  font-size: 0.7em;  /* Tamaño de la fuente adecuado */
+  padding: 0.5em;
+  border-radius: 6px;  /* Bordes redondeados */
+  white-space: pre !important;  /* Permitir saltos de línea */
+  word-wrap: break-word;  /* Envolver el texto largo */
+  overflow-x: auto !important; /* Desplazamiento horizontal si es necesario */
+  -webkit-overflow-scrolling: touch;  /* Desplazamiento suave en dispositivos táctiles */
   user-select: all;
   cursor: text;
-  font-size: 0.7em;
+}
+
+/* Modo claro - Cajas de código claras */
+code, pre {
+  background-color: #f6f8fa;  /* Fondo claro */
+  color: #161616;  /* Texto oscuro */
+}
+
+/* Modo oscuro - Cajas de código oscuras */
+@media (prefers-color-scheme: dark) {
+  code, pre {
+    background-color: #2a2a2e;  /* Fondo oscuro */
+    color: #c9d1d9;  /* Texto claro */
+  }
 }
 
 /* Scrollbar for code blocks */
@@ -330,3 +337,10 @@ footer {
     font-size: 0.9em;
   }
 }
+
+/* Aumentar el tamaño de las fórmulas */
+mjx-container {
+  font-size: 1.2em;  /* Ajusta el tamaño de la fuente de las fórmulas */
+  line-height: 1.6;
+}
+
