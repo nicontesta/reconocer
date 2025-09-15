@@ -159,6 +159,12 @@ pre {
   color: var(--code-color);
   margin: 1.2em 0;
   line-height: 1.4;
+  /* Permitir selección de texto */
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+  cursor: text;
 }
 
 pre code {
@@ -169,21 +175,24 @@ pre code {
   color: inherit;
   line-height: inherit;
   font-size: inherit;
+  /* Heredar la selección de texto del pre */
+  -webkit-user-select: inherit;
+  -moz-user-select: inherit;
+  -ms-user-select: inherit;
+  user-select: inherit;
 }
 
-.highlight::-webkit-scrollbar,
-.code::-webkit-scrollbar {
+/* Scrollbars para bloques de código */
+pre::-webkit-scrollbar {
   height: 8px;
 }
 
-.highlight::-webkit-scrollbar-thumb,
-.code::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb {
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 4px;
 }
 
-.highlight::-webkit-scrollbar-track,
-.code::-webkit-scrollbar-track {
+pre::-webkit-scrollbar-track {
   background: transparent;
 }
 
@@ -517,11 +526,14 @@ mjx-container[jax="CHTML"][display="true"] {
     display: block;
     max-width: 100%;
     overflow-x: auto;
-    overflow-y: auto;
-    max-height: 75vh;
+    overflow-y: hidden;
+    max-height: none;
     white-space: pre;
+    /* Mejorar desplazamiento en móviles */
     -webkit-overflow-scrolling: touch;
-    touch-action: auto;
+    touch-action: manipulation;
+    /* Prevenir que el desplazamiento horizontal afecte a la página */
+    overscroll-behavior-x: contain;
   }
   
   .mobile-toc {
@@ -596,4 +608,28 @@ aside#toc .toc-header {
 
 .toc-nav a:hover {
   background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos específicos para mejorar la experiencia táctil en móviles */
+@media (max-width: 768px) {
+  /* Mejorar la selección de texto en código */
+  pre {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+  }
+  
+  /* Mejorar el desplazamiento horizontal */
+  pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  
+  /* Evitar que los code blocks sean demasiado altos */
+  pre {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
 }
