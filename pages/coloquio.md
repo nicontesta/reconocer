@@ -9,7 +9,7 @@ permalink: /coloquio/
 ## Introducción
 Con un prompt bien diseñado y un archivo semilla, es posible crear experiencias interactivas educativas y críticas que muestren el potencial positivo de los modelos de lenguaje grande (LLMs). Esta herramienta permite generar enlaces compartibles para debates, ejercicios académicos o investigaciones, sin requerir configuración avanzada por parte del usuario final.
 
-### Método de Implementación
+## Método de Implementación
 1.  **Prompt Base (PB):** Conjunto de instrucciones precisas que guían al LLM sobre cómo procesar el documento adjunto.
 2.  **Archivo Semilla:** Documento de referencia (ej: texto, datos, código) que contextualiza la interacción.
 3.  **Generación de Enlace:** Plataformas compatibles (ej: ChatGPT, Claude) permiten crear enlaces públicos combinando PB + archivo.
@@ -19,7 +19,7 @@ Con un prompt bien diseñado y un archivo semilla, es posible crear experiencias
 - No todas las plataformas permiten compartir sesiones de forma pública.
 - La estabilidad del enlace depende de las políticas del proveedor.
 
-### Ejemplo de Prompt Base (PB):
+## Ejemplo de Prompt Base (PB):
 
 ```markdown
 # PROMPT BASE DE ESCENA – “COLOQUIO IMPOSIBLE” (Versión Extendida y Modular)
@@ -164,7 +164,7 @@ Cualquier personaje puede reingresar si el guion lo permite en clave irónica o 
 - Se puede crear un índice general para compilar todas las escenas del Coloquio Imposible.
 ```
 
-### Nota Crítica: Mantener el Contexto del LLM
+## Nota Crítica: Mantener el Contexto del LLM
 Los LLMs tienden a divagar o inventar información cuando pierden el contexto. Para evitarlo:
 
 **Técnicas de recordatorio contextual:**
@@ -174,14 +174,14 @@ Los LLMs tienden a divagar o inventar información cuando pierden el contexto. P
   - *"No agregues información externa"*
 
 
-### Recomendaciones de Uso
+## Recomendaciones de Uso
 1.  **Para educadores:** Ideal para generar debates variados, se pueden consultar ejemplos en esta misma web, usando el [Coloquio Imposible](https://archive.org/details/reconocer) como semilla.
  * Ejemplo "Políticamente Correcto" para generar debate:
 Usuario: *"Entra Calvin quejándose porque Disney hará la película sobre él con un niño afroamericano como protagonista. Sigue el PB."*
 2.  **Para estudiantes:** Ejercicios de análisis crítico con el [artículo epistemológico](https://archive.org/details/auditor) como documento base.
 3.  **Para desarrolladores:** Implementar usando el [Anexo A](https://archive.org/details/anexo-a) como guía metodológica base.
 
-### Acceso a la Herramienta
+## Acceso a la Herramienta
 - **Enlace al PB estable**:<a href="https://chatgpt.com/share/68bd151c-f9a4-800e-be85-61c2012a30b8" target="_blank" rel="noopener noreferrer">Bonus Track Pedagógico</a>
 - **Modo recomendado:** *"Permanecer con la sesión cerrada"* para evitar persistencia de datos.
 - **Guardar resultados:** Se recomienda consultar la  
