@@ -438,8 +438,8 @@ footer {
   
   /* Asegurar que las codeboxes se vean bien en móvil */
   .highlight, .code {
-    background-color: var(--code-background-color);
-    color: var(--code-color);
+    background-color: var(--code-color);
+    color: var(--code-background-color);
   }
   
   /* Nav bar en móvil */
@@ -515,29 +515,8 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s;
 }
-/* Añadir al final del archivo styles.css */
 
-/* ===== CORRECCIÓN PARA CODE BOXES ===== */
-/* Asegurar que las code boxes usen los colores correctos */
-.highlight, .code {
-  background-color: var(--code-background-color) !important;
-  color: var(--code-color) !important;
-}
 
-/* Forzar contraste en modo claro y oscuro */
-@media (prefers-color-scheme: light) {
-  .highlight, .code {
-    background-color: #161616 !important;
-    color: #ededed !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .highlight, .code {
-    background-color: #ededed !important;
-    color: #161616 !important;
-  }
-}
 
 /* ===== TOC MÓVIL MEJORADA ===== */
 .mobile-toc {
@@ -628,10 +607,5 @@ mjx-container[jax="CHTML"][display="true"] {
   body {
     padding-top: 5px;
   }
-  
-  /* Asegurar que las code boxes sean legibles */
-  .highlight, .code {
-    font-size: 0.8em;
-    padding: 0.8em;
-  }
 }
+
