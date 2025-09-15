@@ -196,79 +196,82 @@ th, td {
 }
 
 
-/* TOC Styles */
-
+/* -------------------- */
+/*     TOC STYLES       */
+/* -------------------- */
 aside#toc {
-    position: fixed;
-    top: 60px;
-    left: 20px;
-    width: 210px;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    z-index: 999;
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  width: 210px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 999;
 }
 
-/* TOC home link */
+@media (prefers-color-scheme: dark) {
+  aside#toc {
+    background-color: #2a2a2e;
+    border-color: #555;
+    color: #ededed;
+  }
+
+  aside#toc li a,
+  aside#toc > div:first-child a {
+    color: #ededed;
+  }
+}
+
 aside#toc > div:first-child a {
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--link-color);
+  font-weight: bold;
+  font-size: 16px;
 }
 
-/* TOC list styles */
 aside#toc ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 aside#toc li {
-    margin-bottom: 6px;
-    cursor: pointer;
-}
-
-aside#toc li a {
-    color: var(--link-color);
-    text-decoration: none;
+  margin-bottom: 6px;
+  cursor: pointer;
 }
 
 aside#toc li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Indent H2 and H3 items */
 aside#toc li[data-level="h2"] {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 aside#toc li[data-level="h3"] {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
-/* Collapsible styling */
 aside#toc li .toggle-icon {
-    font-weight: bold;
-    margin-right: 6px;
-    user-select: none;
+  font-weight: bold;
+  margin-right: 6px;
+  user-select: none;
 }
 
-/* Hide nested lists by default (collapsed) */
 aside#toc ul ul {
-    display: none;
-    margin-left: 15px;
+  display: none;
+  margin-left: 15px;
 }
 
-/* Show nested lists when parent is expanded */
 aside#toc li.expanded > ul {
-    display: block;
+  display: block;
 }
+
 /* Responsive - hide TOC on small screens */
 @media (max-width: 768px) {
   body {
@@ -313,11 +316,78 @@ footer {
   text-align: center;
 
 }
+/* -------------------- */
+/*      MATH STYLES     */
+/* -------------------- */
+math {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
+  font-size: 1.3em;
+  line-height: 1.4;
+  margin: 0 0.2em;
+  vertical-align: middle;
+}
+
+math[display="block"] {
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+math mi, math mo, math mn {
+  padding: 0 0.1em;
+}
+
+mjx-container {
+  font-size: 1.3em !important;
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="inline"] {
+  font-size: 1.2em !important;
+  vertical-align: middle;
+}
+
+mjx-container[jax="CHTML"][display="block"] {
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.math-inline, .math-display {
+  margin: 0.5em 0;
+}
+
+.math-inline {
+  vertical-align: middle;
+}
+
+/* -------------------- */
+/*     PRINT STYLES     */
+/* -------------------- */
+@media print {
+  header, nav, footer, aside#toc {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    background: white;
+    color: black;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+}
+
 .highlight, .code, .highlight code, pre code {
   font-size: 14px !important;
   font-family: monospace !important;
   background-color: var(--code-background-color) !important;
   color: var(--code-color) !important;
 }
+
 
 
