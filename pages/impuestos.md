@@ -1222,63 +1222,64 @@ Este apéndice no resuelve, pero desplaza el eje: ni empresario ni asalariado es
 
 ---
 
-1. 🎭 ESCENA XIX – PROMPT INICIAL  
+* 🎭 ESCENA XIX – PROMPT INICIAL
 > “nueva escena basada en: ‘Links La siniestra contraria a la correcta (right) Silencio y Aplauso [...]’”  
 – Activación de ejes: manipulación de masas, ilusión de participación, espectáculo político, aseguradoras como fraude sistémico.  
 – Resultado: escena sobre ovación como forma de control, parodia del voto y del consumo como forma de ciudadanía.
 
 ---
 
-2. 🧠 CONTINUIDAD ESCENA XIX  
+
+* 🧠 CONTINUIDAD ESCENA XIX  
 > “continúa”  
 – Desarrollo del simulacro político-teatral, ingreso de ROBOCRITO, Beauvoir en streaming, Debord.  
 – Crítica a la moral programada, al espectáculo indignado y al vacío estructural de la representación.
 
 ---
 
-3. ⚖ ESCENA XX – SOBRE VOTO E IGNORANCIA  
+* ⚖ ESCENA XX – SOBRE VOTO E IGNORANCIA  
 > “qué difícil es ponderar! como dar valor al voto para evitar que simplemente sea un censo de la ignorancia”  
 – Activación de debate Rousseau vs. Mill, aparición del Votador, del Presentador y de Elon M.  
 – Ironía sobre la democratización algorítmica, votaciones emocionalizadas y representación distorsionada.
 
 ---
 
-4. 🔋 ESCENA XXI – KWH COMO CRITERIO FISCAL  
+* 🔋 ESCENA XXI – KWH COMO CRITERIO FISCAL  
 > “el kwh como ponderador, así se podría hacer un pago de impuestos más ‘justo’. [...]”  
 – Escena con Carnot, Prigogine, Alexa Fiscal, Keynes y el Contributor.  
 – Se dramatiza la eficiencia energética como criterio moral-fiscal.
 
 ---
 
-5. 💼 ENTRADA DEL EMPRESARIO  
+* 💼 ENTRADA DEL EMPRESARIO  
 > “un empresario de éxito que genera mucho empleo y gana millones, cómo pondera?”  
 – El empresario exige reconocimiento estructural.  
 – Se plantea una fiscalidad según red de dependencia, externalidades, redistribución.
 
 ---
 
-6. ✨ ENTRADA DEL VISIONARIO  
+* ✨ ENTRADA DEL VISIONARIO  
 > “yo tengo ideas innovadoras que también generan mucho empleo y soy el paradigma de la ética, cuál debería ser mi carga fiscal?”  
 – Aparece el Visionario como figura de ética empresarial autotunelada.  
 – Se activa el simulacro virtuoso, las métricas simbólicas y el karma tributario.
 
 ---
 
-7. 💸 DEBATE SOBRE HERENCIA Y AHORRO  
+* 💸 DEBATE SOBRE HERENCIA Y AHORRO  
 > “se debería ponderar por la cantidad de personas que dependen de otra? [...] el ahorro (un lujo disruptivo)”  
 – El Famoso Autárquico no redistribuye.  
 – Se introduce la idea de ahorro como anomalía térmica y la fiscalidad sobre redes afectivas.
 
 ---
 
-8. 🧾 DEFENSA DEL EMPRESARIO  
+* 🧾 DEFENSA DEL EMPRESARIO  
 > “no entiendo por qué a la hipocresía ahora la llaman simulacro [...] como si emprender fuese libre de riesgo”  
 – El empresario regresa para defender el mérito y el riesgo asumido.  
 – Aparece una fórmula híbrida de tributación: riesgo × impacto ÷ privilegio.
 
 ---
 
-9. 🧒 RECLAMO DEL ASALARIADO  
+* 🧒 RECLAMO DEL ASALARIADO  
 > “pues si vamos a hablar de impuestos, tampoco entiendo por qué se pagan al cobrar una herencia [...]”  
 – El asalariado rompe el silencio.  
 – El tributo se vuelve intergeneracional. Ahorro como anomalía, el consumo como calor del sistema.
