@@ -174,8 +174,8 @@ th, td {
 /* Code boxes */
 .highlight, .code {
   padding: 1em 1.5em;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
+  background-color: var(--code-color);
+  color: var(--code-background-color);
   border-radius: 12px;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -598,3 +598,4 @@ code, pre {
 body, html {
   scroll-padding-top: 72px;
 }
+
