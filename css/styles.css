@@ -1,5 +1,7 @@
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
+/* Root Variables */
 :root {
   --width: 1000px;
   --font-main: 'Special Elite', monospace;
@@ -18,7 +20,6 @@
   --code-blur: blur(20px) saturate(0.8);
   --toc-bg-color: rgba(251, 251, 246, 0.95);
   --toc-border: 1px solid #ccc;
-  --nav-height: 40px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,15 +42,13 @@
 /* Reset básico */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* Body - Estilo de guión de teatro */
+/* Body */
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
   max-width: var(--width);
   text-align: left;
@@ -58,17 +57,16 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: var(--text-color);
-  position: relative;
-  width: 100%;
 }
 
-/* Headings - Todos del mismo tamaño como en Bearblog */
+/* Headings - Todos del mismo tamaño como solicitado */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
+  font-size: var(--font-scale);
   font-weight: 400;
-  margin: 1.5em 0 0.5em 0;
-  font-size: var(--font-scale) !important; /* Mismo tamaño para todos */
+  text-transform: none; /* Evita transformación a mayúsculas */
+  letter-spacing: normal; /* Elimina espaciado especial */
 }
 
 /* Links */
@@ -82,7 +80,6 @@ a {
   display: inline-block;
   margin: 0.25rem 0.5rem 0.5rem 0;
   line-height: 1.2;
-  border: 1px solid var(--link-color);
 }
 
 a:hover {
@@ -90,65 +87,135 @@ a:hover {
   transform: scale(1.05);
 }
 
-nav a {
-  margin-right: 8px;
+li a {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+/* Bold */
+strong, b {
+  color: var(--heading-color);
+}
+
+/* Buttons */
+button {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Main */
+main {
+  line-height: 1.6;
+  margin-left: 0; /* Eliminamos el margen izquierdo fijo */
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px dashed;
+}
+
+/* Images */
+img {
+  max-width: 100%;
 }
 
 /* Inline code */
 code {
   font-family: monospace;
-  padding: 0 3px;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  border-radius: 4px;
-  border: var(--code-border);
-  display: inline;
-  vertical-align: baseline;
-  line-height: 1.2;
-  word-wrap: break-word;
-  white-space: pre-wrap;
+  padding: 2px 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Code blocks - Siempre modo contrario */
-pre {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-  padding: 1em;
-  border-radius: 6px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+@media (prefers-color-scheme: dark) {
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  position: relative;
   margin: 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 2px solid #aaa;
+  color: var(--text-color);
+  font-size: 0.7em;
+  font-style: italic;
+  background: transparent;
+}
+
+/* Tables */
+table {
+  width: auto;
+  max-width: 600px;
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-size: 0.7em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+}
+
+th, td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  color: var(--text-color);
+}
+
+/* Code boxes */
+.highlight, .code {
+  padding: 1em 1.5em;
   background-color: var(--code-background-color);
   color: var(--code-color);
+  border-radius: 12px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre !important;
   border: var(--code-border);
   box-shadow: var(--code-shadow);
   backdrop-filter: var(--code-blur);
-  width: 100%;
+  -webkit-backdrop-filter: var(--code-blur);
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+  cursor: text;
+  font-size: 0.7em;
 }
 
-/* Asegurar que el código dentro de pre herede los estilos */
-pre code {
+/* Scrollbar for code blocks */
+.highlight::-webkit-scrollbar,
+.code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.highlight::-webkit-scrollbar-thumb,
+.code::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-track,
+.code::-webkit-scrollbar-track {
   background: transparent;
-  border: none;
-  padding: 0;
-  color: inherit;
-  white-space: pre-wrap;
-  display: block;
-  line-height: 1.5;
 }
 
-/* -------------------- */
-/*     TOC STYLES       */
-/* -------------------- */
+/* -------- TOC STYLES -------- */
 /* TOC para escritorio */
 aside#toc {
   position: fixed;
-  top: 60px;
+  top: 80px; /* Ajustado para estar debajo de la nav bar */
   left: 20px;
-  width: 250px;
-  max-height: calc(100vh - 80px);
+  width: 210px;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
   font-family: Arial, sans-serif;
   font-size: 12px;
@@ -251,6 +318,9 @@ aside#toc li.expanded > ul {
   font-size: 1.1em;
   border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.3s ease;
+  margin: 0;
+  text-transform: none; /* Evita mayúsculas */
+  letter-spacing: normal; /* Espaciado normal */
 }
 
 .mobile-toc-header:hover {
@@ -321,34 +391,98 @@ aside#toc li.expanded > ul {
   font-style: italic;
 }
 
-/* Barra de navegación móvil */
-.mobile-nav {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--toc-bg-color);
-  border-top: var(--toc-border);
-  padding: 8px 0;
+/* -------- NAVIGATION BAR -------- */
+header {
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-}
-
-.mobile-nav-container {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(0.8);
+  -webkit-backdrop-filter: blur(20px) saturate(0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.3rem 0.5rem;
+  max-width: var(--width);
+  margin-inline: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  border-radius: 40px;
 }
 
-.mobile-nav a {
-  font-size: 1.5em;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  padding: 5px 15px;
+.title {
+  display: none !important;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  padding: 0.2rem 0;
+  line-height: 1;
+  margin: 0 auto;
+}
+
+nav p {
+  display: flex;
+  gap: 0.75rem;
   margin: 0;
-  display: inline-block;
+  padding: 0;
+}
+
+nav p a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #161616;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav p a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+/* Evitar que la barra de navegación cubra los enlaces de anclaje */
+body, html {
+  scroll-padding-top: 72px; /* Ajusta este valor según la altura de tu barra de navegación */
+}
+
+/* Blog post list */
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--visited-color);
+}
+
+/* Inline override */
+.inline {
+  width: auto !important;
+}
+
+/* Footer */
+footer {
+  padding: 25px 0;
+  text-align: center;
 }
 
 /* Responsive */
@@ -360,6 +494,10 @@ aside#toc li.expanded > ul {
   .mobile-toc {
     display: block;
   }
+  
+  main {
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -370,17 +508,39 @@ aside#toc li.expanded > ul {
     max-width: 100%;
   }
   
+  .highlight, .code {
+    font-size: 0.7em;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 75vh;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
+  }
+  
   .mobile-toc {
     margin: 0 -15px 15px -15px;
     width: calc(100% + 30px);
   }
   
-  .mobile-nav {
-    display: block;
+  /* Nav bar en móvil */
+  header {
+    position: fixed;
+    bottom: 10px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    border-radius: 40px;
+    padding: 0.3rem 0.5rem;
   }
-  
-  pre, code {
-    font-size: 0.9em;
+
+  nav p a {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
   }
   
   /* Asegurar que todos los elementos tengan un ancho adecuado */
@@ -392,16 +552,28 @@ aside#toc li.expanded > ul {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  
-  /* Ajustar el margen del main cuando hay TOC móvil */
-  main {
-    margin-top: 20px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: rgba(29, 29, 33, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  nav p a {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ededed;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav p a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
 
 /* Estilos de impresión */
 @media print {
-  .mobile-toc, aside#toc, .mobile-nav {
+  .mobile-toc, aside#toc {
     display: none;
   }
   
@@ -419,6 +591,10 @@ aside#toc li.expanded > ul {
     background: none;
     border: none;
     padding: 0;
+  }
+
+  header {
+    display: none;
   }
 }
 
