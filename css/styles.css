@@ -1,4 +1,3 @@
-/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 /* Root Variables */
@@ -45,7 +44,7 @@
   box-sizing: border-box;
 }
 
-/* Body */
+/* Estilos base */
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
@@ -60,19 +59,26 @@ body {
   color: var(--text-color);
 }
 
-/* Headings - Solo tamaño unificado, sin otras modificaciones */
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body, html {
+  scroll-padding-top: 72px;
+}
+
+/* Tipografía */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
   font-size: var(--font-scale);
   font-weight: 400;
-  /* Se eliminan transformaciones de texto no deseadas */
   text-transform: none;
   letter-spacing: normal;
   margin: 1em 0;
 }
 
-/* Links */
+/* Enlaces */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -95,36 +101,33 @@ li a {
   margin-bottom: 0.5em;
 }
 
-/* Bold */
+/* Elementos de formato */
 strong, b {
   color: var(--heading-color);
 }
 
-/* Buttons */
 button {
   margin: 0;
   cursor: pointer;
 }
 
-/* Main */
+hr {
+  border: 0;
+  border-top: 1px dashed;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Estructura principal */
 main {
   line-height: 1.6;
   margin-left: calc(var(--toc-width) + 20px);
   transition: margin-left 0.3s ease;
 }
 
-/* Horizontal rule */
-hr {
-  border: 0;
-  border-top: 1px dashed;
-}
-
-/* Images */
-img {
-  max-width: 100%;
-}
-
-/* Inline code */
+/* Código */
 code {
   font-family: monospace;
   padding: 2px 6px;
@@ -134,45 +137,6 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  code {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Blockquotes */
-blockquote {
-  position: relative;
-  margin: 1.5em 0;
-  padding-left: 1.5em;
-  border-left: 2px solid #aaa;
-  color: var(--text-color);
-  font-size: 0.7em;
-  font-style: italic;
-  background: transparent;
-}
-
-/* Tables */
-table {
-  width: auto;
-  max-width: 600px;
-  margin: 1em 0;
-  border-collapse: collapse;
-  font-size: 0.7em;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
-}
-
-th, td {
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  color: var(--text-color);
-}
-
-/* Code boxes - Corregido para móvil */
 .highlight, .code {
   padding: 1em 1.5em;
   background-color: var(--code-background-color);
@@ -195,7 +159,6 @@ th, td {
   font-size: 0.7em;
 }
 
-/* Scrollbar for code blocks */
 .highlight::-webkit-scrollbar,
 .code::-webkit-scrollbar {
   height: 8px;
@@ -212,8 +175,42 @@ th, td {
   background: transparent;
 }
 
-/* -------- TOC STYLES -------- */
-/* TOC para escritorio */
+code, pre {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Blockquotes */
+blockquote {
+  position: relative;
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 2px solid #aaa;
+  color: var(--text-color);
+  font-size: 0.7em;
+  font-style: italic;
+  background: transparent;
+}
+
+/* Tablas */
+table {
+  width: auto;
+  max-width: 600px;
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-size: 0.7em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+}
+
+th, td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  color: var(--text-color);
+}
+
+/* TOC Escritorio */
 aside#toc {
   position: fixed;
   top: 80px;
@@ -313,7 +310,59 @@ aside#toc li.expanded > ul {
   display: block;
 }
 
-/* -------- NAVIGATION BAR -------- */
+/* TOC Móvil */
+.mobile-toc {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--toc-bg-color);
+  border-bottom: var(--toc-border);
+  padding: 10px 15px;
+  margin: 0 -20px 20px -20px;
+  backdrop-filter: blur(10px);
+  width: calc(100% + 40px);
+}
+
+.mobile-toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.mobile-toc-header .nav-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-toc-header .nav-icons a {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-toc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-toc-content.expanded {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+/* Barra de navegación */
 header {
   position: sticky;
   top: 0;
@@ -373,12 +422,7 @@ nav p a:hover {
   transform: scale(1.1);
 }
 
-/* Evitar que la barra de navegación cubra los enlaces de anclaje */
-body, html {
-  scroll-padding-top: 72px;
-}
-
-/* Blog post list */
+/* Listas de blog */
 ul.blog-posts {
   list-style-type: none;
   padding: unset;
@@ -396,18 +440,68 @@ ul.blog-posts li a:visited {
   color: var(--visited-color);
 }
 
-/* Inline override */
+/* Utilidades */
 .inline {
   width: auto !important;
 }
 
-/* Footer */
 footer {
   padding: 25px 0;
   text-align: center;
 }
 
-/* Responsive */
+/* Fórmulas matemáticas */
+math {
+  font-size: 1.2em !important;
+}
+
+mjx-container {
+  font-size: 1.2em !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  font-size: 1.5em !important;
+  margin: 1em 0;
+}
+
+/* Modo oscuro para elementos específicos */
+@media (prefers-color-scheme: dark) {
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  header {
+    background-color: rgba(29, 29, 33, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  nav p a {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ededed;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav p a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Forzar contraste en code boxes en modo oscuro */
+  .highlight, .code {
+    background-color: #ededed !important;
+    color: #161616 !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Forzar contraste en code boxes en modo claro */
+  .highlight, .code {
+    background-color: #161616 !important;
+    color: #ededed !important;
+  }
+}
+
+/* Media Queries Responsivas */
 @media (max-width: 1024px) {
   aside#toc {
     display: none;
@@ -416,12 +510,21 @@ footer {
   main {
     margin-left: 0 !important;
   }
+  
+  header {
+    display: none;
+  }
+  
+  .mobile-toc {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
   body {
     font-size: 16px;
     padding: 15px;
+    padding-top: 5px;
   }
   
   .highlight, .code {
@@ -436,10 +539,10 @@ footer {
     touch-action: auto;
   }
   
-  /* Asegurar que las codeboxes se vean bien en móvil */
-  .highlight, .code {
-    background-color: var(--code-background-color);
-    color: var(--code-color);
+  .mobile-toc {
+    margin: 0 -15px 15px -15px;
+    width: calc(100% + 30px);
+    padding: 10px;
   }
   
   /* Nav bar en móvil */
@@ -461,26 +564,9 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  header {
-    background-color: rgba(29, 29, 33, 0.75);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  nav p a {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ededed;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  nav p a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-}
-
 /* Estilos de impresión */
 @media print {
-  aside#toc {
+  aside#toc, .mobile-toc, header {
     display: none;
   }
   
@@ -497,135 +583,8 @@ footer {
     border: none;
     padding: 0;
   }
-
-  header {
-    display: none;
-  }
   
   main {
     margin-left: 0 !important;
   }
 }
-
-/* Transiciones suaves */
-html {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-code, pre {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-
-
-/* ===== TOC MÓVIL MEJORADA ===== */
-.mobile-toc {
-  display: none;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--toc-bg-color);
-  border-bottom: var(--toc-border);
-  padding: 10px 15px;
-  margin: 0 -20px 20px -20px;
-  backdrop-filter: blur(10px);
-  width: calc(100% + 40px);
-}
-
-.mobile-toc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  margin: 0;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.mobile-toc-header .nav-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.mobile-toc-header .nav-icons a {
-  background: transparent;
-  border: none;
-  padding: 5px;
-  margin: 0;
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-toc-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.mobile-toc-content.expanded {
-  max-height: 60vh;
-  overflow-y: auto;
-  margin-top: 10px;
-}
-
-/* Ocultar nav bar en móvil cuando hay TOC */
-@media (max-width: 1024px) {
-  header {
-    display: none;
-  }
-  
-  .mobile-toc {
-    display: block;
-  }
-}
-
-/* ===== CORRECCIÓN PARA FÓRMULAS MATEMÁTICAS ===== */
-/* Aumentar tamaño de fórmulas matemáticas */
-math {
-  font-size: 1.2em !important;
-}
-
-mjx-container {
-  font-size: 1.2em !important;
-}
-
-mjx-container[jax="CHTML"][display="true"] {
-  font-size: 1.5em !important;
-  margin: 1em 0;
-}
-
-/* ===== AJUSTES RESPONSIVOS ADICIONALES ===== */
-@media (max-width: 768px) {
-  .mobile-toc {
-    margin: 0 -15px 15px -15px;
-    width: calc(100% + 30px);
-    padding: 10px;
-  }
-  
-  body {
-    padding-top: 5px;
-  }
-}
-/* Asegurar que las code boxes usen los colores correctos */
-.highlight, .code {
-  background-color: var(--code-background-color) !important;
-  color: var(--code-color) !important;
-}
-
-/* Forzar contraste en modo claro y oscuro */
-@media (prefers-color-scheme: light) {
-  .highlight, .code {
-    background-color: #161616 !important;
-    color: #ededed !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .highlight, .code {
-    background-color: #ededed !important;
-    color: #161616 !important;
-  }
-}
-
