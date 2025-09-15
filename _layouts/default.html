@@ -31,6 +31,18 @@
 
 <body class="{% if page.url == '/' %}home{% else %}subpage{% endif %}">
 
+  <!-- Nav Bar -->
+  <header>
+    <h1 class="title">{{ site.title }}</h1>
+    <nav>
+      <p>
+        <a href="#top">🔝</a>
+        <a href="/">🏠</a>
+        <a href="#bottom">🔻</a>
+      </p>
+    </nav>
+  </header>
+
   <!-- TOC Lateral (se oculta en index.md vía JS) -->
   <aside id="toc">
     <div style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; margin-bottom: 10px;">
@@ -39,16 +51,21 @@
     <!-- El contenido se genera dinámicamente con toc.js -->
   </aside>
 
+  <!-- TOC para móviles - Integrada como encabezado -->
+  <div class="mobile-toc">
+    <h1 class="mobile-toc-header">TABLA DE CONTENIDOS</h1>
+    <div class="mobile-toc-content"></div>
+  </div>
+
   <!-- Contenido principal -->
- <p><a id="top"></a></p> 
-  <main style="margin-left: 240px;">
+  <p><a id="top"></a></p> 
+  <main>
     {{ content }}
   </main>
 
   <!-- Script para generar TOC lateral -->
   <script src="/js/toc.js"></script>
 
-<p><a id="bottom"></a></p>
+  <p><a id="bottom"></a></p>
 </body>
 </html>
-
