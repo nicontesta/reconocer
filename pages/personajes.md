@@ -7,5 +7,5 @@ permalink: /personajes/
 
 ## [Calvin](/calvin/)
 ## [Castelao](/castelao)
-## [Dalí](/dali)
+## [Dalí](/salvador)
 ## [Mafalda](/mafalda/)
