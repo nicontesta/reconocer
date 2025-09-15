@@ -12,7 +12,7 @@ permalink: /inicio/
 [Convocatoria](/convocatoria/)
 [Crea tu propio Coloquio](/coloquio/)  
 [Manuales](/manuales/)
-[Escenas](/blog/)
+[Escenas](/escenas/)
 
 
 
