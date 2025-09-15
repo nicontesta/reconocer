@@ -14,3 +14,7 @@ permalink: /inicio/
 [Manuales](/manuales/)
 [Escenas](/blog/)
 
+
+
+---
+<small><a title="La Obra" href="/reconocer/" target="_blank" rel="noopener noreferrer">archive.org/details/reconocer</a></small>
