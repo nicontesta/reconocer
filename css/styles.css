@@ -583,45 +583,30 @@ mjx-container[jax="CHTML"][display="true"] {
     border: none;
     padding: 0;
   }
-/* Code boxes - Aseguramos contraste */
-.highlight, .code {
-  padding: 1em 1.5em;
-  background-color: var(--code-background-color) !important;
-  color: var(--code-color) !important;
-  border-radius: 12px;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch;
-  white-space: pre !important;
-  border: var(--code-border);
-  box-shadow: var(--code-shadow);
-  backdrop-filter: var(--code-blur);
-  -webkit-backdrop-filter: var(--code-blur);
-  -webkit-user-select: all;
-  -moz-user-select: all;
-  -ms-user-select: all;
-  user-select: all;
-  cursor: text;
-  font-size: 0.7em;
+/* Asegurar que el encabezado de la TOC sea visible */
+aside#toc .toc-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--toc-bg-color);
+  padding: 10px;
+  margin: -10px -10px 10px -10px;
+  border-radius: 8px 8px 0 0;
 }
 
-/* Forzar colores específicos para mayor contraste */
-@media (prefers-color-scheme: light) {
-  .highlight, .code {
-    background-color: #161616 !important;
-    color: #ededed !important;
-  }
+/* Contenedor para la lista de la TOC */
+.toc-list-container {
+  margin-top: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .highlight, .code {
-    background-color: #ededed !important;
-    color: #161616 !important;
-  }
-}  
-  main {
-    margin-left: 0 !important;
-  }
+/* Asegurar que los enlaces de navegación en el encabezado sean visibles */
+.toc-nav a {
+  padding: 5px 8px !important;
+  font-size: 14px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50% !important;
 }
 
+.toc-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
