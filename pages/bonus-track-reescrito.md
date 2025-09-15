@@ -4,9 +4,9 @@ title: Bonus Track Reescrito
 permalink: /bonus-track-reescrito/
 ---
 
-### ESCENA  “El Espejo Incompleto”
+# ESCENA  “El Espejo Incompleto”
 
-#### PERSONAJES
+## PERSONAJES
 
 - **Orson Welles** – Maestro del simulacro, ilusionista del discurso mediático, voz profunda y omnipresente.  
 - **Kurt Gödel** – Lógico de la incompletud, obsesionado con la verdad no demostrable, lúgubre y brillante.  
@@ -14,11 +14,11 @@ permalink: /bonus-track-reescrito/
 - **Rita** – Una femme fatale autoconsciente que sabe que es simulacro, reflejo roto que busca liberarse del bucle, y personaje en loop que reinterpreta su texto de *The Lady from Shanghai* como acto político.  
 - **Dante** – Voz espectral del Infierno, poeta y guía, que recuerda a Rita su debut en *Dante’s Inferno* y la condena estética.  
 
-#### ESCENARIO
+## ESCENARIO
 
 Una laguna perfectamente inmóvil, rodeada de pantallas flotantes que muestran la laguna desde todos los ángulos, incluso antes de que ocurra. El agua no moja, pero refleja. Una vieja cámara de cine gira sola, proyectando una película nunca filmada. La superficie del agua comienza a agrietarse y las pantallas parpadean entre imagen y estática.
 
-#### DIÁLOGO
+## DIÁLOGO
 
 (En el centro, Narciso observa su reflejo inmóvil.)
 
@@ -251,9 +251,9 @@ Quien fue mirada, aprende a mirar.
 (Rita cierra los ojos. El escenario desaparece.)
 
 (Final.)
-#### RÉPLICA Y CONTRARRÉPLICA CON ACOTACIÓN ACADÉMICA
+## RÉPLICA Y CONTRARRÉPLICA CON ACOTACIÓN ACADÉMICA
 
-##### Tensión 1: Debut en el Infierno y la condena estética
+### Tensión 1: Debut en el Infierno y la condena estética
 
 La escena incorpora el dato clave: Rita Hayworth debutó en *Dante’s Inferno* (1935), conectando el mito de la mujer atrapada en un infierno simbólico con la icónica escena del baile de *Gilda* (1946), donde el deseo y la imagen se convierten en arma y prisión.
 
@@ -262,7 +262,7 @@ El debut en *Dante’s Inferno* establece un marco simbólico de condena estéti
 
 ---
 
-##### Tensión 2: Simulacro, lógica incompleta y voz política
+### Tensión 2: Simulacro, lógica incompleta y voz política
 
 Gödel y Welles representan tensiones entre la lógica formal y la construcción mediática. Rita, como figura performativa, rompe el sistema con su auto-consciencia y la reescritura de su guión, rechazando la reproducción pasiva para activar la creación.
 
@@ -271,7 +271,7 @@ La incompletud de Gödel se convierte en metáfora del deseo y la identidad que 
 
 ---
 
-##### Tensión 3: La mirada y la pausa
+### Tensión 3: La mirada y la pausa
 
 Narciso, atrapado en la auto-absorción, representa la mirada que busca confirmación. Rita le ofrece la pausa necesaria para romper el bucle y devenir sujeto. La escena finaliza con la resignificación del guante como gesto de resistencia y la ruptura del reflejo como prisión.
 
@@ -280,7 +280,7 @@ La ruptura del reflejo y la conversión del guante en gesto evocan las teorías 
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN
+## PREGUNTAS PARA LA REFLEXIÓN
 
 - ¿Cómo se relacionan la historia personal y la performatividad en la construcción de la identidad?  
 - ¿Qué significado tiene reapropiarse de una imagen o un guion impuesto?  
@@ -289,7 +289,7 @@ La ruptura del reflejo y la conversión del guante en gesto evocan las teorías 
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO
+## META-COMENTARIO DISRUPTIVO
 
 (Una voz digitalizada, con el tono de Rick Sánchez.)
 
@@ -298,7 +298,7 @@ La ruptura del reflejo y la conversión del guante en gesto evocan las teorías 
 
 ---
 
-#### REFERENCIAS (APA 7.ª edición)
+## REFERENCIAS (APA 7.ª edición)
 
 - Baudrillard, J. (1981). *Simulacros y simulación*. Ediciones Cátedra.  
 - Butler, J. (1990). *Gender Trouble: Feminism and the Subversion of Identity*. Routledge.  
@@ -312,7 +312,7 @@ La ruptura del reflejo y la conversión del guante en gesto evocan las teorías 
 
 
 
-### Instrucciones del usuario vinculadas a la Escena XXII – “El Espejo Incompleto”
+# Instrucciones del usuario vinculadas a la Escena XXII – “El Espejo Incompleto”
 
 1. **Inicio de la escena con Orson Welles, Gödel y Narciso**  
    - Crear una escena híbrida que incluya a estos personajes con tensión filosófica sobre simulacro, incompletud, bucle autorreferencial y estética.  
@@ -365,7 +365,7 @@ La ruptura del reflejo y la conversión del guante en gesto evocan las teorías 
 
 Estas instrucciones constituyen la hoja de ruta para la escritura, desarrollo, cierre y formato de la Escena - “El Espejo Incompleto”.
 
-### Instrucciones del usuario:
+## Transcripción de las instrucciones del usuario:
 
 1. nueva escena se encuentran Orson Welles, Gödel y Narciso  
 2. entra Rita (Shanghai)  
@@ -390,19 +390,4 @@ La escena aquí copiada es la reescrita después de la instrucción 12 y generad
 
 <a href="https://chatgpt.com/share/68b398e6-002c-800e-accb-e2bf6b5cbeba" target="_blank" rel="noopener noreferrer">Bonus Track interactivo</a>
 
-<a id="bottom"></a>
-**TABLA DE CONTENIDOS**
-- [ESCENA  “El Espejo Incompleto”](#escena-el-espejo-incompleto)
-  - [PERSONAJES](#personajes)
-  - [ESCENARIO](#escenario)
-  - [DIÁLOGO](#dialogo)
-  - [RÉPLICA Y CONTRARRÉPLICA CON ACOTACIÓN ACADÉMICA](#replica-y-contrarreplica-con-acotacion-academica)
-    - [Tensión 1: Debut en el Infierno y la condena estética](#tension-1-debut-en-el-infierno-y-la-condena-estetica)
-    - [Tensión 2: Simulacro, lógica incompleta y voz política](#tension-2-simulacro-logica-incompleta-y-voz-politica)
-    - [Tensión 3: La mirada y la pausa](#tension-3-la-mirada-y-la-pausa)
-  - [PREGUNTAS PARA LA REFLEXIÓN](#preguntas-para-la-reflexion)
-  - [META-COMENTARIO DISRUPTIVO](#meta-comentario-disruptivo)
-  - [REFERENCIAS (APA 7.ª edición)](#referencias-apa-7a-edicion)
-- [Instrucciones del usuario vinculadas a la Escena XXII – “El Espejo Incompleto”](#instrucciones-del-usuario-vinculadas-a-la-escena-xxii-el-espejo-incompleto)
-- [Instrucciones del usuario:](#instrucciones-del-usuario)
  
