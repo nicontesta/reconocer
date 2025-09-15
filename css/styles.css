@@ -226,11 +226,11 @@ aside#toc {
   position: fixed;
   top: 60px;
   left: 20px;
-  width: 270px;
+  width: 250px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   background-color: transparent; /* Fondo transparente */
   border: none;  /* Sin bordes */
   padding: 0; /* Quitar relleno */
@@ -419,6 +419,7 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
 }
+
 
 
 
