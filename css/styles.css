@@ -115,6 +115,7 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.1);  /* Borde más sutil */
   display: inline;  /* Se mantiene en línea con el texto */
   vertical-align: baseline;  /* Alineación en la línea base del texto */
+  line-height: 1.2;  /* Ajustamos la altura de línea para reducir el espacio */
   word-wrap: break-word;  /* Permite que el texto se divida si es necesario */
   white-space: pre-wrap;  /* Asegura que el código se ajuste correctamente */
 }
@@ -412,6 +413,7 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
 }
+
 
 
 
