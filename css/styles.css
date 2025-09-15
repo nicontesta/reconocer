@@ -153,7 +153,7 @@ th, td {
   color: var(--text-color);
 }
 
-/* Code boxes */
+/* Code blocks */
 .highlight, .code {
   padding: 1em 1.5em;
   background-color: var(--code-background-color);
@@ -285,12 +285,14 @@ aside#toc li.expanded > ul {
     max-height: 75vh;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
-    touch-action: auto; /* ← permite desplazamiento vertical y horizontal */
+    touch-action: auto;
   }
+
   main {
     margin-left: 0 !important;
     padding: 10px;
   }
+
   aside#toc {
     display: none;
   }
@@ -327,105 +329,4 @@ footer {
     content: " (" attr(href) ")";
     font-size: 0.9em;
   }
-}
-
-/* -------------------- */
-/*     INLINE CODE      */
-/* -------------------- */
-code {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  font-size: 0.85em;
-  background-color: rgba(175, 184, 193, 0.2);
-  color: #1f2328;
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  margin: 0;
-  border: none;
-}
-
-/* -------------------- */
-/*     CODE BLOCKS      */
-/* -------------------- */
-pre {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  font-size: 0.85em;
-  line-height: 1.45;
-  background-color: #f6f8fa;
-  color: #1f2328;
-  padding: 1em 1.5em;
-  overflow-x: auto;
-  border-radius: 6px;
-  border: 1px solid #d0d7de;
-  margin: 1.5em 0;
-  white-space: pre;
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding: 0;
-  margin: 0;
-  border: none;
-  white-space: pre;
-}
-
-/* Scrollbar custom for code blocks */
-pre::-webkit-scrollbar {
-  height: 8px;
-}
-
-pre::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 4px;
-}
-
-pre::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Neutralize links in code */
-pre code a,
-code a {
-  color: inherit;
-  text-decoration: none;
-  pointer-events: none;
-  cursor: default;
-}
-
-/* -------------------- */
-/*   DARK MODE SUPPORT  */
-/* -------------------- */
-@media (prefers-color-scheme: dark) {
-  code {
-    background-color: rgba(110, 118, 129, 0.4);
-    color: #c9d1d9;
-  }
-
-  pre {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
-  }
-}
-
-/* -------------------- */
-/*   MATHJAX STYLES     */
-/* -------------------- */
-mjx-container {
-  font-size: 1em;
-  line-height: 1.4;
-  margin: 1em 0;
-}
-
-mjx-container[jax="CHTML"][display="block"] {
-  display: block;
-  text-align: center;
-  margin: 1.5em auto;
-}
-
-mjx-container[jax="CHTML"][display="inline"] {
-  display: inline;
-  vertical-align: middle;
 }
