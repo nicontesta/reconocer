@@ -158,31 +158,41 @@ th, td {
   color: var(--text-color);
 }
 /* Cajas de código sin bordes */
+/* ------------------- */
+/* Estilos generales */
 code, pre {
   font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
-  font-size: 14px;  /* Tamaño de la fuente adecuado */
+  font-size: 14px;  /* Tamaño adecuado */
   padding: 0.5em;
   border-radius: 6px;  /* Bordes redondeados */
-  white-space: pre !important;  /* Permitir saltos de línea */
-  word-wrap: break-word;  /* Envolver el texto largo */
-  overflow-x: auto !important; /* Desplazamiento horizontal si es necesario */
+  white-space: pre-wrap;  /* Permitir que el texto se divida si es necesario */
+  word-wrap: break-word;  /* Envolver texto largo */
+  overflow-x: auto !important;  /* Desplazamiento horizontal si es necesario */
   -webkit-overflow-scrolling: touch;  /* Desplazamiento suave en dispositivos táctiles */
   user-select: all;
   cursor: text;
 }
 
 /* Modo claro - Cajas de código claras */
-  code, pre {
-    background-color: #2a2a2e;  /* Fondo oscuro */
-    color: #c9d1d9;  /* Texto claro */
-  }
+code, pre {
+  background-color: #2a2a2e;  /* Fondo oscuro */
+  color: #c9d1d9;  /* Texto claro */
+}
 
 /* Modo oscuro - Cajas de código oscuras */
 @media (prefers-color-scheme: dark) {
-code, pre {
-  background-color: #f6f8fa;  /* Fondo claro */
-  color: #161616;  /* Texto oscuro */
+  code, pre {
+    background-color: #f6f8fa;  /* Fondo claro */
+    color: #161616;  /* Texto oscuro */
+  }
 }
+
+/* Modo móvil - Cajas de código para móviles */
+@media (max-width: 768px) {
+  code, pre {
+    font-size: 12px;  /* Ajuste de tamaño de fuente para pantallas pequeñas */
+    padding: 0.3em;  /* Menor relleno */
+  }
 }
 
 /* Scrollbar for code blocks */
@@ -395,6 +405,13 @@ mjx-container[jax="CHTML"][display="block"] {
   vertical-align: middle;
 }
 
+html {
+  transition: background-color 0.3s, color 0.3s; /* Transición suave de color */
+}
+
+code, pre {
+  transition: background-color 0.3s, color 0.3s; /* Transición suave de fondo y texto */
+}
 
 
 
