@@ -214,53 +214,58 @@ aside#toc {
   overflow-y: auto;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 12px 15px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  border-radius: 6px;
+  background-color: transparent; /* Fondo transparente */
+  border: none;  /* Sin bordes */
+  padding: 0; /* Quitar relleno */
+  box-shadow: none; /* Eliminar sombra */
   z-index: 999;
 }
 
 @media (prefers-color-scheme: dark) {
   aside#toc {
-    background-color: #2a2a2e;
-    border-color: #555;
-    color: #ededed;
+    background-color: transparent; /* Fondo transparente en modo oscuro */
+    color: #ededed; /* Texto claro en modo oscuro */
   }
 
   aside#toc li a,
   aside#toc > div:first-child a {
-    color: #ededed;
+    color: #ededed; /* Enlaces claros */
   }
 }
 
 aside#toc > div:first-child a {
   font-weight: bold;
   font-size: 16px;
+  padding: 5px 0; /* Relleno para la primera entrada */
 }
 
 aside#toc ul {
-  list-style: none;
+  list-style: none; /* Sin estilo de lista */
   padding-left: 0;
   margin: 0;
 }
 
 aside#toc li {
-  margin-bottom: 6px;
+  margin-bottom: 6px; /* Espaciado entre los items */
   cursor: pointer;
 }
 
+aside#toc li a {
+  text-decoration: none; /* Sin subrayado */
+  color: var(--text-color); /* Color de texto del tema */
+  transition: color 0.3s ease; /* Transición suave */
+}
+
 aside#toc li a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Subrayado al pasar el cursor */
 }
 
 aside#toc li[data-level="h2"] {
-  margin-left: 10px;
+  margin-left: 10px; /* Sangría para los subniveles */
 }
 
 aside#toc li[data-level="h3"] {
-  margin-left: 20px;
+  margin-left: 20px; /* Más sangría para los subniveles de h3 */
 }
 
 aside#toc li .toggle-icon {
@@ -283,6 +288,7 @@ aside#toc li.expanded > ul {
   body {
     font-size: 0.7em;
   }
+
   li a {
     display: inline-block;
     margin-bottom: 0.5em;
@@ -300,16 +306,16 @@ aside#toc li.expanded > ul {
     touch-action: auto;
   }
 
-  
   main {
     margin-left: 0 !important;
     padding: 10px;
   }
 
   aside#toc {
-    display: none;
+    display: none; /* Ocultar TOC en pantallas pequeñas */
   }
 }
+
 
 /* Neutralize links in code */
 .code a,
@@ -388,6 +394,7 @@ mjx-container[jax="CHTML"][display="block"] {
 .math-inline {
   vertical-align: middle;
 }
+
 
 
 
