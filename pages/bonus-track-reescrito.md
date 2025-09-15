@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Bonus Track reescrito
+title: Bonus Track Reescrito
 permalink: /bonus-track-reescrito/
 ---
 
