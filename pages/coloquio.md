@@ -4,9 +4,9 @@ title: Crea tu Coloquio
 permalink: /coloquio/
 ---
 
-### Propuesta de Herramienta Pedagógica Interactiva con LLMs
+## Propuesta de Herramienta Pedagógica Interactiva con LLMs
 
-#### Introducción
+### Introducción
 Con un prompt bien diseñado y un archivo semilla, es posible crear experiencias interactivas educativas y críticas que muestren el potencial positivo de los modelos de lenguaje grande (LLMs). Esta herramienta permite generar enlaces compartibles para debates, ejercicios académicos o investigaciones, sin requerir configuración avanzada por parte del usuario final.
 
 #### Método de Implementación
