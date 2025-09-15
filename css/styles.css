@@ -155,7 +155,7 @@ th, td {
 /* Cajas de código sin bordes */
 code, pre {
   font-family: 'Courier New', Courier, monospace;  /* Fuente monoespaciada */
-  font-size: 0.5em;  /* Tamaño de la fuente adecuado */
+  font-size: 11px;  /* Tamaño de la fuente adecuado */
   padding: 0.5em;
   border-radius: 6px;  /* Bordes redondeados */
   white-space: pre !important;  /* Permitir saltos de línea */
@@ -383,6 +383,7 @@ mjx-container[jax="CHTML"][display="block"] {
 .math-inline {
   vertical-align: middle;
 }
+
 
 
 
