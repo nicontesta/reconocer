@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Salir si no hay elementos TOC
   if ((!toc && !mobileToc) || (!mobileTocHeader && !mobileTocContent)) return;
   
-  // Oculta TOC si estamos en index.md
+  // Oculta TOC si estamos en index.md o página principal
   const path = window.location.pathname;
-  if (path === "/" || path.endsWith("index.html") || path.endsWith("index.md")) {
+  const isHomePage = path === "/" || path.endsWith("index.html") || path.endsWith("index.md");
+  
+  if (isHomePage) {
     if (toc) toc.style.display = "none";
     if (mobileToc) mobileToc.style.display = "none";
     return;
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       li.setAttribute("data-level", header.tagName.toLowerCase());
       const a = document.createElement("a");
       a.href = `#${header.id}`;
-      a.textContent = header.textContent;
+      a.textContent = header.textContent; // Mantener el formato original
       a.addEventListener("click", function(e) {
         // Cerrar TOC móvil después de hacer clic en un enlace
         if (window.innerWidth <= 1024 && mobileTocContent && mobileTocHeader) {
