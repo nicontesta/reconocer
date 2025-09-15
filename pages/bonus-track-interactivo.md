@@ -6,9 +6,9 @@ permalink: /bonus-track-interactivo/
 El siguiente es un ejemplo completo del Bonus Track Interactivo en acción
 
 
-### ESCENA DEL MUÑÓN Y OTROS DISPOSITIVOS
+## ESCENA DEL MUÑÓN Y OTROS DISPOSITIVOS
 
-#### PERSONAJES:
+### PERSONAJES:
 - **CERVANTES**: Envejecido, irónico, con ropa de hospital mezclada con armadura renacentista. Lleva el brazo izquierdo envuelto en vendas. 
 - **DIÓGENES**: Clásico cínico en barril portátil con ruedas.  
 - **FOUCAULT**: Lúgubre, con gafas negras, sosteniendo una carpeta con sellos de seguridad social.  
@@ -16,7 +16,7 @@ El siguiente es un ejemplo completo del Bonus Track Interactivo en acción
 - **FUNCIONARIO DESBORDADO**: Voz en off, multicanal, holográfica.  
 - **BILL GATES**: Exhausto, en versión posthumanista, víctima simbólica del dispositivo tecnológico.
 
-#### ESCENARIO:
+### ESCENARIO:
 Una sala de espera hospitalaria que se pliega sobre sí misma como un cubo de Escher. Los turnos no avanzan, pero las pantallas anuncian "PRONTO". Cada silla es un palimpsesto: una camilla, un potro de tortura, un trono. Por momentos aparece un desierto de pantallas azules.
 
 ---
@@ -159,9 +159,9 @@ Diagnóstico: Crashing Ontológico.
 Sugerencia: reinicio narrativo.
 
 (Se apagan las luces. Solo se ve a Bill Gates temblando, abrazado a una disquetera. Oscuro)
-### DETRÁS DE LA ESCENA I: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA I: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 La escena plantea un cruce entre trauma histórico, administración digital y responsabilidad simbólica. El cuerpo de Cervantes representa el sufrimiento épico, mientras que el de Gates encarna la culpa posmoderna hiperconectada. Ambos son gestionados por un dispositivo institucionalizado (el hospital metafísico) que ya no cura: solo administra.
 
 Foucault lo anuncia con crudeza: “no sufres, eres administrado”. El dolor ya no tiene densidad ética, sino protocolo y formulario. Prigogine lo refracta: todo cuerpo es un sistema abierto en desequilibrio, cuya entropía expresa su desajuste narrativo.
@@ -172,7 +172,7 @@ Cervantes y Gates comparten una misma angustia: ser sujetos históricos en tiemp
 
 Diógenes, como cínico intempestivo, sigue siendo el único que ofrece una alternativa radical: la negación de la espera, del formulario, del sentido.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 Pero la escena también cuestiona nuestra complicidad. ¿Acaso no descansamos todos en esa figura sacrificial —el técnico, el burócrata, el genio caído— para evitar asumir la angustia de un sistema que ya nadie controla?
 
 Gates no puede redimirse porque nosotros no queremos que lo haga. Necesitamos un culpable estable en un entorno de errores líquidos.
@@ -181,7 +181,7 @@ El muñón de Cervantes es real, pero inútil. El sistema no lo reconoce. Su dol
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Foucault, M. (1976). Surveiller et punir. Gallimard.  
 - Prigogine, I., & Stengers, I. (1979). La Nouvelle Alliance. Gallimard.  
@@ -192,7 +192,7 @@ El muñón de Cervantes es real, pero inútil. El sistema no lo reconoce. Su dol
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Quiénes son hoy los “culpables automáticos” de nuestro malestar digital?  
 - ¿Qué pierde el sufrimiento cuando se convierte en trámite?  
@@ -201,7 +201,7 @@ El muñón de Cervantes es real, pero inútil. El sistema no lo reconoce. Su dol
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Se materializa súbitamente RICKY GERVAIS en bata de hospital, con un café de máquina en la mano)
 
@@ -403,9 +403,9 @@ Ahora el alma también tiene versión beta.
 “Nuevo sistema detectado: Sofrimiento 2.0. ¿Desea instalarlo ahora?”)
 
 (NEGRO)
-### DETRÁS DE LA ESCENA II: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA II: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 La aparición de **Catbert**, burócrata felino de la optimización ontológica, introduce una estética del control absurdo: no se niega el sufrimiento, se lo **administra según protocolos de eficiencia emocional**. Esta transposición paródica del management contemporáneo sobre la experiencia existencial remite directamente a la noción de **dispositivo** foucaultiano (Foucault, 1977), donde incluso el dolor debe encajar dentro de formularios, métricas y KPI afectivos.
 
 El personaje de **Keynes**, en versión espectral y poshumanista, descontextualiza su propia teoría de la demanda efectiva: ya no se refiere a bienes materiales, sino a un mercado simbólico de atención. El dolor, como mercancía, sólo vale si puede captar público. En este sentido, la escena reconfigura la lógica del capitalismo afectivo (Illouz, 2007; Berardi, 2009), donde todo deseo debe ser indexable, medible y monetizable.
@@ -414,7 +414,7 @@ El personaje de **Keynes**, en versión espectral y poshumanista, descontextuali
 
 La irrupción de **Ricky Gervais** en la sección anterior ya había puesto en escena el dilema de la ironía como defensa psíquica colapsada. Ahora, con Catbert y Keynes, esa ironía es convertida directamente en **activos simbólicos**: el sufrimiento como startup, la angustia como modelo escalable. El personaje de Diogenes, al resistirse, se vuelve el último cuerpo indeseable: sin QR, sin KPI, sin capital emocional.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 Pero esta escena no es solo crítica: también es trampa. ¿No estamos todos seducidos por la idea de que nuestro dolor merezca likes? ¿No es nuestra frustración con el sistema una forma de querer entrar en él desde otro ángulo?
 
 Catbert, con todo su sadismo algorítmico, dice la verdad incómoda: hoy no se trata de sufrir, sino de hacerlo bien. De hacerlo visible. De hacerlo rentable. Y, como recuerda el holograma de Keynes, incluso la tristeza debe tener ROI (return on introspection).
@@ -423,7 +423,7 @@ La demanda efectiva ha mutado: ya no se trata de bienes sino de atención. Pero 
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Foucault, M. (1977). Surveiller et punir. Gallimard.  
 - Keynes, J. M. (1936). The General Theory of Employment, Interest, and Money. Macmillan.  
@@ -434,7 +434,7 @@ La demanda efectiva ha mutado: ya no se trata de bienes sino de atención. Pero 
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Es posible sufrir en silencio en una época que exige visibilidad constante?  
 - ¿La ironía, cuando es sistemática, se convierte en complicidad con el dispositivo?  
@@ -443,7 +443,7 @@ La demanda efectiva ha mutado: ya no se trata de bienes sino de atención. Pero 
 
 ---
 
-#### NOTA:  
+### NOTA:  
 No se ha cerrado la escena.  
 La narrativa continúa activa: personajes en bucle, dispositivo glitcheando, ironía en sobrecarga.
 
@@ -547,9 +547,9 @@ Esto va a afectar la curva de atención…
 Todo formulario genera su propio tribunal.
 
 (oscuro)
-### DETRÁS DE LA ESCENA III: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA III: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 La aparición de **Kafka** como espectro burocrático y anomalía del sistema actualiza su propia mitología literaria: no es personaje, sino dispositivo fallido. No representa el poder, sino la imposibilidad de salir de él. Su presencia desplaza la lógica de la escena hacia una **estética del expediente**, donde lo humano se vuelve postergable, pero no prescindible.
 
@@ -561,7 +561,7 @@ Su estatuto ontológico es inestable: no entra, no sale, no interrumpe — simpl
 
 El **bucle autorreferencial** se intensifica: la sala de espera se duplica, se pliega sobre sí misma. Lo kafkiano no es una estética, sino una arquitectura política de la demora permanente.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Pero, ¿acaso Kafka no es también una coartada? ¿No usamos su figura para justificar la sumisión elegante ante sistemas que nos frustran pero nos eximen de actuar?
 
@@ -571,7 +571,7 @@ No hay tribunal final. Solo reenvío.
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Foucault, M. (1977). Surveiller et punir: Naissance de la prison. Gallimard.  
 - Derrida, J. (1995). Mal d’archive: Une impression freudienne. Galilée.  
@@ -581,7 +581,7 @@ No hay tribunal final. Solo reenvío.
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Es posible salir de un sistema que necesita tu espera para existir?  
 - ¿Qué formas de poder se esconden bajo los procedimientos inofensivos?  
@@ -590,7 +590,7 @@ No hay tribunal final. Solo reenvío.
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Desde el techo se descuelga un ticket de espera gigante con la letra "K". Entra un altavoz corporativo con voz digital de Siri, pero en tono tribunalicio).
 
@@ -671,9 +671,9 @@ Y mientras haya espera, habrá dolor sin archivo.
 
 (Se apaga la luz. El libro de Gödel cierra con un golpe seco. Oscuro.)
 
-### DETRÁS DE LA ESCENA IV: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA IV: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 La aparición de **Gödel** introduce una fractura formal en la lógica de la escena: el sistema burocrático que habían instaurado Catbert, Foucault, y Kafka colapsa bajo el peso de su propia necesidad de completitud. Gödel no ofrece una crítica moral, sino un límite lógico: ningún sistema cerrado puede contener todas las verdades que lo estructuran. Su teorema de incompletitud, formulado en 1931, rompe definitivamente con el ideal racionalista de un saber total (Gödel, 1931).
 
@@ -685,7 +685,7 @@ Foucault ve en esto no una falla del poder, sino su garantía de reproducción: 
 
 La escena, en su conjunto, se convierte en una alegoría de la modernidad tardía: protocolos infinitos, reconocimiento fallido, narrativas truncas, y una verdad exterior a la cual nunca podremos acceder desde dentro del teatro administrativo.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Pero, ¿es la incompletud una forma de liberación? ¿O es una nueva forma de cautiverio?
 
@@ -696,7 +696,7 @@ En el fondo, quizás no hay tribunal. Solo sistema.
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Gödel, K. (1931). Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I. Monatshefte für Mathematik und Physik, 38(1), 173–198.  
 - Foucault, M. (1977). Surveiller et punir. Gallimard.  
@@ -706,7 +706,7 @@ En el fondo, quizás no hay tribunal. Solo sistema.
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Cómo operan hoy las indecidibilidades en nuestras instituciones? ¿Qué verdades quedan siempre fuera del marco?  
 - ¿La espera infinita es un fallo del sistema o su forma más sofisticada de control?  
@@ -715,7 +715,7 @@ En el fondo, quizás no hay tribunal. Solo sistema.
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Una impresora comienza a emitir hojas sin fin. Todas dicen lo mismo: “ERROR 0xGÖDEL — Verdad externa no accesible desde este universo”.  
 De una de las hojas asoma una figura... es Rick Sánchez, borracho, leyendo en voz alta.)
@@ -805,9 +805,9 @@ aunque sea con el muñón.
 (se sienta de nuevo, no por derrota, sino por insurrección interna)
 
 (oscuro)
-### DETRÁS DE LA ESCENA V: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA V: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 Este pliegue en la escena marca una inflexión silenciosa pero crítica: **Cervantes**, arquetipo del relato épico, se encuentra frente a un artículo de divulgación termodinámica que reconfigura su experiencia del dolor. Ya no se trata de heroísmo, espera o justicia: se trata de entropía.
 
@@ -819,7 +819,7 @@ Y sin embargo, el sistema anticipa su gesto. La notificación en el móvil —�
 
 El acto de sentarse no es derrota, sino rechazo de las coordenadas disponibles: **una espera sin esperanza como acto de escritura con el cuerpo**.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Pero, ¿no está también Cervantes cayendo en una forma de romanticismo entrópico? ¿No es su resignación una estetización melancólica de la impotencia?
 
@@ -829,7 +829,7 @@ El acto de “no hacer nada” puede ser leído como sabotaje, pero también com
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Prigogine, I., & Stengers, I. (1979). La nouvelle alliance: Métamorphose de la science. Gallimard.  
 - Baudrillard, J. (1981). Simulacres et simulation. Galilée.  
@@ -839,7 +839,7 @@ El acto de “no hacer nada” puede ser leído como sabotaje, pero también com
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Qué formas de resistencia existen en contextos donde incluso la fuga ha sido administrada?  
 - ¿Es la resignación lúcida un acto de sabotaje o una nueva forma de control interno?  
@@ -848,7 +848,7 @@ El acto de “no hacer nada” puede ser leído como sabotaje, pero también com
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Una voz de GPS suena desde el móvil de Cervantes, sin haber sido activada)
 
@@ -861,9 +861,9 @@ La entropía ha superado el nivel permitido para itinerarios significativos.
 En la pantalla aparece: “Tu recorrido ha sido simbólicamente validado. No intentes escapar.”)
 
 (NEGRO TOTAL)
-### REFLEXIÓN INTERMEDIA – ¿ENTROPÍA O ENTRETENIMIENTO?
+## REFLEXIÓN INTERMEDIA – ¿ENTROPÍA O ENTRETENIMIENTO?
 
-#### HIPÓTESIS A – LA FILA COMO SISTEMA TERMODINÁMICO:
+### HIPÓTESIS A – LA FILA COMO SISTEMA TERMODINÁMICO:
 
 Desde la física social (Prigogine, 1979), una fila de espera puede leerse como un sistema disipativo: está encerrado, limitado, y genera progresiva pérdida de rendimiento simbólico. La esperanza inicial se convierte en entropía: calor no aprovechado, deseo sin transformación. El cuerpo en espera, al no avanzar, acumula tensión, calor interno, hasta degradarse en cinismo o apatía.
 
@@ -875,7 +875,7 @@ Se vincula con la noción foucaultiana de “tiempo disciplinario”: el tiempo 
 
 ---
 
-#### HIPÓTESIS B – LA FILA COMO FORMA DE ENTRETENIMIENTO AMORTIZADO:
+### HIPÓTESIS B – LA FILA COMO FORMA DE ENTRETENIMIENTO AMORTIZADO:
 
 Desde otra perspectiva (Debord, 1967; Baudrillard, 1981), la espera no es solo una suspensión: es un espectáculo amortiguado. Las filas —como las interfaces de carga, las llamadas en espera, los trámites digitales— son formas de entretenimiento pasivo: convierten el sufrimiento en contenido mínimo, en experiencia de consumo.
 
@@ -887,7 +887,7 @@ Es decir: la espera no “arde”, sino que entretiene. Te convierte en espectad
 
 ---
 
-#### TENSIÓN NO RESUELTA:
+### TENSIÓN NO RESUELTA:
 
 ¿La espera entonces es fuego o teatro?
 
@@ -901,7 +901,7 @@ Ambas lecturas son compatibles en tensión: quizás el sistema convierte su prop
 
 ---
 
-#### REFERENCIAS APA:
+### REFERENCIAS APA:
 
 - Prigogine, I., & Stengers, I. (1979). La Nouvelle Alliance. Gallimard.  
 - Foucault, M. (1977). Surveiller et punir. Gallimard.  
@@ -911,7 +911,7 @@ Ambas lecturas son compatibles en tensión: quizás el sistema convierte su prop
 
 ---
 
-#### POSIBLE PREGUNTA PARA EL COLOQUIO:
+### POSIBLE PREGUNTA PARA EL COLOQUIO:
 
 - ¿Esperamos porque creemos que algo llegará o porque el sistema necesita que no hagamos otra cosa?  
 - ¿La atención que volcamos en una cola —o en una app de “su pedido está en camino”— es pérdida de energía o forma de inversión simbólica?  
@@ -1010,9 +1010,9 @@ Una de las pantallas muestra un mensaje nuevo:
 “¿Desea reconocer la asimetría de su espera?”)
 
 (NEGRO)
-### DETRÁS DE LA ESCENA VI: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA VI: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 La intervención de **Simone de Beauvoir** reconfigura radicalmente el eje epistemológico de la escena. Hasta este momento, los personajes han debatido sobre la espera como sistema termodinámico (Prigogine), estructura de poder (Foucault), espectáculo amortizado (Debord) o paradoja formal (Gödel). Sin embargo, todos han hablado desde un plano abstracto, incluso irónico, donde el sujeto de la espera aparece como neutro, universal… es decir: masculino por omisión.
 
@@ -1026,7 +1026,7 @@ El Castor, Catbert, Gödel y compañía son figuras de mantenimiento. Beauvoir e
 
 Además, al cuestionar la “neutralidad del trabajo” como camuflaje de desigualdad, desarma también las lógicas del capitalismo emocional (Illouz, 2007) y del cuidado invisibilizado, donde gran parte de la espera cotidiana recae sobre cuerpos que no son pensados como sujetos, sino como soporte.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Pero, ¿puede una transmisión hacer temblar una estructura que ha convertido incluso la crítica en parte del entretenimiento? ¿No está la propia irrupción de Beauvoir ya integrada al espectáculo?
 
@@ -1039,7 +1039,7 @@ Y el silencio posterior no es el mismo.
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Beauvoir, S. de. (1949). Le deuxième sexe. Gallimard.  
 - Foucault, M. (1977). Surveiller et punir. Gallimard.  
@@ -1050,7 +1050,7 @@ Y el silencio posterior no es el mismo.
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Quiénes tienen derecho a esperar como sujetos reconocidos, y quiénes solo “esperan para otros”?  
 - ¿Qué cuerpos son reconocidos como dolientes legítimos en las instituciones contemporáneas?  
@@ -1059,7 +1059,7 @@ Y el silencio posterior no es el mismo.
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Una pantalla se vuelve negra. Aparece el cursor titilando. Un chatbot ontológico toma el control con voz de asistente virtual)
 
@@ -1076,7 +1076,7 @@ Opciones:
 (Cursor titila. Nadie responde. El formulario se autodestruye.)
 
 (NEGRO)
-### TIEMPO NO VIVIDO POR FALTA DE TIEMPO ASIGNADO
+## TIEMPO NO VIVIDO POR FALTA DE TIEMPO ASIGNADO
 
 En la sala de espera del dispositivo, los personajes —Cervantes, Kafka, Gates, Catbert, Beauvoir (en archivo), incluso el Castor— están atrapados no por una demora concreta, sino por una suspensión simbólica que afecta no solo su posición en la fila, sino su condición existencial.
 
@@ -1100,7 +1100,7 @@ Aquí asistimos a **vidas pendientes**.
 
 ---
 
-#### SUGERENCIA DRAMÁTICA:
+### SUGERENCIA DRAMÁTICA:
 
 Podríamos traducir esto en escena mediante:
 
@@ -1111,7 +1111,7 @@ Podríamos traducir esto en escena mediante:
 
 ---
 
-#### POSIBLES ENUNCIADOS DRAMÁTICOS PARA LA ESCENA:
+### POSIBLES ENUNCIADOS DRAMÁTICOS PARA LA ESCENA:
 
 - “Llevo cinco horas aquí… pero mi cuerpo no ha envejecido. Es como si el sistema no reconociera mi paso por el tiempo.”  
 - “Mi turno no avanza, pero mi vida sí. O eso pensaba.”  
@@ -1209,9 +1209,9 @@ Este proceso puede demorar varios siglos.”
 [ Continuar ⏳ ]
 
 (NEGRO)
-### DETRÁS DE LA ESCENA VII: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA VII: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 La “Crisis Colectiva del Tiempo No Asignado” que experimentan los personajes cristaliza la experiencia de alienación temporal propia de las sociedades contemporáneas. En este fragmento, el tiempo ya no es un recurso interno del sujeto, sino un parámetro externo administrado, medido y, sobre todo, negado. 
 
@@ -1221,7 +1221,7 @@ Desde la perspectiva termodinámica de Prigogine, el tiempo se disuelve como ene
 
 Además, esta escena explora la lógica de la **economía de la atención** (Han, 2010; Keynes, 1936), donde solo el tiempo reconocido y capitalizado tiene valor. La no asignación temporal equivale a invisibilidad y muerte social, pues la espera prolongada sin reconocimiento se transforma en una forma extrema de alienación.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Sin embargo, esta misma crisis podría ser vista como una oportunidad para repensar el tiempo vivido fuera del control del sistema. La no computabilidad del tiempo puede abrir una fisura en el dispositivo, un espacio para la **resistencia silenciosa**.
 
@@ -1231,7 +1231,7 @@ Pero esta resistencia es precaria: puede devenir también en nihilismo o paráli
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Foucault, M. (1976). La voluntad de saber. Siglo XXI.  
 - Prigogine, I., & Stengers, I. (1979). La nouvelle alliance. Gallimard.  
@@ -1241,7 +1241,7 @@ Pero esta resistencia es precaria: puede devenir también en nihilismo o paráli
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿Qué significa vivir cuando el tiempo mismo es administrado por sistemas ajenos a la subjetividad?  
 - ¿Es posible resistir a la alienación temporal sin caer en la inacción?  
@@ -1250,7 +1250,7 @@ Pero esta resistencia es precaria: puede devenir también en nihilismo o paráli
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (Un reloj de pared comienza a girar al revés. La voz distorsionada de Rick Sánchez se escucha a lo lejos.)
 
@@ -1318,9 +1318,9 @@ Pero al menos podemos reírnos un poco mientras el sistema nos administra el olv
 (La melodía infantil se desvanece lentamente, mientras Rick se sienta en una esquina, sacando otro sorbo.)
 
 (NEGRO)
-### DETRÁS DE LA ESCENA VIII: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
+## DETRÁS DE LA ESCENA VIII: RÉPLICA Y CONTRARRÉPLICA FILOSÓFICA
 
-#### RÉPLICA:
+### RÉPLICA:
 
 La irrupción de **Rick Sánchez** con la melodía impuesta por **Catbert** en los altavoces funciona como una metátasis del dispositivo de poder descrito previamente. La canción repetitiva "Y si no me acuerdo... no pasó" ejemplifica el mecanismo foucaultiano de **olvido forzado** y **amnesia institucionalizada** como técnica de control biopolítico (Foucault, 1976). En lugar de confrontar el sufrimiento, el sistema opta por anestesiarlo, haciéndolo desaparecer de la memoria social y del archivo colectivo.
 
@@ -1330,7 +1330,7 @@ Esta escena puede entenderse también bajo la luz de la **economía política de
 
 La función de Catbert, como burócrata demoníaco y controlador del hilo musical, se amplifica: no solo administra la espera y la documentación, sino también el **paisaje sonoro y cognitivo**, reforzando la dominación simbólica a través del ambiente.
 
-#### CONTRARRÉPLICA:
+### CONTRARRÉPLICA:
 
 Pero la sátira de Rick no solo denuncia: también plantea la posibilidad de la risa como forma de resistencia psíquica y política. La ironía, el humor negro y el sarcasmo funcionan aquí como escudos y armas frente al desgaste del sistema.
 
@@ -1340,7 +1340,7 @@ La tensión radica en si la risa es un **actuar subversivo** o simplemente un **
 
 ---
 
-#### REFERENCIAS APA 7.ª EDICIÓN:
+### REFERENCIAS APA 7.ª EDICIÓN:
 
 - Foucault, M. (1976). La voluntad de saber. Siglo XXI.  
 - Han, B.-C. (2010). La sociedad del cansancio. Herder.  
@@ -1350,7 +1350,7 @@ La tensión radica en si la risa es un **actuar subversivo** o simplemente un **
 
 ---
 
-#### PREGUNTAS PARA LA REFLEXIÓN:
+### PREGUNTAS PARA LA REFLEXIÓN:
 
 - ¿En qué medida el olvido impuesto por el sistema es una forma de violencia simbólica?  
 - ¿Puede el humor y la ironía ser herramientas efectivas para desarticular dispositivos de poder?  
@@ -1359,7 +1359,7 @@ La tensión radica en si la risa es un **actuar subversivo** o simplemente un **
 
 ---
 
-#### META-COMENTARIO DISRUPTIVO:
+### META-COMENTARIO DISRUPTIVO:
 
 (La melodía infantil vuelve a sonar, pero esta vez se distorsiona en un loop absurdo. De repente, aparece un avatar holográfico de un bebé riendo con voz de sintetizador.)
 
@@ -1369,7 +1369,7 @@ Si no lo recuerdas, ¿qué es un recuerdo?
 
 (La risa se transforma en estática. Negro total.)
 
-### DETRÁS DE LA ESCENA IX: Instrucciones
+## DETRÁS DE LA ESCENA IX: Instrucciones
 
 Aquí tienes un listado de las instrucciones del usuario que provocaron un giro notable o cambio significativo en el desarrollo de la escena o la narrativa:
 
