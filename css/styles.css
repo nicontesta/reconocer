@@ -382,9 +382,45 @@ math mi, math mo, math mn, math msup, math msub, math mfrac {
   font-size: 14px !important;
   font-family: monospace !important;
   background-color: var(--code-background-color) !important;
-  color: var(--code-color) !important;
   border: var(--code-border) !important;
   box-shadow: var(--code-shadow) !important;
   backdrop-filter: var(--code-blur) !important;
   -webkit-backdrop-filter: var(--code-blur) !important;
  }
+
+/* Code blocks (pre + code) estilo GitHub */
+pre, code, .highlight, .code {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre;
+  border: var(--code-border);
+  box-shadow: var(--code-shadow);
+  backdrop-filter: var(--code-blur);
+  -webkit-backdrop-filter: var(--code-blur);
+  user-select: all;
+  cursor: text;
+}
+
+/* Código inline */
+code {
+  display: inline;
+  padding: 0.2em 0.4em;
+  font-size: 0.95em;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Código inline en modo oscuro */
+@media (prefers-color-scheme: dark) {
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
