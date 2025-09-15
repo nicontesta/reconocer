@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Verificar que todos los elementos necesarios existan
   const toc = document.getElementById("toc");
   const mobileToc = document.querySelector(".mobile-toc");
   const mobileTocHeader = document.querySelector(".mobile-toc-header");
   const mobileTocContent = document.querySelector(".mobile-toc-content");
   
+  // Salir si no hay elementos TOC
+  if ((!toc && !mobileToc) || (!mobileTocHeader && !mobileTocContent)) return;
+  
   // Oculta TOC si estamos en index.md
-  if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
+  const path = window.location.pathname;
+  if (path === "/" || path.endsWith("index.html") || path.endsWith("index.md")) {
     if (toc) toc.style.display = "none";
     if (mobileToc) mobileToc.style.display = "none";
     return;
@@ -137,3 +142,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
