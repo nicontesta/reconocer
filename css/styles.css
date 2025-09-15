@@ -515,3 +515,123 @@ html {
 code, pre {
   transition: background-color 0.3s, color 0.3s;
 }
+/* Añadir al final del archivo styles.css */
+
+/* ===== CORRECCIÓN PARA CODE BOXES ===== */
+/* Asegurar que las code boxes usen los colores correctos */
+.highlight, .code {
+  background-color: var(--code-background-color) !important;
+  color: var(--code-color) !important;
+}
+
+/* Forzar contraste en modo claro y oscuro */
+@media (prefers-color-scheme: light) {
+  .highlight, .code {
+    background-color: #161616 !important;
+    color: #ededed !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight, .code {
+    background-color: #ededed !important;
+    color: #161616 !important;
+  }
+}
+
+/* ===== TOC MÓVIL MEJORADA ===== */
+.mobile-toc {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--toc-bg-color);
+  border-bottom: var(--toc-border);
+  padding: 10px 15px;
+  margin: 0 -20px 20px -20px;
+  backdrop-filter: blur(10px);
+  width: calc(100% + 40px);
+}
+
+.mobile-toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.mobile-toc-header .nav-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-toc-header .nav-icons a {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-toc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-toc-content.expanded {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+/* Ocultar nav bar en móvil cuando hay TOC */
+@media (max-width: 1024px) {
+  header {
+    display: none;
+  }
+  
+  .mobile-toc {
+    display: block;
+  }
+}
+
+/* ===== CORRECCIÓN PARA FÓRMULAS MATEMÁTICAS ===== */
+/* Aumentar tamaño de fórmulas matemáticas */
+math {
+  font-size: 1.5em !important;
+}
+
+mjx-container {
+  font-size: 1.5em !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  font-size: 1.8em !important;
+  margin: 1em 0;
+}
+
+/* ===== AJUSTES RESPONSIVOS ADICIONALES ===== */
+@media (max-width: 768px) {
+  .mobile-toc {
+    margin: 0 -15px 15px -15px;
+    width: calc(100% + 30px);
+    padding: 10px;
+  }
+  
+  body {
+    padding-top: 5px;
+  }
+  
+  /* Asegurar que las code boxes sean legibles */
+  .highlight, .code {
+    font-size: 0.8em;
+    padding: 0.8em;
+  }
+}
