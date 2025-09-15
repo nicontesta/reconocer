@@ -21,6 +21,7 @@ title: Τεδ¡ο
   No me esperes
 </div>
 <div style="text-align: right">  
-  <a href="/reconocer/">RE(O∩O)∃Я</a>  
+  <a href="/inicio/">RE(O∩O)∃Я</a>  
 </div>
+
 
