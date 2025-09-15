@@ -175,9 +175,9 @@ Los LLMs tienden a divagar o inventar información cuando pierden el contexto. P
 
 
 ## Recomendaciones de Uso
-1.  **Para educadores:** Ideal para generar debates variados, se pueden consultar ejemplos en esta misma web, usando el [Coloquio Imposible](https://archive.org/details/reconocer) como semilla.
- * Ejemplo "Políticamente Correcto" para generar debate:
-Usuario: *"Entra Calvin quejándose porque Disney hará la película sobre él con un niño afroamericano como protagonista. Sigue el PB."*
+1.  **Para educadores:** Ideal para generar debates variados, se pueden consultar ejemplos en esta misma web, usando el [Coloquio Imposible](https://archive.org/details/reconocer) como semilla. 
+ * Ejemplo "Políticamente Correcto" para generar debate:  
+   Usuario: *"Entra Calvin quejándose porque Disney hará la película sobre él con un niño afroamericano como protagonista. Sigue el PB."*
 2.  **Para estudiantes:** Ejercicios de análisis crítico con el [artículo epistemológico](https://archive.org/details/auditor) como documento base.
 3.  **Para desarrolladores:** Implementar usando el [Anexo A](https://archive.org/details/anexo-a) como guía metodológica base.
 
@@ -185,7 +185,7 @@ Usuario: *"Entra Calvin quejándose porque Disney hará la película sobre él c
 - **Enlace al PB estable**:<a href="https://chatgpt.com/share/68bd151c-f9a4-800e-be85-61c2012a30b8" target="_blank" rel="noopener noreferrer">Bonus Track Pedagógico</a>
 - **Modo recomendado:** *"Permanecer con la sesión cerrada"* para evitar persistencia de datos.
 - **Guardar resultados:** Se recomienda consultar la  
-[Guía Básica de .md](https://reconocer.bearblog.dev/markdownguide/) \
+[Guía Básica de .md](/markdownguide/) \
 para preservar los datos obtenidos.
 
 ⚠️ **Nota de privacidad:** Las sesiones compartidas pueden ser accesibles públicamente. No adjuntar documentos confidenciales.
