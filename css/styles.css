@@ -37,11 +37,16 @@
   }
 }
 
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
 /* Body - Estilo de guión de teatro */
 body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
   max-width: var(--width);
   text-align: left;
@@ -56,6 +61,7 @@ body {
   background-size: 100% 2em;
   background-position: 0 0;
   position: relative;
+  width: 100%;
 }
 
 /* Headings - Estilo de guión */
@@ -138,6 +144,7 @@ pre {
   border: var(--code-border);
   box-shadow: var(--code-shadow);
   backdrop-filter: var(--code-blur);
+  width: 100%;
 }
 
 /* Asegurar que el código dentro de pre herede los estilos */
@@ -245,11 +252,12 @@ aside#toc li.expanded > ul {
   font-family: var(--font-main);
   background-color: var(--toc-bg-color);
   border-bottom: var(--toc-border);
-  margin: -20px -20px 20px -20px;
+  margin: 0 -20px 20px -20px;
   position: sticky;
   top: 0;
   z-index: 998;
   backdrop-filter: blur(10px);
+  width: calc(100% + 40px);
 }
 
 .mobile-toc-header {
@@ -284,6 +292,7 @@ aside#toc li.expanded > ul {
   overflow: hidden;
   transition: max-height 0.3s ease;
   background-color: var(--toc-bg-color);
+  width: 100%;
 }
 
 .mobile-toc-content.expanded {
@@ -296,11 +305,13 @@ aside#toc li.expanded > ul {
   list-style: none;
   padding: 10px 15px;
   margin: 0;
+  width: 100%;
 }
 
 .mobile-toc-content li {
   margin-bottom: 10px;
   line-height: 1.4;
+  width: 100%;
 }
 
 .mobile-toc-content li a {
@@ -313,6 +324,7 @@ aside#toc li.expanded > ul {
   display: block;
   border-radius: 3px;
   transition: background-color 0.2s ease;
+  width: 100%;
 }
 
 .mobile-toc-content li a:hover {
@@ -345,6 +357,8 @@ aside#toc li.expanded > ul {
     font-size: 16px;
     padding: 15px;
     background-size: 100% 1.8em;
+    width: 100%;
+    max-width: 100%;
   }
   
   h1 {
@@ -362,11 +376,22 @@ aside#toc li.expanded > ul {
   }
   
   .mobile-toc {
-    margin: -15px -15px 15px -15px;
+    margin: 0 -15px 15px -15px;
+    width: calc(100% + 30px);
   }
   
   pre, code {
     font-size: 0.9em;
+  }
+  
+  /* Asegurar que todos los elementos tengan un ancho adecuado */
+  main, header, footer, article, section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -381,6 +406,8 @@ aside#toc li.expanded > ul {
     color: black;
     font-size: 12pt;
     background-image: none;
+    width: 100%;
+    max-width: 100%;
   }
   
   a {
