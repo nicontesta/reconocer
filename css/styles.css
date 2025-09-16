@@ -19,7 +19,7 @@
   --code-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --toc-bg-color: rgba(251, 251, 246, 0.95);
   --toc-border: 1px solid #ccc;
-  --toc-width: 225px;
+  --toc-width: 240px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -680,6 +680,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
