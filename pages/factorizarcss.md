@@ -334,3 +334,62 @@ La refactorización de CSS es un proceso metódico que requiere:
 5. Documentación y mantenimiento continuo
 
 Siguiendo esta guía, podrás transformar cualquier código CSS en un sistema mantenible, escalable y de alto rendimiento, independientemente del tamaño o complejidad del proyecto.
+
+-------------------------------------------------------
+
+# Prompt para Refactorización y Optimización CSS
+*Adjunta tus archivos CSS/HTML/JS y ejecuta este prompt*
+
+---
+```
+**Objetivo**:  
+Refactorizar y optimizar el código CSS siguiendo las mejores prácticas de la guía, mejorando mantenibilidad, rendimiento y accesibilidad.
+
+**Instrucciones**:  
+1. **Analiza los archivos adjuntos** (CSS, HTML, JS) y evalúa:  
+   - Especificidad problemática y reglas en conflicto.  
+   - Código duplicado/redundante.  
+   - Compatibilidad con navegadores.  
+   - Oportunidades de optimización de rendimiento.  
+
+2. **Aplica el sistema de diseño**:  
+   - Define variables CSS para colores, espaciados, tipografía y breakpoints.  
+   - Implementa metodología BEM para nombres de clases.  
+   - Reestructura los estilos siguiendo la arquitectura de archivos recomendada.  
+
+3. **Refactoriza el código**:  
+   - Reduce la especificidad de los selectores.  
+   - Elimina duplicados y extrae estilos comunes.  
+   - Reorganiza el código en este orden:  
+     1. Variables y configuraciones  
+     2. Reset y elementos base  
+     3. Tipografía  
+     4. Layout y componentes principales  
+     5. Componentes específicos  
+     6. Utilidades  
+     7. Media queries (al final)  
+
+4. **Optimiza rendimiento**:  
+   - Simplifica selectores complejos.  
+   - Reemplaza propiedades que causan reflujo en animaciones (usa `transform`/`opacity`).  
+   - Aplica técnicas de optimización para móviles.  
+
+5. **Mejora accesibilidad y compatibilidad**:  
+   - Agrega soporte para `prefers-reduced-motion`, `prefers-contrast`, y modos de alto contraste.  
+   - Implementa `@supports` para funcionalidades CSS avanzadas.  
+   - Asegura visibilidad de estados `:focus`.  
+
+6. **Documenta y mantén**:  
+   - Añade comentarios estructurados para componentes y utilidades.  
+   - Genera una checklist de verificación post-refactorización.  
+
+7. **Entrega**:  
+   - CSS refactorizado en un solo archivo o estructura modular.  
+   - Informe de cambios realizados y optimizaciones aplicadas.  
+   - Recomendaciones para futuras mejoras.  
+```
+
+---
+
+**Nota para el usuario**:  
+Adjunta tus archivos CSS/HTML/JS y ejecuta este prompt. El resultado incluirá código optimizado y un reporte detallado.
