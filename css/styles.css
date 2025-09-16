@@ -278,11 +278,9 @@ aside#toc ul {
 }
 
 aside#toc li {
-  margin-bottom: 6px;
-  cursor: pointer;
-  line-height: 1.4;
-  align-items: center; /* Nuevo */
-  white-space: normal;
+display: flex;
+align-items: center;
+line-height: 1.4;
 }
 
 aside#toc li a {
@@ -294,7 +292,8 @@ aside#toc li a {
   padding: 2px 5px;
   margin: 0;
   border-radius: 3px;
-  display: block;
+display: inline-block;
+flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -314,12 +313,12 @@ aside#toc li[data-level="h3"] {
 }
 
 aside#toc li .toggle-icon {
-  font-weight: bold;
-  vertical-align: middle;
-  margin-right: 6px;
-  user-select: none;
-  display: inline-block;
-  width: 12px;
+font-weight: bold;
+margin-right: 6px;
+user-select: none;
+display: inline-block;
+width: 12px;
+flex-shrink: 0;
 }
 
 aside#toc ul ul {
@@ -638,6 +637,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
