@@ -400,7 +400,6 @@ GitHub te mostrará un recuadro azul con la dirección de tu sitio web vivo. Ser
 
 ### 3.9. Visualizando el Resultado y Entendiendo el YAML Front Matter
 
-### ¿Cómo se vería tu página web?
 
 Después de seguir los pasos del Capítulo 3, si abres el archivo `index.html` en tu navegador o visitas tu sitio en `https://tu-usuario.github.io`, verías algo similar a esto:
 
@@ -472,9 +471,9 @@ Un archivo `default.html` típico (que Jekyll busca en una carpeta llamada `_lay
 En nuestro flujo de trabajo, nosotros usamos Pandoc para hacer la conversión a HTML *antes* de subir los archivos a GitHub. Esto significa que estamos generando archivos HTML completos (`--standalone`) que no necesitan que Jekyll los procese.
 
 Sin embargo, incluir el bloque YAML sigue siendo una buena práctica porque:
-1.  Pandoc lo utiliza para generar partes del HTML.
-2.  Si alguna vez decides cambiar tu método y dejar que Jekyll haga la conversión por ti, tus archivos ya estarán preparados.
-3.  Mantiene tus metadatos organizados y accesibles.
+* Pandoc lo utiliza para generar partes del HTML.
+* Si alguna vez decides cambiar tu método y dejar que Jekyll haga la conversión por ti, tus archivos ya estarán preparados.
+* Mantiene tus metadatos organizados y accesibles.
 
 ---
 
@@ -485,6 +484,7 @@ Sin embargo, incluir el bloque YAML sigue siendo una buena práctica porque:
 4.  Usaste Git para tomar una "foto" de tu proyecto.
 5.  Creaste un repositorio en GitHub y subiste tu código.
 6.  Activaste GitHub Pages para publicar tu sitio automáticamente.
+
 
 ---
 
@@ -1266,9 +1266,7 @@ En este capítulo has hecho que tu blog sea visible y accesible:
 
 Estos no son "trucos secretos", sino fundamentos de una buena ciudadanía web. Hacen que tu sitio sea más útil, ético y, en última instancia, más exitoso.
 
-**Próximo Paso:** En el Capítulo 8, hablaremos del mantenimiento. Cómo actualizar tu contenido, cómo hacer copias de seguridad de tu repositorio de GitHub y qué hacer si algo sale mal. ¡Aprenderás a mantener tu blog funcionando sin problemas para siempre!
-
-
+----
 
 ## Capítulo 8. Mantenimiento Sin Estrés: Cómo Mantener Tu Blog Funcionando Para Siempre
 
@@ -1381,7 +1379,7 @@ Tu blog ya no es solo un hobby; es un activo profesional que puedes mantener par
 Desde esos primeros pasos tentativos con Markdown hasta configurar un flujo de publicación automatizado, has construido algo remarkable. Has transformado tu contenido de un formato limitado en una plataforma a un sistema bajo tu control completo, capaz de publicar en múltiples formatos y plataformas.
 
 
-## El Poder que Ahora Tienes en Tus Manos
+**El Poder que Ahora Tienes en Tus Manos**
 
 Lo más importante que has ganado no es solo un blog, sino **autonomía digital**. Ahora:
 
@@ -3046,7 +3044,7 @@ npm audit
 pip-audit
 ```
 
-### Backup y Recuperación
+## Backup y Recuperación
 
 ### Script de Backup Automático
 ```bash
@@ -3066,7 +3064,7 @@ LATEST_BACKUP=$(ls -t backup_*.tar.gz | head -1)
 tar -xzf "$LATEST_BACKUP"
 ```
 
-### Monitorización Continua
+## Monitorización Continua
 
 ### Health Checks Automatizados
 ```yaml
