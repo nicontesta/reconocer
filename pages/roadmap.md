@@ -1373,7 +1373,7 @@ Tu blog ya no es solo un hobby; es un activo profesional que puedes mantener par
 
 ---
 
-# Capítulo 9: Conclusión - Tu Viaje Solo Acaba de Comenzar
+# Anexos - Tu Viaje Solo Acaba de Comenzar
 
 ## Recorriendo el Camino Recorrido
 
