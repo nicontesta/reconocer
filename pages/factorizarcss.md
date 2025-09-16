@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Refactorizar CSS
-permalink: /factorizar CSS/
+permalink: /factorizarcss/
 ---
 # Guía Completa para Refactorizar y Optimizar CSS
 
