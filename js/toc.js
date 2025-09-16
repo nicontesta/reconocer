@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Elementos TOC para escritorio y móvil
   const toc = document.getElementById("toc");
   const mobileToc = document.querySelector(".mobile-toc");
   const mobileTocHeader = document.querySelector(".mobile-toc-header");
   const mobileTocContent = document.querySelector(".mobile-toc-content");
-  
+
   // Ocultar TOC si estamos en la página de inicio
-  if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("index.md")) {
+  if (
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname.endsWith("index.md")
+  ) {
     if (toc) toc.style.display = "none";
     if (mobileToc) mobileToc.style.display = "none";
-    if (document.querySelector("main")) document.querySelector("main").style.marginLeft = "0";
+    if (document.querySelector("main"))
+      document.querySelector("main").style.marginLeft = "0";
     return;
   }
 
@@ -18,43 +22,51 @@ document.addEventListener("DOMContentLoaded", function () {
   if (headers.length === 0) {
     if (toc) toc.style.display = "none";
     if (mobileToc) mobileToc.style.display = "none";
-    if (document.querySelector("main")) document.querySelector("main").style.marginLeft = "0";
+    if (document.querySelector("main"))
+      document.querySelector("main").style.marginLeft = "0";
     return;
   }
 
-  // Función para generar la estructura de la TOC
+  // Función para generar estructura TOC
   function generateTOCStructure() {
     const ul = document.createElement("ul");
     let currentH1 = null;
     let currentH2 = null;
 
-    headers.forEach(header => {
-      // Crear ID si no existe
+    headers.forEach((header) => {
       if (!header.id) {
-        header.id = header.textContent.trim().toLowerCase().replace(/[^\w]+/g, '-');
+        header.id = header.textContent
+          .trim()
+          .toLowerCase()
+          .replace(/[^\w]+/g, "-");
       }
 
       const li = document.createElement("li");
       li.setAttribute("data-level", header.tagName.toLowerCase());
-      const a = document.createElement("a");
-      a.href = `#${header.id}`;
-      a.textContent = header.textContent;
 
-      // Cerrar TOC móvil al hacer clic en un enlace
-      a.addEventListener("click", function() {
+      const link = document.createElement("a");
+      link.href = `#${header.id}`;
+      link.textContent = header.textContent;
+
+      // Cierre del TOC móvil al hacer clic en un enlace
+      link.addEventListener("click", function () {
         if (window.innerWidth <= 1024 && mobileTocContent) {
           mobileTocContent.classList.remove("expanded");
         }
       });
 
-      li.appendChild(a);
+      const tocItem = document.createElement("div");
+      tocItem.className = "toc-item";
 
-      // Organizar por niveles
-      if (header.tagName === 'H1') {
+      tocItem.appendChild(link);
+      li.appendChild(tocItem);
+
+      // Insertar en la estructura jerárquica
+      if (header.tagName === "H1") {
         ul.appendChild(li);
         currentH1 = li;
         currentH2 = null;
-      } else if (header.tagName === 'H2') {
+      } else if (header.tagName === "H2") {
         if (!currentH1) {
           ul.appendChild(li);
           return;
@@ -66,116 +78,97 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         subUl.appendChild(li);
         currentH2 = li;
-      } else if (header.tagName === 'H3') {
-        if (!currentH2) {
-          if (!currentH1) {
-            ul.appendChild(li);
-            return;
-          }
-          let subUl = currentH1.querySelector("ul");
-          if (!subUl) {
-            subUl = document.createElement("ul");
-            currentH1.appendChild(subUl);
-          }
-          subUl.appendChild(li);
-        } else {
-          let subUl = currentH2.querySelector("ul");
-          if (!subUl) {
-            subUl = document.createElement("ul");
-            currentH2.appendChild(subUl);
-          }
-          subUl.appendChild(li);
+      } else if (header.tagName === "H3") {
+        let parent = currentH2 || currentH1;
+        if (!parent) {
+          ul.appendChild(li);
+          return;
         }
+        let subUl = parent.querySelector("ul");
+        if (!subUl) {
+          subUl = document.createElement("ul");
+          parent.appendChild(subUl);
+        }
+        subUl.appendChild(li);
       }
     });
 
     return ul;
   }
 
-  // Función para añadir comportamiento de plegado/desplegado
+  // Función para añadir toggles
   function addToggleBehavior(container) {
     const topLevelItems = container.querySelectorAll("li");
-    
+
     topLevelItems.forEach((li) => {
       const childUl = li.querySelector("ul");
-      
-      if (childUl) {
-        childUl.style.display = "none";
-        
+      const tocItem = li.querySelector(".toc-item");
+
+      if (childUl && tocItem) {
+        // Crear botón toggle
         const toggleBtn = document.createElement("span");
         toggleBtn.className = "toggle-icon";
         toggleBtn.textContent = "▶";
         toggleBtn.style.cursor = "pointer";
-        toggleBtn.style.marginRight = "5px";
-        toggleBtn.style.userSelect = "none";
-        
+
+        // Insertar antes del enlace dentro de toc-item
+        tocItem.insertBefore(toggleBtn, tocItem.firstChild);
+
+        // Añadir toggle
         toggleBtn.addEventListener("click", (e) => {
           e.stopPropagation();
-          if (childUl.style.display === "none") {
-            childUl.style.display = "block";
-            toggleBtn.textContent = "▼";
-          } else {
-            childUl.style.display = "none";
+          if (li.classList.contains("expanded")) {
+            li.classList.remove("expanded");
             toggleBtn.textContent = "▶";
+          } else {
+            li.classList.add("expanded");
+            toggleBtn.textContent = "▼";
           }
         });
-        
-        li.insertBefore(toggleBtn, li.firstChild);
       }
     });
   }
 
-  // Configurar TOC de escritorio
+  // TOC Escritorio
   if (toc) {
-    // Buscar o crear contenedor para la lista
-    let tocListContainer = toc.querySelector('.toc-list-container');
+    let tocListContainer = toc.querySelector(".toc-list-container");
     if (!tocListContainer) {
-      tocListContainer = document.createElement('div');
-      tocListContainer.className = 'toc-list-container';
-      
-      // Insertar después del encabezado si existe
-      const tocHeader = toc.querySelector('.toc-header');
+      tocListContainer = document.createElement("div");
+      tocListContainer.className = "toc-list-container";
+
+      const tocHeader = toc.querySelector(".toc-header");
       if (tocHeader) {
-        tocHeader.insertAdjacentElement('afterend', tocListContainer);
+        tocHeader.insertAdjacentElement("afterend", tocListContainer);
       } else {
         toc.appendChild(tocListContainer);
       }
     }
-    
-    // Generar y añadir la estructura TOC
+
     const tocStructure = generateTOCStructure();
-    tocListContainer.innerHTML = '';
+    tocListContainer.innerHTML = "";
     tocListContainer.appendChild(tocStructure);
-    
-    // Añadir comportamiento de toggle
     addToggleBehavior(tocListContainer);
-    
-    // Recordar posición de scroll
-    const tocScrollPosition = localStorage.getItem('tocScrollPosition');
+
+    // Recordar scroll
+    const tocScrollPosition = localStorage.getItem("tocScrollPosition");
     if (tocScrollPosition) {
       toc.scrollTop = tocScrollPosition;
     }
-    
-    toc.addEventListener('scroll', function() {
-      localStorage.setItem('tocScrollPosition', toc.scrollTop);
+    toc.addEventListener("scroll", function () {
+      localStorage.setItem("tocScrollPosition", toc.scrollTop);
     });
   }
 
-  // Configurar TOC móvil
+  // TOC Móvil
   if (mobileTocContent) {
     const mobileTocStructure = generateTOCStructure();
-    mobileTocContent.innerHTML = '';
+    mobileTocContent.innerHTML = "";
     mobileTocContent.appendChild(mobileTocStructure);
-    
-    // Añadir comportamiento de toggle
     addToggleBehavior(mobileTocContent);
-    
-    // Configurar comportamiento expandir/colapsar
+
     if (mobileTocHeader) {
-      mobileTocHeader.addEventListener("click", function(e) {
-        // No hacer toggle si se hace clic en los iconos de navegación
-        if (e.target.tagName === 'A') return;
-        
+      mobileTocHeader.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") return;
         mobileTocContent.classList.toggle("expanded");
       });
     }
