@@ -281,7 +281,6 @@ aside#toc li {
   margin-bottom: 6px;
   cursor: pointer;
   line-height: 1.4;
-  display: flex;
   align-items: center; /* Nuevo */
   gap: 4px;
 }
@@ -316,6 +315,7 @@ aside#toc li[data-level="h3"] {
 
 aside#toc li .toggle-icon {
   font-weight: bold;
+  vertical-align: middle;
   margin-right: 6px;
   user-select: none;
   display: inline-block;
@@ -638,6 +638,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
