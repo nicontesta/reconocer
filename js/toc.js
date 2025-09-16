@@ -97,38 +97,41 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Función para añadir toggles
-  function addToggleBehavior(container) {
-    const topLevelItems = container.querySelectorAll("li");
+function addToggleBehavior(container) {
+  const topLevelItems = container.querySelectorAll("li");
 
-    topLevelItems.forEach((li) => {
-      const childUl = li.querySelector("ul");
-      const tocItem = li.querySelector(".toc-item");
+  topLevelItems.forEach((li) => {
+    const childUl = li.querySelector("ul");
+    const tocItem = li.querySelector(".toc-item");
 
-      if (childUl && tocItem) {
-        // Crear botón toggle
-        const toggleBtn = document.createElement("span");
-        toggleBtn.className = "toggle-icon";
-        toggleBtn.textContent = "▶";
-        toggleBtn.style.cursor = "pointer";
+    if (childUl && tocItem) {
+      // Crear botón toggle
+      const toggleBtn = document.createElement("span");
+      toggleBtn.className = "toggle-icon";
+      toggleBtn.textContent = "▶";
+      toggleBtn.style.cursor = "pointer";
 
-        // Insertar antes del enlace dentro de toc-item
-        tocItem.insertBefore(toggleBtn, tocItem.firstChild);
+      // Insertar antes del enlace dentro de toc-item
+      tocItem.insertBefore(toggleBtn, tocItem.firstChild);
 
-        // Añadir toggle
-        toggleBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          if (li.classList.contains("expanded")) {
-            li.classList.remove("expanded");
-            toggleBtn.textContent = "▶";
-          } else {
-            li.classList.add("expanded");
-            toggleBtn.textContent = "▼";
-          }
-        });
-      }
-    });
-  }
+      // Colapsar por defecto
+      li.classList.remove("expanded");
 
+      // Añadir toggle
+      toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (li.classList.contains("expanded")) {
+          li.classList.remove("expanded");
+          toggleBtn.textContent = "▶";
+        } else {
+          li.classList.add("expanded");
+          toggleBtn.textContent = "▼";
+        }
+      });
+    }
+  });
+}
+ 
   // TOC Escritorio
   if (toc) {
     let tocListContainer = toc.querySelector(".toc-list-container");
@@ -174,3 +177,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
