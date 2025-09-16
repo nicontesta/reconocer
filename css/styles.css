@@ -423,6 +423,33 @@ aside#toc li[data-level="h3"] > .toc-item {
   }
 }
 
+/* Ocultar sublistas en TOC móvil por defecto */
+.mobile-toc-content li > ul {
+  display: none;
+}
+
+/* Mostrar sublistas cuando están expandidas */
+.mobile-toc-content li.expanded > ul {
+  display: block;
+}
+
+/* Asegurar que el toggle funcione en móvil */
+.mobile-toc-content .toggle-icon {
+  font-weight: bold;
+  user-select: none;
+  width: 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Indentación para niveles en móvil */
+.mobile-toc-content li[data-level="h2"] > .toc-item {
+  padding-left: 10px;
+}
+
+.mobile-toc-content li[data-level="h3"] > .toc-item {
+  padding-left: 20px;
+}
 
 /* Barra de navegación */
 header {
@@ -680,6 +707,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
