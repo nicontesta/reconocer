@@ -317,6 +317,7 @@ aside#toc li .toggle-icon {
   user-select: none;
   display: inline-block;
   width: 12px;
+  vertical-align: middle;
 }
 
 aside#toc ul ul {
@@ -635,4 +636,5 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
