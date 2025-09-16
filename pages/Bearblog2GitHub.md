@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hoja de Ruta
-permalink: /roadmap/
+permalink: /Bearblog2GitHub/
 ---
 
 # Guía para Inexpertos: De Bearblog a GitHub Pages como un Profesional
