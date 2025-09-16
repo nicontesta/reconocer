@@ -1373,13 +1373,13 @@ Tu blog ya no es solo un hobby; es un activo profesional que puedes mantener par
 
 ---
 
-# Anexos - Tu Viaje Solo Acaba de Comenzar
+## Capítulo 9 - Tu Viaje Solo Acaba de Comenzar
 
-## Recorriendo el Camino Recorrido
 
 ¡Felicidades! Has llegado al final de esta guía, pero esto es realmente solo el comienzo de tu viaje como publicador web independiente. Mira todo lo que has logrado:
 
 Desde esos primeros pasos tentativos con Markdown hasta configurar un flujo de publicación automatizado, has construido algo remarkable. Has transformado tu contenido de un formato limitado en una plataforma a un sistema bajo tu control completo, capaz de publicar en múltiples formatos y plataformas.
+
 
 ## El Poder que Ahora Tienes en Tus Manos
 
@@ -1390,7 +1390,7 @@ Lo más importante que has ganado no es solo un blog, sino **autonomía digital*
 - **Eres multi-formato**: Tu contenido puede vivir en web, eBooks, PDFs y más
 - **Tienes las herramientas**: Sabes solucionar problemas y mejorar tu sitio
 
-## Los Anexos: Tu Caja de Herramientas para el Futuro
+**Los Anexos: Tu Caja de Herramientas para el Futuro**
 
 Los anexos que hemos incluido no son appendixes decorativos, son **trampolines para tu próxima fase de crecimiento**. Cada uno representa una dirección en la que puedes especializarte:
 
@@ -1402,7 +1402,7 @@ Los anexos que hemos incluido no son appendixes decorativos, son **trampolines p
 
 No necesitas dominar todos estos ámbitos a la vez. Elige lo que más te entusiasme y profundiza allí primero.
 
-## Mantén la Curiosidad y la Experimentación
+**Mantén la Curiosidad y la Experimentación**
 
 La tecnología web evoluciona constantemente, pero los fundamentos que has aprendido aquí te servirán por años. La clave está en:
 
@@ -1410,7 +1410,7 @@ La tecnología web evoluciona constantemente, pero los fundamentos que has apren
 2. **Experimentar sin miedo**: Tus scripts de build y control de versiones te permiten probar cosas nuevas sin romper tu sitio
 3. **Participar en comunidades**: GitHub, Stack Overflow, y foros técnicos están llenos de personas que comparten tus intereses
 
-## Tu Blog como Laboratorio Personal
+**Tu Blog como Laboratorio Personal**
 
 Tu sitio ahora es más que un blog: es tu laboratorio personal, tu portafolio y tu plataforma de aprendizaje. Úsalo para:
 
@@ -1419,7 +1419,7 @@ Tu sitio ahora es más que un blog: es tu laboratorio personal, tu portafolio y 
 - Desarrollar tus habilidades técnicas
 - Construir tu presencia digital profesional
 
-## El Viaje Continúa
+**El Viaje Continúa**
 
 Recuerda que cada experto fue alguna vez un principiante. Esas primeras líneas de código que te parecieron misteriosas ahora son herramientas que manejas con confianza. Las dudas que tenías sobre DNS y deployment ahora son procedimientos que dominas.
 
@@ -1432,9 +1432,9 @@ Recuerda que cada experto fue alguna vez un principiante. Esas primeras líneas 
 ---
 
 
-# Anexo 1: Automatización y Despliegue Avanzado
+## Anexo 1: Automatización y Despliegue Avanzado
 
-## Tu Trabajo Está Seguro: Controla Quién Ve Tu "Cocina"
+### Tu Trabajo Está Seguro: Controla Quién Ve Tu "Cocina"
 
 Es completamente normal querer proteger tu trabajo y tu originalidad. Tal vez te preocupa que alguien pueda copiar tus ideas o tu código si todo está abierto al público. ¡Es una preocupación válida!
 
@@ -1461,7 +1461,7 @@ Cuando vinculas tu cuenta de GitHub a Netlify, este te mostrará una lista de to
 
 ---
 
-## De Hacerlo Tú Mismo a que la Máquina lo Haga por Ti
+### De Hacerlo Tú Mismo a que la Máquina lo Haga por Ti
 
 Ahora, hablemos de automatización. Has aprendido a construir y desplegar tu blog manualmente con scripts. ¡Es un gran logro! Pero ahora vamos a dar un paso más hacia la automatización profesional. Imagina que cada vez que escribes un nuevo post y lo subes a GitHub, tu sitio se reconstruye y se actualiza automáticamente, sin que tú tengas que ejecutar ningún script. Eso es lo que hacen **GitHub Actions** y **Netlify**.
 
@@ -1576,9 +1576,9 @@ Para esto, necesitarías crear "secretos" en tu repositorio de GitHub (`NETLIFY_
 **Recuerda:** El código de ejemplo que te hemos dado es una plantilla. Te animamos a buscar en la documentación de [GitHub Actions](https://docs.github.com/es/actions) y [Netlify](https://docs.netlify.com/) para adaptarlo a tus necesidades exactas. ¡Hay un mundo de posibilidades esperándote
 
 
-# Anexo 2: Un Toque de Interactividad con JavaScript
+## Anexo 2: Un Toque de Interactividad con JavaScript
 
-## Haz Tu Sitio Más Dinámico y Atractivo
+### Haz Tu Sitio Más Dinámico y Atractivo
 
 Hasta ahora, tu blog es estático: muestra tu contenido maravillosamente, pero no puede responder a las acciones del usuario. **JavaScript (JS)** es el lenguaje que le da vida a la web, permitiendo crear experiencias interactivas. Desde un simple menú desplegable hasta complejas visualizaciones de datos, JS es lo que hace que una página web se sienta como una aplicación.
 
@@ -1788,9 +1788,9 @@ Escribir todo el código desde cero para funcionalidades complejas es difícil y
 **Consejo Final:** Empieza con cosas pequeñas. Añade un botón, un toggle, un pequeño efecto. Verás cómo estas pequeñas victorias te darán la confianza para abordar proyectos más grandes. Tu sitio es tu lienzo, y JavaScript es uno de los pinceles más potentes que tienes para pintarlo.
 
 
-# Anexo 2 bis: Un Toque de Interactividad con JavaScript
+## Anexo 2 bis: Un Toque de Interactividad con JavaScript
 
-## Dos Librerías Esenciales para un Blog Técnico
+### Dos Librerías Esenciales para un Blog Técnico
 
 En el mundo de los blogs técnicos, dos librerías de JavaScript se destacan por su utilidad y potencia: **Prism.js** para resaltar código y **MathJax** para renderizar fórmulas matemáticas. Son las herramientas profesionales que transforman bloques de texto aburridos en código colorido y fórmulas elegantes.
 
@@ -2015,9 +2015,9 @@ Para mejorar el rendimiento de tu sitio:
 Estas dos librerías transformarán tu blog técnico en una experiencia profesional y visualmente atractiva, mostrando tanto tu código como tus fórmulas con la claridad y elegancia que se merecen.
 
 
-# Anexo 3: Domina el Diseño con CSS - Desde Cero hasta Profesional
+## Anexo 3: Domina el Diseño con CSS - Desde Cero hasta Profesional
 
-## Da Vida y Personalidad a Tu Blog con CSS
+### Da Vida y Personalidad a Tu Blog con CSS
 
 CSS (Cascading Style Sheets) es el lenguaje que controla la presentación visual de tu sitio web. Si HTML es la estructura de tu casa (paredes, puertas, ventanas), CSS es la pintura, la decoración y el diseño de interiores que la hace única y acogedora.
 
@@ -2422,9 +2422,9 @@ body {
 **Recuerda:** La mejor manera de aprender CSS es practicando. Experimenta, comete errores, inspecciona sitios web que te gusten y no tengas miedo de probar cosas nuevas. Tu blog es el lugar perfecto para practicar y desarrollar tus habilidades de diseño.
 
 
-# Anexo 4: Publica en Múltiples Formatos con Pandoc
+## Anexo 4: Publica en Múltiples Formatos con Pandoc
 
-## Lleva Tu Contenido Más Allá de la Web
+### Lleva Tu Contenido Más Allá de la Web
 
 Hasta ahora has aprendido a crear un blog web impresionante, pero ¿sabías que con el mismo contenido Markdown puedes generar eBooks, documentos PDF y mucho más? Pandoc es como una imprenta digital que puede convertir tus ideas en múltiples formatos profesionales.
 
@@ -2703,9 +2703,9 @@ La clave está en mantener tu contenido bien estructurado en Markdown y usar los
 **No tengas miedo de experimentar** con diferentes plantillas y estilos. La belleza de este enfoque es que puedes iterar rápidamente y ver los resultados inmediatamente. ¡Tu contenido merece ser disfrutado en todos los formatos posibles!
 
 
-# Anexo 5: LaTeX y Pandoc - Una Relación Poderosa
+## Anexo 5: LaTeX y Pandoc - Una Relación Poderosa
 
-## Entendiendo el Motor detrás de la Magia
+### Entendiendo el Motor detrás de la Magia
 
 LaTeX (se pronuncia "lá-tej") es un sistema de composición tipográfica de alta calidad, especialmente popular en ámbitos académicos y científicos. Pandoc aprovecha su potencia para generar documentos PDF profesionales, pero su relación va mucho más allá.
 
@@ -2915,9 +2915,9 @@ La belleza de Pandoc es que te permite elegir. Puedes empezar sin instalar LaTeX
 
 
 
-# Anexo 6: Troubleshooting Avanzado y Optimización
+## Anexo 6: Troubleshooting Avanzado y Optimización
 
-## Solución de Problemas Comunes
+### Solución de Problemas Comunes
 
 ### Problemas de Renderizado de Fórmulas
 ```bash
@@ -2969,9 +2969,9 @@ find . -name "*.png" -exec pngquant --force --output {} {} \;
 
 ---
 
-# Anexo 7: Monetización y Crecimiento
+## Anexo 7: Monetización y Crecimiento
 
-## Estrategias de Monetización
+### Estrategias de Monetización
 
 ### Publicidad No Intrusiva
 ```html
@@ -3024,9 +3024,9 @@ function checkSubscription() {
 
 ---
 
-# Anexo 8: Seguridad y Mantenimiento
+## Anexo 8: Seguridad y Mantenimiento
 
-## Mejores Prácticas de Seguridad
+### Mejores Prácticas de Seguridad
 
 ### Headers de Seguridad
 ```nginx
@@ -3088,9 +3088,9 @@ tar -xzf "$LATEST_BACKUP"
 
 Estos anexos adicionales te proporcionan herramientas para llevar tu sitio al siguiente nivel, cubriendo aspectos avanzados de optimización, monetización, seguridad y crecimiento. Cada uno representa una especialización potencial que puedes explorar según tus necesidades e intereses.
 
-# Anexo 9: Para Usuarios de Windows - PowerShell es Tu Amigo
+## Anexo 9: Para Usuarios de Windows - PowerShell es Tu Amigo
 
-## No Tengas Miedo: La Terminal de Windows ha Evolucionado
+### No Tengas Miedo: La Terminal de Windows ha Evolucionado
 
 Si eres usuario de Windows y algunos de los comandos de terminal te parecen intimidantes, ¡tenemos buenas noticias! **PowerShell**, la terminal moderna de Windows, es mucho más amigable y poderosa de lo que piensas. Bajo el liderazgo de Satya Nadella, Microsoft ha abrazado el mundo del código abierto y ha hecho que el desarrollo en Windows sea más fácil que nunca.
 
@@ -3213,5 +3213,3 @@ La comunidad de desarrolladores en Windows es enorme y activa. Si tienes problem
 **Recuerda:** Lo importante no es la terminal que uses, sino entender los conceptos. Una vez que entiendes qué hace `git add .` o `pandoc --mathml`, puedes ejecutarlo en cualquier entorno.
 
 ¡El mundo del desarrollo en Windows es más accesible que nunca! No dejes que el miedo a la terminal te impida disfrutar del poder y control que te ofrece tener tu propio sitio web.
-
-
