@@ -2942,7 +2942,7 @@ find . -name "*.jpg" -exec convert {} -resize 1200x -quality 85 {} \;
 find . -name "*.png" -exec pngquant --force --output {} {} \;
 ```
 
-## Monitoreo y Analytics
+**Monitoreo y Analytics**  
 
 ### Configuración Básica de Google Analytics
 ```html
