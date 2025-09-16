@@ -633,3 +633,49 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
+/* ==========================================================================
+   Prism.js Override – Light Mode = Dark Code, Dark Mode = Light Code
+   ========================================================================== */
+
+/* Base Prism reset (aplica a ambos modos) */
+pre[class*="language-"],
+code[class*="language-"] {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  padding: 1em;
+  margin: 1.2em 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode: fondo oscuro, texto claro */
+@media (prefers-color-scheme: light) {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    background-color: #161616;
+    color: #ededed;
+  }
+}
+
+/* Dark mode: fondo claro, texto oscuro */
+@media (prefers-color-scheme: dark) {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    background-color: #ffffff;
+    color: #161616;
+  }
+}
+
+/* Scrollbar styling (optional) */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
