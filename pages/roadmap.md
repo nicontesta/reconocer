@@ -3046,7 +3046,7 @@ npm audit
 pip-audit
 ```
 
-## Backup y Recuperación
+### Backup y Recuperación
 
 ### Script de Backup Automático
 ```bash
@@ -3066,7 +3066,7 @@ LATEST_BACKUP=$(ls -t backup_*.tar.gz | head -1)
 tar -xzf "$LATEST_BACKUP"
 ```
 
-## Monitorización Continua
+### Monitorización Continua
 
 ### Health Checks Automatizados
 ```yaml
