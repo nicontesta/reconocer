@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const link = document.createElement("a");
       link.href = `#${header.id}`;
       link.textContent = header.textContent;
+      link.title = header.textContent; 
 
       // Cierre del TOC móvil al hacer clic en un enlace
       link.addEventListener("click", function () {
@@ -177,4 +178,5 @@ function addToggleBehavior(container) {
     }
   }
 });
+
 
