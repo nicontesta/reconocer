@@ -2015,13 +2015,14 @@ Estas dos librerías transformarán tu blog técnico en una experiencia profesio
 
 ## Anexo 3: Domina el Diseño con CSS - Desde Cero hasta Profesional
 
-### Da Vida y Personalidad a Tu Blog con CSS
+ Da Vida y Personalidad a Tu Blog con CSS
 
 CSS (Cascading Style Sheets) es el lenguaje que controla la presentación visual de tu sitio web. Si HTML es la estructura de tu casa (paredes, puertas, ventanas), CSS es la pintura, la decoración y el diseño de interiores que la hace única y acogedora.
 
+
 ### 3.1. Conceptos Fundamentales que Debes Conocer
 
-#### Selectores: Cómo Decirle a Qué Elemento Aplicar Estilos
+Selectores: Cómo Decirle a Qué Elemento Aplicar Estilos
 
 Los selectores son como direcciones que le indican al navegador qué elementos HTML quieres estilizar.
 
@@ -2066,7 +2067,7 @@ Cada elemento en una página web es una caja rectangular con estas propiedades:
 
 ### 3.2. Layout Moderno con Flexbox y Grid
 
-#### Flexbox: Para Diseños en 1 Dimensión
+Flexbox: Para Diseños en 1 Dimensión
 
 Perfecto para menús de navegación, alineación vertical, y distribuir elementos en una fila o columna.
 
@@ -2422,7 +2423,7 @@ body {
 
 ## Anexo 4: Publica en Múltiples Formatos con Pandoc
 
-### Lleva Tu Contenido Más Allá de la Web
+Lleva Tu Contenido Más Allá de la Web
 
 Hasta ahora has aprendido a crear un blog web impresionante, pero ¿sabías que con el mismo contenido Markdown puedes generar eBooks, documentos PDF y mucho más? Pandoc es como una imprenta digital que puede convertir tus ideas en múltiples formatos profesionales.
 
@@ -2915,7 +2916,7 @@ La belleza de Pandoc es que te permite elegir. Puedes empezar sin instalar LaTeX
 
 ## Anexo 6: Troubleshooting Avanzado y Optimización
 
-### Solución de Problemas Comunes
+ Solución de Problemas Comunes  
 
 ### Problemas de Renderizado de Fórmulas
 ```bash
@@ -2969,7 +2970,7 @@ find . -name "*.png" -exec pngquant --force --output {} {} \;
 
 ## Anexo 7: Monetización y Crecimiento
 
-### Estrategias de Monetización
+**Estrategias de Monetización**
 
 ### Publicidad No Intrusiva
 ```html
@@ -2992,7 +2993,7 @@ function checkSubscription() {
 *Descripción del producto con enlace de afiliado*
 ```
 
-## Crecimiento de Audiencia
+Crecimiento de Audiencia  
 
 ### SEO Técnico Avanzado
 ```html
@@ -3024,7 +3025,7 @@ function checkSubscription() {
 
 ## Anexo 8: Seguridad y Mantenimiento
 
-### Mejores Prácticas de Seguridad
+**Mejores Prácticas de Seguridad**  
 
 ### Headers de Seguridad
 ```nginx
@@ -3044,7 +3045,7 @@ npm audit
 pip-audit
 ```
 
-## Backup y Recuperación
+**Backup y Recuperación**  
 
 ### Script de Backup Automático
 ```bash
@@ -3064,7 +3065,7 @@ LATEST_BACKUP=$(ls -t backup_*.tar.gz | head -1)
 tar -xzf "$LATEST_BACKUP"
 ```
 
-## Monitorización Continua
+**Monitorización Continua**  
 
 ### Health Checks Automatizados
 ```yaml
