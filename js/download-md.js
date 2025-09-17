@@ -1,27 +1,9 @@
 // download-md.js - Descarga del contenido como Markdown usando Turndown.js
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Buscar el TOC lateral (para escritorio)
-  const tocAside = document.querySelector('aside#toc');
+  const downloadBtn = document.getElementById('toc-download-btn');
   
-  // Solo añadir el botón si estamos en escritorio (existe el TOC lateral)
-  if (tocAside) {
-    // Crear contenedor para el botón debajo del TOC
-    const downloadContainer = document.createElement('div');
-    downloadContainer.className = 'toc-download-container';
-    
-    // Añadir botón de descarga de Markdown
-    const downloadBtn = document.createElement('button');
-    downloadBtn.className = 'download-md-btn';
-    downloadBtn.textContent = '📥 Descargar MD';
-    downloadBtn.title = 'Descargar contenido como Markdown';
-    
-    // Añadir botón al contenedor
-    downloadContainer.appendChild(downloadBtn);
-    
-    // Insertar el contenedor después del TOC
-    tocAside.parentNode.insertBefore(downloadContainer, tocAside.nextSibling);
-    
+  if (downloadBtn) {
     // Función para mostrar carga
     function showLoading(message) {
       const loadingDiv = document.createElement('div');
