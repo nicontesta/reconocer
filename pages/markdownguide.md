@@ -143,7 +143,7 @@ Markdown permite crear tablas con formato (depende del css):
 | Ana    | 25   |
 | Luis   | 30   |
 
-### Código
+#### Código
 
 Texto con código en línea: `console.log("Hola");`
 
@@ -187,7 +187,7 @@ Si lo prefieres, puedes descargar el contenido completo de la página en formato
 
 ### 🔄 Conversor de HTML a Markdown
 
-Si necesitas convertir contenido HTML a Markdown, puedes usar nuestra herramienta [conversor.html](/conversor.html).  
+Si necesitas convertir contenido HTML a Markdown, tienes disponible una herramienta especial: [conversor.html](/conversor.html).  
 
 Así es como funciona:  
 
@@ -196,7 +196,7 @@ Así es como funciona:
 3. Obtén el código Markdown resultante.
 4. Previsualiza el archivo sin necesidad de instalar nada.
 
-¡Prueba la herramienta y simplifica el proceso!
+¡Anímate a probarla y simplifica el proceso!
 
 ### 🚀 Publicación en bearblog.dev
 
