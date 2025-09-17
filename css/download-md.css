@@ -1,29 +1,5 @@
-/* download-md.css - Estilos para el botón de descarga de Markdown */
+/* download-md.css - Estilos para el indicador de carga */
 
-/* Botón en el TOC lateral (escritorio) */
-aside#toc .download-md-btn {
-  width: calc(100% - 20px);
-  padding: 8px 10px;
-  margin: 10px;
-  background-color: var(--link-color);
-  color: var(--background-color);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: var(--font-main);
-  font-size: 12px;
-  text-align: center;
-  transition: all 0.3s ease;
-  display: block; /* Solo visible en escritorio, el TOC se oculta en móviles */
-}
-
-aside#toc .download-md-btn:hover {
-  background-color: var(--heading-color);
-}
-
-
-
-/* Indicador de carga */
 .download-md-loading {
   position: fixed;
   top: 0;
