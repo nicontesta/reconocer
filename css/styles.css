@@ -55,6 +55,12 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: var(--text-color);
+  background-image: linear-gradient(to bottom, 
+                    transparent 95%, 
+                    rgba(0, 0, 0, 0.1) 100%);
+  background-size: 100% 2em;
+  background-position: 0 0;
+  position: relative;
 }
 
 html {
@@ -707,6 +713,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
