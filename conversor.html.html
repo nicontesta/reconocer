@@ -561,11 +561,13 @@
         return tempDiv.innerHTML;
       }
       
-      // Función para generar TOC a partir del HTML renderizado
-      function generateTOC(htmlContent) {
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-        const headings = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      // Función para generar TOC a partir del contenido renderizado
+      function generateTOC() {
+        const headings = previewRendered.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        if (headings.length === 0) {
+          return '<p>No hay encabezados para mostrar</p>';
+        }
+        
         let tocHTML = '<ul>';
         
         headings.forEach((heading, index) => {
@@ -579,7 +581,7 @@
           
           tocHTML += `
             <li style="margin-left: ${indent}px;">
-              <a onclick="scrollToHeading('${heading.id}')">
+              <a href="#${heading.id}" onclick="event.preventDefault(); scrollToHeading('${heading.id}')">
                 ${heading.textContent}
               </a>
             </li>
@@ -587,11 +589,11 @@
         });
         
         tocHTML += '</ul>';
-        return {tocHTML, headings};
+        return tocHTML;
       }
       
       // Función para desplazarse a un encabezado en la previsualización
-      window.scrollToHeading = function(id) {
+      function scrollToHeading(id) {
         const heading = previewRendered.querySelector('#' + id);
         if (heading) {
           heading.scrollIntoView({ behavior: 'smooth' });
@@ -602,7 +604,7 @@
             heading.style.backgroundColor = '';
           }, 1000);
         }
-      };
+      }
       
       // Evento para el botón de conversión
       convertBtn.addEventListener('click', function() {
@@ -656,17 +658,8 @@
         // Mostrar el HTML en la previsualización
         previewRendered.innerHTML = cleanHtml;
         
-        // Generar TOC
-        const {tocHTML, headings} = generateTOC(cleanHtml);
-        tocContent.innerHTML = tocHTML;
-        
-        // Asegurarse de que los encabezados en el preview tengan los mismos IDs
-        headings.forEach((heading, index) => {
-          const previewHeading = previewRendered.querySelector(`h${heading.tagName.substring(1)}:nth-child(${index + 1})`);
-          if (previewHeading && !previewHeading.id) {
-            previewHeading.id = heading.id;
-          }
-        });
+        // Generar TOC basado en el contenido renderizado
+        tocContent.innerHTML = generateTOC();
         
         // Mostrar la ventana de previsualización
         previewModal.style.display = 'flex';
@@ -687,6 +680,9 @@
         previewModal.style.display = 'none';
         previewOverlay.style.display = 'none';
       });
+      
+      // Hacer scrollToHeading accesible globalmente
+      window.scrollToHeading = scrollToHeading;
       
       // Ejemplo de HTML para probar
       htmlInput.value = `<!-- Puedes pegar tu HTML aquí para probar -->
