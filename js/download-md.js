@@ -6,20 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Solo añadir el botón si estamos en escritorio (existe el TOC lateral)
   if (tocAside) {
-    // Añadir botón de descarga de Markdown dentro del TOC
+    // Crear contenedor para el botón debajo del TOC
+    const downloadContainer = document.createElement('div');
+    downloadContainer.className = 'toc-download-container';
+    
+    // Añadir botón de descarga de Markdown
     const downloadBtn = document.createElement('button');
     downloadBtn.className = 'download-md-btn';
     downloadBtn.textContent = '📥 Descargar MD';
     downloadBtn.title = 'Descargar contenido como Markdown';
     
-    // Insertar el botón después del encabezado del TOC
-    const tocHeader = tocAside.querySelector('.toc-header');
-    if (tocHeader) {
-      tocHeader.parentNode.insertBefore(downloadBtn, tocHeader.nextSibling);
-    } else {
-      // Si no hay encabezado, insertar al principio
-      tocAside.insertBefore(downloadBtn, tocAside.firstChild);
-    }
+    // Añadir botón al contenedor
+    downloadContainer.appendChild(downloadBtn);
+    
+    // Insertar el contenedor después del TOC
+    tocAside.parentNode.insertBefore(downloadContainer, tocAside.nextSibling);
     
     // Función para mostrar carga
     function showLoading(message) {
@@ -153,52 +154,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Regla para fórmulas matemáticas (MathJax) - inline y display
-      turndownService.addRule('mathJax', {
+      // Regla para fórmulas matemáticas (mantener MathML)
+      turndownService.addRule('mathFormulas', {
         filter: function(node) {
           return (node.classList && (
             node.classList.contains('MathJax') || 
             node.classList.contains('math') ||
-            (node.querySelector && node.querySelector('.MathJax'))
-          )) || (node.tagName === 'SCRIPT' && node.type.includes('math/tex'));
+            node.tagName === 'MJX-CONTAINER'
+          ));
         },
         replacement: function(content, node) {
-          // Intentar extraer la fórmula original
-          let formula = '';
-          
-          // Si es un script de tipo math/tex
-          if (node.tagName === 'SCRIPT' && node.type.includes('math/tex')) {
-            formula = node.textContent;
-          } 
-          // Buscar scripts de MathJax en el nodo
-          else {
-            const scripts = node.querySelectorAll('script');
-            for (let i = 0; i < scripts.length; i++) {
-              if (scripts[i].type.includes('math/tex')) {
-                formula = scripts[i].textContent;
-                break;
-              }
-            }
-          }
-          
-          // Si no encontramos el script, usar el texto alternativo
-          if (!formula) {
-            const alt = node.querySelector('[alt]');
-            if (alt && alt.alt) {
-              formula = alt.alt;
-            } else {
-              // Como último recurso, usar el texto del nodo
-              formula = node.textContent;
-            }
-          }
-          
-          // Determinar si es una fórmula en línea o en bloque
-          // Para fórmulas inline, el tipo es math/tex, para display math/tex; mode=display
-          const isDisplay = node.type === 'math/tex; mode=display' || 
-                           (node.classList && node.classList.contains('display')) ||
-                           (node.querySelector && node.querySelector('.display'));
-          
-          return isDisplay ? '\n\n$$\n' + formula + '\n$$\n\n' : '$' + formula + '$';
+          // Mantener el HTML interno (MathML) para fórmulas
+          return node.innerHTML;
         }
       });
       
@@ -238,9 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         elementsToRemove.forEach(el => el.remove());
         
-        // Preprocesar fórmulas matemáticas
-        preprocessMathFormulas(contentClone);
-        
         // Preprocesar tablas
         preprocessTables(contentClone);
         
@@ -267,48 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hideLoading(loading);
       }
     });
-    
-    // Función para preprocesar fórmulas matemáticas
-    function preprocessMathFormulas(node) {
-      // Buscar elementos de MathJax
-      const mathElements = node.querySelectorAll('.MathJax, .math, mjx-container, script[type*="math/tex"]');
-      
-      mathElements.forEach(el => {
-        // Si es un script de MathJax, reemplazarlo por su contenido LaTeX
-        if (el.tagName === 'SCRIPT' && el.type.includes('math/tex')) {
-          const span = document.createElement('span');
-          span.className = 'math-source';
-          span.textContent = el.textContent;
-          el.parentNode.replaceChild(span, el);
-        } 
-        // Para otros elementos de MathJax, intentar extraer la fórmula
-        else {
-          let texCode = '';
-          
-          // Buscar en datos de MathJax
-          if (el.hasAttribute('data-math')) {
-            texCode = el.getAttribute('data-math');
-          } 
-          // Buscar scripts de MathJax dentro del elemento
-          else {
-            const scripts = el.querySelectorAll('script');
-            scripts.forEach(script => {
-              if (script.type.includes('math/tex')) {
-                texCode = script.textContent;
-              }
-            });
-          }
-          
-          // Si encontramos código LaTeX, reemplazar el contenido
-          if (texCode) {
-            const span = document.createElement('span');
-            span.className = 'math-source';
-            span.textContent = texCode;
-            el.parentNode.replaceChild(span, el);
-          }
-        }
-      });
-    }
     
     // Función para preprocesar tablas
     function preprocessTables(node) {
