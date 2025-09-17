@@ -1,4 +1,4 @@
-// download-md.js - Descarga del contenido como Markdown
+// download-md.js - Descarga del contenido como Markdown usando Turndown.js
 
 document.addEventListener('DOMContentLoaded', function() {
   // Añadir botón de descarga de Markdown
@@ -39,68 +39,128 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
   }
   
-  // Función para convertir HTML a Markdown básico
-  function htmlToMarkdown(html) {
-    // Esta es una conversión básica, puedes mejorarla según tus necesidades
-    return html
-      .replace(/<h1[^>]*>(.*?)<\/h1>/gi, '# $1\n\n')
-      .replace(/<h2[^>]*>(.*?)<\/h2>/gi, '## $1\n\n')
-      .replace(/<h3[^>]*>(.*?)<\/h3>/gi, '### $1\n\n')
-      .replace(/<h4[^>]*>(.*?)<\/h4>/gi, '#### $1\n\n')
-      .replace(/<h5[^>]*>(.*?)<\/h5>/gi, '##### $1\n\n')
-      .replace(/<h6[^>]*>(.*?)<\/h6>/gi, '###### $1\n\n')
-      .replace(/<p[^>]*>(.*?)<\/p>/gi, '$1\n\n')
-      .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<strong[^>]*>(.*?)<\/strong>/gi, '**$1**')
-      .replace(/<b[^>]*>(.*?)<\/b>/gi, '**$1**')
-      .replace(/<em[^>]*>(.*?)<\/em>/gi, '*$1*')
-      .replace(/<i[^>]*>(.*?)<\/i>/gi, '*$1*')
-      .replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)')
-      .replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`')
-      .replace(/<pre[^>]*>(.*?)<\/pre>/gi, '```\n$1\n```')
-      .replace(/<ul[^>]*>(.*?)<\/ul>/gi, '$1')
-      .replace(/<ol[^>]*>(.*?)<\/ol>/gi, '$1')
-      .replace(/<li[^>]*>(.*?)<\/li>/gi, '- $1\n')
-      .replace(/<div[^>]*>(.*?)<\/div>/gi, '$1')
-      .replace(/<span[^>]*>(.*?)<\/span>/gi, '$1')
-      .replace(/<img[^>]*src="([^"]*)"[^>]*alt="([^"]*)"[^>]*>/gi, '![$2]($1)')
-      .replace(/<[^>]+>/g, '') // Eliminar cualquier otra etiqueta HTML
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/\n\s*\n\s*\n/g, '\n\n') // Limpiar múltiples saltos de línea
-      .trim();
+  // Función para cargar Turndown.js
+  function loadTurndown() {
+    return new Promise((resolve, reject) => {
+      if (window.TurndownService) {
+        resolve();
+        return;
+      }
+      
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/turndown@7.1.1/dist/turndown.js';
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
   }
   
-  downloadBtn.addEventListener('click', function() {
+  // Configuración personalizada para bloques de código
+  function configureTurndown() {
+    const turndownService = new TurndownService({
+      headingStyle: 'atx',
+      codeBlockStyle: 'fenced',
+      fence: '```'
+    });
+    
+    // Añadir reglas personalizadas para mejorar la conversión
+    turndownService.addRule('codeBlocks', {
+      filter: function(node) {
+        return node.nodeName === 'PRE' && node.firstChild && node.firstChild.nodeName === 'CODE';
+      },
+      replacement: function(content, node) {
+        // Obtener el lenguaje del código si está especificado
+        let language = '';
+        if (node.firstChild.className) {
+          const match = node.firstChild.className.match(/language-(\w+)/);
+          if (match) language = match[1];
+        }
+        
+        return '\n\n```' + language + '\n' + node.firstChild.textContent + '\n```\n\n';
+      }
+    });
+    
+    // Mejorar el manejo de código en línea
+    turndownService.addRule('inlineCode', {
+      filter: function(node) {
+        return node.nodeName === 'CODE' && 
+               (!node.parentNode || node.parentNode.nodeName !== 'PRE');
+      },
+      replacement: function(content) {
+        return '`' + content + '`';
+      }
+    });
+    
+    // Mejorar el manejo de imágenes
+    turndownService.addRule('images', {
+      filter: 'img',
+      replacement: function(content, node) {
+        const alt = node.alt || '';
+        const src = node.src || '';
+        return '![' + alt + '](' + src + ')';
+      }
+    });
+    
+    return turndownService;
+  }
+  
+  downloadBtn.addEventListener('click', async function() {
     const loading = showLoading('Preparando Markdown...');
     
-    // Obtener el contenido principal
-    const mainContent = document.querySelector('main');
-    if (!mainContent) {
+    try {
+      // Cargar Turndown.js
+      await loadTurndown();
+      
+      // Obtener el contenido principal
+      const mainContent = document.querySelector('main');
+      if (!mainContent) {
+        throw new Error('No se pudo encontrar el contenido principal');
+      }
+      
+      // Clonar el contenido para no modificar el original
+      const contentClone = mainContent.cloneNode(true);
+      
+      // Limpiar elementos no deseados
+      const elementsToRemove = contentClone.querySelectorAll(
+        'header, nav, aside, footer, .download-md-btn, .mobile-toc, #toc, script, link, style, .print-booklet-btn'
+      );
+      elementsToRemove.forEach(el => el.remove());
+      
+      // Configurar Turndown
+      const turndownService = configureTurndown();
+      
+      // Convertir a Markdown
+      const markdown = turndownService.turndown(contentClone.innerHTML);
+      
+      // Limpiar el Markdown resultante
+      const cleanedMarkdown = cleanMarkdown(markdown);
+      
+      // Obtener el título del documento para el nombre del archivo
+      const docTitle = document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'documento';
+      const filename = `${docTitle}.md`;
+      
+      // Descargar
+      downloadTextAsFile(cleanedMarkdown, filename);
+      
+    } catch (error) {
+      console.error('Error al generar Markdown:', error);
+      alert('Error al generar el Markdown: ' + error.message);
+    } finally {
       hideLoading(loading);
-      alert('No se pudo encontrar el contenido principal');
-      return;
     }
-    
-    // Clonar el contenido para no modificar el original
-    const contentClone = mainContent.cloneNode(true);
-    
-    // Limpiar elementos no deseados
-    const elementsToRemove = contentClone.querySelectorAll('header, nav, aside, footer, .download-md-btn, .mobile-toc, #toc, script, link, style, .print-booklet-btn');
-    elementsToRemove.forEach(el => el.remove());
-    
-    // Convertir a Markdown
-    const markdown = htmlToMarkdown(contentClone.innerHTML);
-    
-    // Obtener el título del documento para el nombre del archivo
-    const docTitle = document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'documento';
-    const filename = `${docTitle}.md`;
-    
-    // Descargar
-    downloadTextAsFile(markdown, filename);
-    
-    hideLoading(loading);
   });
+  
+  // Función para limpiar el Markdown resultante
+  function cleanMarkdown(markdown) {
+    return markdown
+      // Limpiar múltiples saltos de línea
+      .replace(/\n\s*\n\s*\n/g, '\n\n')
+      // Asegurar que los bloques de código tengan formato correcto
+      .replace(/```\s*\n\s*```/g, '')
+      // Eliminar espacios en blanco al inicio/final de líneas
+      .replace(/^[ \t]+|[ \t]+$/gm, '')
+      // Añadir línea en blanco antes de los encabezados si no la tienen
+      .replace(/([^\n])\n(#+ )/g, '$1\n\n$2')
+      .trim();
+  }
 });
