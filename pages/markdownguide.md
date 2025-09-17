@@ -206,7 +206,9 @@ Una vez que tengas tu contenido en formato Markdown, publicarlo en **bearblog.de
 2. Pega tu archivo Markdown en el editor.
 3. Personaliza tu sitio y publica.
 
-Bearblog es una plataforma minimalista y enfocada en el contenido, ideal para blogs y documentación.
+Bearblog es una plataforma minimalista y enfocada en el contenido, ideal para blogs y documentación.  
+
+Si prefieres tener un mayor control o BearBlog se te queda pequeño tienes una [Hoja de Ruta](/Bearblog2GitHub/) para usar Github como plataforma   
 
 ### Conclusión
 
