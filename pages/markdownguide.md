@@ -169,101 +169,37 @@ $$
 - ✅ **Bloc de notas (Notepad)**  
 - 🆗 **Notepad++** (más avanzado, pero fácil de usar)
 
-## Todo lo anterior corresponde a:
-
-```
-## ✅ Resumen rápido de la **Sintaxis Markdown**
-
-#### Énfasis  
-Se puede aplicar formato al texto como:  
-- **Negrita**  
-- *Cursiva*  
-- ~~Tachado~~  
-- ==Resaltado==
-
-#### Encabezados  
-Hay diferentes niveles de encabezados, del más grande al más pequeño, definidos con el símbolo `#`.  Esta característica permite generar automáticamente una tabla de contenidos (TOC)  
- 
-Ejemplo:  
-- `# Encabezado 1`  
-- `## Encabezado 2`  
-- `### Encabezado 3`
-
-#### Listas  
-Se pueden crear:  
-- Listas genéricas (con viñetas).  
-- Listas numeradas.  
-- Listas anidadas (listas dentro de listas).
-
-#### Enlaces  
-Se pueden insertar enlaces externos o internos al mismo documento.  
-Ejemplo:  
-- Enlace a una página externa: `[Google](https://www.google.com)`  
-- Enlace a una sección interna: `[Ir a Título](#encabezado-1)`.
-
-#### Reemplazos tipográficos  
-Markdown soporta símbolos tipográficos automáticos como:  
-- ®, ©, ™, ± ((r),(c),(tm),(+-) en BearBlog) 
-- Subíndices y superíndices.
-
-#### Saltos de línea  
-- Un solo salto de línea no se muestra a menos que se use una barra invertida (`\`) o dos espacios al final de la línea.  
-- Dos saltos de línea crean un nuevo párrafo.
-
-#### Notas al pie  
-Markdown permite crear notas al pie con el siguiente formato:  
-**Ejemplo:**  
-Este es un texto con una nota al pie.[^2]  
-
-[^2]: Y el ejemplo es la segunda nota al pie.
-
-#### Citas  
-Para crear citas, usa el símbolo `>` al inicio de la línea:  
-> Esta es una cita simple.  
-> Puede ocupar varias líneas.
-
-#### Imágenes  
-Para insertar imágenes:  
-`![Texto alternativo](https://via.placeholder.com/150)`  
-- Ejemplo de imagen: ![Imagen](URL de la imagen)
-
-
-### Tablas
-
-| Nombre | Edad |
-|--------|------|
-| Ana    | 25   |
-| Luis   | 30   |
-
 ---
 
-### Código
+## 🌟 Características Avanzadas de Nuestro Entorno Markdown
 
-Texto con código en línea: `console.log("Hola");`
+Además de los básicos para guardar y ver archivos Markdown, en nuestro sitio hemos implementado características avanzadas que hacen más fácil trabajar con este formato.
 
-Bloque de código (sin el \ ):
+### 📑 Tabla de Contenidos (TOC) Interactiva
 
-\```python
-def saludar():
-    print("Hola")
-\```
+En muchas de nuestras páginas (incluyendo esta guía) verás una **Tabla de Contenidos interactiva** en el lateral (en escritorio) o desplegable (en móviles). Esta TOC se genera automáticamente a partir de los encabezados del documento, permitiéndote navegar rápidamente por las secciones.
 
----
+### 📥 Descarga del Contenido como Markdown
 
-### LaTeX
+También encontrarás un botón de descarga (📥) que te permite **obtener el contenido completo de la página en formato Markdown**. Esto es útil si quieres guardar el contenido para editarlo localmente o publicarlo en otro lugar. O simplemente saber como fue generada esta misma guía
 
-Ecuación en línea: $E = mc^2$
+### 🔄 Conversor HTML a Markdown
 
-Bloque matemático:
+Para convertir contenido de HTML a Markdown, hemos creado una herramienta especial: [conversor.html](/conversor.html). Puedes usarla para:
 
-$$
-\int_0^\infty e^{-x} dx = 1
-$$
+1. Copiar el HTML de cualquier página (usando las herramientas de desarrollador de tu navegador)
+2. Pegarlo en el conversor
+3. Obtener el código Markdown resultante
 
-### 🛠️ Editores recomendados
+¡Te invitamos a probarla!
 
-- ✅ **Bloc de notas (Notepad)**  
-- 🆗 **Notepad++** (más avanzado, pero fácil de usar)
-```
+### 🚀 Publicación en bearblog.dev
 
----
+Una vez que tengas tu contenido en Markdown, publicarlo en [bearblog.dev](https://bearblog.dev) es muy sencillo:
+
+1. Crea una cuenta en bearblog.dev (gratuita)
+2. Pega tu Markdown en el editor
+3. Personaliza tu sitio y publica
+
+Bearblog es una plataforma minimalista y centrada en el contenido, ideal para blogs y documentación.
+
