@@ -1,21 +1,18 @@
 // print-booklet.js - Generación de PDF en formato folleto
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Crear y añadir botón de generación de PDF
+  // Añadir botón de generación de PDF
   const printBtn = document.createElement('button');
   printBtn.className = 'print-booklet-btn';
   printBtn.textContent = '📘 Generar Folleto PDF';
-  printBtn.title = 'Generar PDF en formato folleto para impresión';
+  printBtn.title = 'Generar PDF en formato folleto para impresión a doble cara';
   document.body.appendChild(printBtn);
   
   // Función para mostrar carga
-  function showLoading() {
+  function showLoading(message) {
     const loadingDiv = document.createElement('div');
-    loadingDiv.className = 'pdf-loading';
-    loadingDiv.innerHTML = `
-      <div class="pdf-loading-spinner"></div>
-      <div class="pdf-loading-text">Generando PDF folleto...</div>
-    `;
+    loadingDiv.className = 'print-booklet-loading';
+    loadingDiv.innerHTML = `<div>${message}</div>`;
     document.body.appendChild(loadingDiv);
     return loadingDiv;
   }
@@ -27,92 +24,113 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Función para reorganizar páginas en formato folleto
-  function arrangePagesForBooklet(pages) {
-    const totalPages = pages.length;
-    const bookletPages = [];
+  // Función para obtener el contenido HTML formateado
+  function getFormattedContent() {
+    const mainContent = document.querySelector('main').cloneNode(true);
     
-    // Asegurar que el número de páginas es múltiplo de 4
-    const paddedPages = [...pages];
-    while (paddedPages.length % 4 !== 0) {
-      paddedPages.push(null); // Añadir páginas vacías si es necesario
-    }
+    // Limpiar elementos no deseados
+    const elementsToRemove = mainContent.querySelectorAll('header, nav, aside, footer, .print-booklet-btn, .mobile-toc, #toc');
+    elementsToRemove.forEach(el => el.remove());
     
-    // Reorganizar páginas para folleto
-    for (let i = 0; i < paddedPages.length / 2; i += 2) {
-      const firstIndex = i;
-      const lastIndex = paddedPages.length - 1 - i;
-      
-      // Añadir dos páginas por hoja (doble cara)
-      bookletPages.push(paddedPages[lastIndex]);
-      bookletPages.push(paddedPages[firstIndex]);
-      bookletPages.push(paddedPages[firstIndex + 1]);
-      bookletPages.push(paddedPages[lastIndex - 1]);
-    }
+    // Añadir estilos de impresión inline
+    const style = document.createElement('style');
+    style.textContent = `
+      body {
+        font-family: 'Special Elite', monospace;
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+      pre, code {
+        background-color: #f5f5f5;
+        color: #333;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      table {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        width: 100%;
+      }
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+      }
+      @page {
+        size: A4 landscape;
+        margin: 1cm;
+      }
+    `;
     
-    return bookletPages.filter(page => page !== null);
+    // Crear documento HTML para impresión
+    const printDoc = document.createElement('div');
+    printDoc.appendChild(style);
+    printDoc.appendChild(mainContent);
+    
+    return printDoc.innerHTML;
   }
   
-  // Función principal para generar el PDF
-  printBtn.addEventListener('click', async function() {
-    const loading = showLoading();
+  // Función para generar el PDF
+  printBtn.addEventListener('click', function() {
+    const loading = showLoading('Preparando contenido para folleto PDF...');
     
-    try {
-      // Cargar las bibliotecas necesarias dinámicamente
-      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js');
-      
-      // Obtener el contenido principal
-      const element = document.querySelector('main');
-      if (!element) {
-        throw new Error('No se encontró el contenido principal');
+    // Usamos setTimeout para permitir que la UI se actualice con el mensaje de carga
+    setTimeout(async function() {
+      try {
+        // Cargar las librerías necesarias dinámicamente
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js');
+        
+        // Obtener contenido formateado
+        const content = getFormattedContent();
+        
+        // Crear contenedor para la conversión
+        const element = document.createElement('div');
+        element.innerHTML = content;
+        element.style.width = '100%';
+        element.style.padding = '20px';
+        document.body.appendChild(element);
+        
+        // Configuración para html2pdf
+        const opt = {
+          margin: 10,
+          filename: 'folleto.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+        };
+        
+        // Generar PDF
+        loading.querySelector('div').textContent = 'Generando PDF...';
+        
+        html2pdf().set(opt).from(element).save().then(() => {
+          // Limpiar
+          document.body.removeChild(element);
+          hideLoading(loading);
+          alert('PDF generado correctamente. Para imprimir en formato folleto:\n\n1. Abra el PDF con Adobe Acrobat Reader\n2. En Imprimir, seleccione "Folleto" en el menú desplegable de configuración de páginas\n3. Asegúrese de que está configurado para imprimir a doble cara');
+        });
+        
+      } catch (error) {
+        console.error('Error generando PDF:', error);
+        hideLoading(loading);
+        alert('Error al generar el PDF: ' + error.message);
       }
-      
-      // Clonar el elemento para no afectar al DOM original
-      const contentClone = element.cloneNode(true);
-      
-      // Configuración de html2pdf
-      const opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'folleto.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-          scale: 2,
-          useCORS: true,
-          logging: false
-        },
-        jsPDF: { 
-          unit: 'mm', 
-          format: 'a4', 
-          orientation: 'portrait' 
-        },
-        pagebreak: { mode: ['css', 'legacy'] }
-      };
-      
-      // Generar el PDF
-      const worker = html2pdf().set(opt).from(contentClone).toPdf();
-      
-      // Obtener el PDF generado
-      const pdf = await worker.outputPdf('blob');
-      
-      // Descargar el PDF
-      const url = URL.createObjectURL(pdf);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'folleto.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-      
-      // Mostrar instrucciones
-      alert('PDF generado con éxito. Para imprimir en formato folleto:\n\n1. Abra el PDF con Adobe Acrobat Reader\n2. Vaya a Archivo > Imprimir\n3. Seleccione la opción "Folleto"\n4. Configure su impresora para impresión a doble cara\n5. Asegúrese de que las páginas se organicen automáticamente');
-      
-    } catch (error) {
-      console.error('Error al generar el PDF:', error);
-      alert('Error al generar el PDF: ' + error.message);
-    } finally {
-      hideLoading(loading);
-    }
+    }, 100);
   });
   
   // Función para cargar scripts dinámicamente
