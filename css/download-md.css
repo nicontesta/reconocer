@@ -1,29 +1,29 @@
 /* download-md.css - Estilos para el botón de descarga de Markdown */
-.download-md-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 20px;
+
+/* Botón en el TOC lateral (escritorio) */
+aside#toc .download-md-btn {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin: 10px;
   background-color: var(--link-color);
   color: var(--background-color);
   border: none;
-  border-radius: 25px;
+  border-radius: 4px;
   cursor: pointer;
-  z-index: 10000;
   font-family: var(--font-main);
-  font-size: 14px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  text-align: center;
   transition: all 0.3s ease;
+  display: block; /* Solo visible en escritorio, el TOC se oculta en móviles */
 }
 
-.download-md-btn:hover {
+aside#toc .download-md-btn:hover {
   background-color: var(--heading-color);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.download-md-btn:active {
-  transform: translateY(0);
+/* Botón flotante original (ahora oculto) */
+.download-md-btn {
+  display: none;
 }
 
 /* Indicador de carga */
