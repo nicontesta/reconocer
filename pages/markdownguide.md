@@ -82,7 +82,7 @@ Siguiendo cualquiera de estos métodos, podrás abrir y visualizar el archivo `.
 
 ---
 
-### ✅ Resumen rápido de la **Sintaxis Markdown**
+### 5. ✅ Resumen rápido de la **Sintaxis Markdown**
 
 #### Énfasis  
 Se puede aplicar formato al texto como:  
@@ -154,7 +154,7 @@ def saludar():
 
 ---
 
-### LaTeX
+#### LaTeX
 
 Ecuación en línea: $E = mc^2$
 
@@ -164,7 +164,7 @@ $$
 \int_0^\infty e^{-x} dx = 1
 $$
 
-### Editores recomendados
+#### Editores recomendados
 
 - ✅ **Bloc de notas (Notepad)**  
 - 🆗 **Notepad++** (más avanzado, pero fácil de usar)
