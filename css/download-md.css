@@ -1,10 +1,20 @@
 /* download-md.css - Estilos para el botón de descarga de Markdown */
 
-/* Botón en el TOC lateral (escritorio) */
-aside#toc .download-md-btn {
+/* Contenedor del botón debajo del TOC */
+.toc-download-container {
+  position: fixed;
+  top: calc(100vh - 120px);
+  left: 20px;
+  width: var(--toc-width);
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Botón debajo del TOC */
+.toc-download-container .download-md-btn {
   width: calc(100% - 20px);
   padding: 8px 10px;
-  margin: 10px;
   background-color: var(--link-color);
   color: var(--background-color);
   border: none;
@@ -14,14 +24,16 @@ aside#toc .download-md-btn {
   font-size: 12px;
   text-align: center;
   transition: all 0.3s ease;
-  display: block; /* Solo visible en escritorio, el TOC se oculta en móviles */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-aside#toc .download-md-btn:hover {
+.toc-download-container .download-md-btn:hover {
   background-color: var(--heading-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón flotante original (ahora oculto) */
+/* Botón flotante original (oculto) */
 .download-md-btn {
   display: none;
 }
@@ -59,5 +71,12 @@ aside#toc .download-md-btn:hover {
   
   .download-md-loading div {
     color: var(--text-color);
+  }
+}
+
+/* Ocultar en móviles */
+@media (max-width: 1024px) {
+  .toc-download-container {
+    display: none;
   }
 }
