@@ -2,7 +2,7 @@
 
 /* Root Variables */
 :root {
-  --width: 1000px;
+  --width: 1280px;
   --font-main: 'Special Elite', monospace;
   --font-secondary: 'Special Elite', monospace;
   --font-scale: 20px;
@@ -707,6 +707,7 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+
 
 
 
