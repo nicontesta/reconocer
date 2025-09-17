@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Conversor HTML a Markdown</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Librerías para previsualización -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
+  
+  <!-- Estilo GitHub Markdown -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+  
   <style>
     :root {
       --font-main: 'Courier New', monospace;
@@ -12,6 +20,10 @@
       --border-color: #ccc;
       --button-color: #27ae60;
       --button-hover: #2ecc71;
+      --preview-bg: #ffffff;
+      --toc-bg: rgba(251, 251, 246, 0.95);
+      --toc-border: 1px solid #ccc;
+      --toc-width: 240px;
     }
     
     @media (prefers-color-scheme: dark) {
@@ -19,6 +31,61 @@
         --background-color: #1f1d25;
         --text-color: #ededed;
         --border-color: #444;
+        --preview-bg: #2d2d2d;
+        --toc-bg: rgba(31, 29, 37, 0.95);
+        --toc-border: 1px solid #444;
+      }
+      
+      .markdown-body {
+        color-scheme: dark;
+        --color-prettylights-syntax-comment: #8b949e;
+        --color-prettylights-syntax-constant: #79c0ff;
+        --color-prettylights-syntax-entity: #d2a8ff;
+        --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+        --color-prettylights-syntax-entity-tag: #7ee787;
+        --color-prettylights-syntax-keyword: #ff7b72;
+        --color-prettylights-syntax-string: #a5d6ff;
+        --color-prettylights-syntax-variable: #ffa657;
+        --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+        --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+        --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+        --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+        --color-prettylights-syntax-carriage-return-bg: #b62324;
+        --color-prettylights-syntax-string-regexp: #7ee787;
+        --color-prettylights-syntax-markup-list: #f2cc60;
+        --color-prettylights-syntax-markup-heading: #1f6feb;
+        --color-prettylights-syntax-markup-italic: #c9d1d9;
+        --color-prettylights-syntax-markup-bold: #c9d1d9;
+        --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+        --color-prettylights-syntax-markup-deleted-bg: #67060c;
+        --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+        --color-prettylights-syntax-markup-inserted-bg: #033a16;
+        --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+        --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+        --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+        --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+        --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+        --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+        --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+        --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+        --color-fg-default: #e6edf3;
+        --color-fg-muted: #9198a1;
+        --color-fg-subtle: #6e7681;
+        --color-canvas-default: #0d1117;
+        --color-canvas-subtle: #161b22;
+        --color-border-default: #30363d;
+        --color-border-muted: #21262d;
+        --color-neutral-muted: rgba(110,118,129,0.4);
+        --color-accent-fg: #2f81f7;
+        --color-accent-emphasis: #1f6feb;
+        --color-success-fg: #3fb950;
+        --color-success-emphasis: #238636;
+        --color-attention-fg: #d29922;
+        --color-attention-emphasis: #9e6a03;
+        --color-danger-fg: #f85149;
+        --color-danger-emphasis: #da3633;
+        --color-done-fg: #a371f7;
+        --color-done-emphasis: #8957e5;
       }
     }
     
@@ -78,11 +145,17 @@
       cursor: pointer;
       font-size: 16px;
       margin-top: 10px;
+      margin-right: 10px;
       transition: background-color 0.3s;
     }
     
     .button:hover {
       background-color: var(--button-hover);
+    }
+    
+    .button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
     }
     
     .instructions {
@@ -110,6 +183,126 @@
       max-height: 500px;
       overflow-y: auto;
     }
+    
+    /* Estilos para la ventana de previsualización */
+    .preview-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background-color: var(--preview-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--background-color);
+    }
+    
+    .preview-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    .preview-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+    
+    .preview-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    
+    .preview-body {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: var(--preview-bg);
+    }
+    
+    .preview-toc {
+      width: var(--toc-width);
+      padding: 15px;
+      border-right: var(--toc-border);
+      background-color: var(--toc-bg);
+      overflow-y: auto;
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .preview-toc {
+        display: block;
+      }
+    }
+    
+    .preview-toc-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .preview-toc ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+    
+    .preview-toc li {
+      margin: 5px 0;
+    }
+    
+    .preview-toc a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    .preview-toc a:hover {
+      text-decoration: underline;
+    }
+    
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: var(--preview-bg);
+    }
+    
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    
+    .button-group {
+      display: flex;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -124,7 +317,7 @@
       <li>Selecciona "Copiar" → "Copiar elemento" o "Copy" → "Copy element"</li>
       <li>Pega el HTML copiado en el área de la izquierda</li>
       <li>Haz clic en "Convertir a Markdown"</li>
-      <li>Descarga el resultado con el botón "Descargar Markdown"</li>
+      <li>Usa los botones "Previsualizar" o "Descargar Markdown" según necesites</li>
     </ol>
     <p><strong>Nota:</strong> Esta herramienta funciona completamente en tu navegador. Tu HTML no se envía a ningún servidor.</p>
   </div>
@@ -139,17 +332,47 @@
     <div class="panel">
       <h2>Resultado Markdown</h2>
       <div id="markdown-output" class="output">El resultado aparecerá aquí...</div>
-      <button id="download-btn" class="button" disabled>Descargar Markdown</button>
+      <div class="button-group">
+        <button id="preview-btn" class="button" disabled>Previsualizar</button>
+        <button id="download-btn" class="button" disabled>Descargar Markdown</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de previsualización -->
+  <div class="overlay" id="preview-overlay"></div>
+  <div class="preview-modal" id="preview-modal">
+    <div class="preview-header">
+      <h3 class="preview-title">Previsualización de Markdown</h3>
+      <button class="preview-close" id="preview-close">&times;</button>
+    </div>
+    <div class="preview-content">
+      <div class="preview-toc" id="preview-toc">
+        <div class="preview-toc-header">ÍNDICE</div>
+        <div id="toc-content"></div>
+      </div>
+      <div class="preview-body">
+        <div class="markdown-body" id="preview-rendered"></div>
+      </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/turndown@7.1.1/dist/turndown.js"></script>
   <script>
+    // Almacenamiento del último Markdown generado
+    let lastGeneratedMarkdown = '';
+    
     document.addEventListener('DOMContentLoaded', function() {
       const htmlInput = document.getElementById('html-input');
       const convertBtn = document.getElementById('convert-btn');
       const markdownOutput = document.getElementById('markdown-output');
       const downloadBtn = document.getElementById('download-btn');
+      const previewBtn = document.getElementById('preview-btn');
+      const previewModal = document.getElementById('preview-modal');
+      const previewOverlay = document.getElementById('preview-overlay');
+      const previewClose = document.getElementById('preview-close');
+      const previewRendered = document.getElementById('preview-rendered');
+      const tocContent = document.getElementById('toc-content');
       
       // Configuración de Turndown
       function configureTurndown() {
@@ -273,6 +496,43 @@
           .trim();
       }
       
+      // Función para generar TOC a partir del HTML renderizado
+      function generateTOC(htmlContent) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+        const headings = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        let tocHTML = '<ul>';
+        
+        headings.forEach((heading, index) => {
+          // Añadir ID si no tiene
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+          
+          const level = parseInt(heading.tagName.substring(1));
+          const indent = (level - 1) * 15;
+          
+          tocHTML += `
+            <li style="margin-left: ${indent}px;">
+              <a href="#${heading.id}" onclick="scrollToHeading('${heading.id}')">
+                ${heading.textContent}
+              </a>
+            </li>
+          `;
+        });
+        
+        tocHTML += '</ul>';
+        return tocHTML;
+      }
+      
+      // Función para desplazarse a un encabezado en la previsualización
+      window.scrollToHeading = function(id) {
+        const heading = document.getElementById(id);
+        if (heading) {
+          heading.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+      
       // Evento para el botón de conversión
       convertBtn.addEventListener('click', function() {
         const html = htmlInput.value.trim();
@@ -289,21 +549,59 @@
           
           markdownOutput.textContent = cleanedMarkdown;
           downloadBtn.disabled = false;
+          previewBtn.disabled = false;
           
-          // Guardar el markdown para la descarga
-          downloadBtn.markdownContent = cleanedMarkdown;
+          // Guardar el markdown para reutilización
+          lastGeneratedMarkdown = cleanedMarkdown;
         } catch (error) {
           console.error('Error al convertir:', error);
           markdownOutput.textContent = 'Error al convertir el HTML. Por favor, verifica que es HTML válido.';
           downloadBtn.disabled = true;
+          previewBtn.disabled = true;
         }
       });
       
       // Evento para el botón de descarga
       downloadBtn.addEventListener('click', function() {
-        if (this.markdownContent) {
-          downloadTextAsFile(this.markdownContent, 'converted.md');
+        if (lastGeneratedMarkdown) {
+          downloadTextAsFile(lastGeneratedMarkdown, 'converted.md');
         }
+      });
+      
+      // Evento para el botón de previsualización
+      previewBtn.addEventListener('click', function() {
+        if (!lastGeneratedMarkdown) return;
+        
+        // Convertir Markdown a HTML usando marked
+        const rawHtml = marked.parse(lastGeneratedMarkdown);
+        
+        // Sanitizar el HTML para prevenir XSS
+        const cleanHtml = DOMPurify.sanitize(rawHtml);
+        
+        // Mostrar el HTML en la previsualización
+        previewRendered.innerHTML = cleanHtml;
+        
+        // Generar TOC
+        tocContent.innerHTML = generateTOC(cleanHtml);
+        
+        // Mostrar la ventana de previsualización
+        previewModal.style.display = 'flex';
+        previewOverlay.style.display = 'block';
+        
+        // Desplazarse al principio del contenido
+        previewRendered.scrollTop = 0;
+      });
+      
+      // Evento para cerrar la previsualización
+      previewClose.addEventListener('click', function() {
+        previewModal.style.display = 'none';
+        previewOverlay.style.display = 'none';
+      });
+      
+      // Cerrar previsualización al hacer clic fuera
+      previewOverlay.addEventListener('click', function() {
+        previewModal.style.display = 'none';
+        previewOverlay.style.display = 'none';
       });
       
       // Ejemplo de HTML para probar
@@ -317,7 +615,13 @@
 <pre><code class="language-javascript">// Código de ejemplo
 function hello() {
   console.log("Hola mundo");
-}</code></pre>`;
+}</code></pre>
+
+<h2>Subtítulo</h2>
+<p>Más contenido de ejemplo con un <a href="https://ejemplo.com">enlace</a>.</p>
+
+<h3>Sub-subtítulo</h3>
+<p>Texto adicional para demostrar la tabla de contenidos.</p>`;
     });
   </script>
 </body>
