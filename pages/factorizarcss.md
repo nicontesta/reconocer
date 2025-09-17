@@ -392,4 +392,5 @@ Refactorizar y optimizar el código CSS siguiendo las mejores prácticas de la g
 ---
 
 **Nota para el usuario**:  
-Adjunta tus archivos CSS/HTML/JS y ejecuta este prompt. El resultado incluirá código optimizado y un reporte detallado.
+Adjunta tus archivos CSS/HTML/JS y ejecuta este prompt. El resultado incluirá código optimizado y un reporte detallado.  
+<a title="El prompt compartido en ChatGPT" href="https://chatgpt.com/share/68c9c3ae-d9cc-800e-9f04-fe6dce4911e1" target="_blank" rel="noopener noreferrer">Refactorizar CSS</a>
