@@ -171,9 +171,9 @@ $$
 
 ---
 
-## 🌟 Características Avanzadas del Entorno Markdown
+## 🌟 Características Implementadas para tu Inspiración
 
-Además de las funciones básicas para guardar y ver archivos Markdown, el entorno incluye características avanzadas que facilitan el trabajo con este formato.
+Este sitio web, generado íntegramente mediante procesos de lenguaje natural, funciona como un complemento expandido a la obra "Coloquio Imposible" y su correspondiente artículo académico. Más allá de servir como repositorio de contenidos, el proyecto demuestra estratégicamente cómo los sistemas de IA pueden utilizarse para crear materiales divulgativos complejos y estructuralmente sólidos. La implementación en Markdown no es un fin en sí mismo, sino una muestra práctica de cómo tecnologías accesibles pueden facilitar la creación, navegación y publicación de contenido especializado.
 
 ### 📑 Tabla de Contenidos (TOC) Interactiva
 
@@ -187,9 +187,10 @@ Dispones de un botón de descarga (📥) que permite **obtener el contenido comp
 
 Para convertir contenido de HTML a Markdown, existe disponible una herramienta especial: [conversor.html](/conversor.html). Puedes utilizarla para:
 
-1. Copiar el HTML de cualquier página (usando las herramientas de desarrollador del navegador)
+1. Copiar el HTML de cualquier página 
 2. Pegarlo en el conversor
 3. Obtener el código Markdown resultante
+4. Previsualizar el fichero sin instalar nada
 
 ¡Anímate a probarla!
 
@@ -202,3 +203,7 @@ Una vez que tengas tu contenido en Markdown, publicarlo en [bearblog.dev](https:
 3. Personaliza tu sitio y publica
 
 Bearblog es una plataforma minimalista y centrada en el contenido, ideal para blogs y documentación.
+
+---
+
+Estas implementaciones están diseñadas para inspirarte en tus propios proyectos, mostrando cómo con herramientas accesibles y un enfoque estratégico puedes crear recursos divulgativos de calidad sin necesidad de grandes recursos técnicos o económicos.
