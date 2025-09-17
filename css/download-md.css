@@ -1,24 +1,23 @@
 /* download-md.css - Estilos para el botón de descarga de Markdown */
-
 .download-md-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 12px 20px;
-  background-color: #27ae60;
-  color: white;
+  background-color: var(--link-color);
+  color: var(--background-color);
   border: none;
   border-radius: 25px;
   cursor: pointer;
   z-index: 10000;
-  font-family: 'Special Elite', monospace;
+  font-family: var(--font-main);
   font-size: 14px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .download-md-btn:hover {
-  background-color: #2ecc71;
+  background-color: var(--heading-color);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
@@ -39,15 +38,26 @@
   justify-content: center;
   align-items: center;
   z-index: 10001;
-  font-family: 'Special Elite', monospace;
+  font-family: var(--font-main);
   font-size: 18px;
 }
 
 .download-md-loading div {
-  background-color: white;
+  background-color: var(--background-color);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 80%;
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .download-md-loading {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .download-md-loading div {
+    color: var(--text-color);
+  }
 }
