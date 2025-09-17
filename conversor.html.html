@@ -273,6 +273,7 @@
       color: var(--text-color);
       text-decoration: none;
       font-size: 14px;
+      cursor: pointer;
     }
     
     .preview-toc a:hover {
@@ -303,6 +304,22 @@
       display: flex;
       margin-top: 10px;
     }
+    
+    .url-input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    
+    .url-input-label {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -316,6 +333,7 @@
       <li>Una vez seleccionado el elemento, haz clic derecho sobre él en el inspector</li>
       <li>Selecciona "Copiar" → "Copiar elemento" o "Copy" → "Copy element"</li>
       <li>Pega el HTML copiado en el área de la izquierda</li>
+      <li>Si el HTML tiene enlaces relativos, introduce la URL base para corregirlos (opcional)</li>
       <li>Haz clic en "Convertir a Markdown"</li>
       <li>Usa los botones "Previsualizar" o "Descargar Markdown" según necesites</li>
     </ol>
@@ -327,6 +345,9 @@
       <h2>HTML de entrada</h2>
       <textarea id="html-input" placeholder="Pega tu HTML aquí..."></textarea>
       <button id="convert-btn" class="button">Convertir a Markdown</button>
+      
+      <label class="url-input-label" for="base-url">URL base (para enlaces relativos):</label>
+      <input type="text" id="base-url" class="url-input" placeholder="https://ejemplo.com/ruta/">
     </div>
     
     <div class="panel">
@@ -373,6 +394,7 @@
       const previewClose = document.getElementById('preview-close');
       const previewRendered = document.getElementById('preview-rendered');
       const tocContent = document.getElementById('toc-content');
+      const baseUrlInput = document.getElementById('base-url');
       
       // Configuración de Turndown
       function configureTurndown() {
@@ -496,6 +518,49 @@
           .trim();
       }
       
+      // Función para corregir enlaces relativos
+      function fixRelativeLinks(html, baseUrl) {
+        if (!baseUrl) return html;
+        
+        // Crear un elemento temporal para manipular el HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        
+        // Corregir enlaces
+        const links = tempDiv.querySelectorAll('a[href]');
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+          // Si es un enlace relativo (que no comienza con http o //)
+          if (href && !href.startsWith('http') && !href.startsWith('//') && !href.startsWith('#')) {
+            try {
+              // Crear una URL absoluta
+              const absoluteUrl = new URL(href, baseUrl).href;
+              link.setAttribute('href', absoluteUrl);
+            } catch (e) {
+              console.error('Error al corregir enlace:', e);
+            }
+          }
+        });
+        
+        // Corregir imágenes
+        const images = tempDiv.querySelectorAll('img[src]');
+        images.forEach(img => {
+          const src = img.getAttribute('src');
+          // Si es una ruta relativa
+          if (src && !src.startsWith('http') && !src.startsWith('//') && !src.startsWith('data:')) {
+            try {
+              // Crear una URL absoluta
+              const absoluteUrl = new URL(src, baseUrl).href;
+              img.setAttribute('src', absoluteUrl);
+            } catch (e) {
+              console.error('Error al corregir imagen:', e);
+            }
+          }
+        });
+        
+        return tempDiv.innerHTML;
+      }
+      
       // Función para generar TOC a partir del HTML renderizado
       function generateTOC(htmlContent) {
         const tempDiv = document.createElement('div');
@@ -514,7 +579,7 @@
           
           tocHTML += `
             <li style="margin-left: ${indent}px;">
-              <a href="#${heading.id}" onclick="scrollToHeading('${heading.id}')">
+              <a onclick="scrollToHeading('${heading.id}')">
                 ${heading.textContent}
               </a>
             </li>
@@ -522,20 +587,27 @@
         });
         
         tocHTML += '</ul>';
-        return tocHTML;
+        return {tocHTML, headings};
       }
       
       // Función para desplazarse a un encabezado en la previsualización
       window.scrollToHeading = function(id) {
-        const heading = document.getElementById(id);
+        const heading = previewRendered.querySelector('#' + id);
         if (heading) {
           heading.scrollIntoView({ behavior: 'smooth' });
+          
+          // Resaltar temporalmente el encabezado
+          heading.style.backgroundColor = 'rgba(255, 255, 0, 0.2)';
+          setTimeout(() => {
+            heading.style.backgroundColor = '';
+          }, 1000);
         }
       };
       
       // Evento para el botón de conversión
       convertBtn.addEventListener('click', function() {
         const html = htmlInput.value.trim();
+        const baseUrl = baseUrlInput.value.trim();
         
         if (!html) {
           alert('Por favor, introduce algún HTML para convertir.');
@@ -543,8 +615,11 @@
         }
         
         try {
+          // Corregir enlaces relativos si se proporciona una URL base
+          const correctedHtml = baseUrl ? fixRelativeLinks(html, baseUrl) : html;
+          
           const turndownService = configureTurndown();
-          const markdown = turndownService.turndown(html);
+          const markdown = turndownService.turndown(correctedHtml);
           const cleanedMarkdown = cleanMarkdown(markdown);
           
           markdownOutput.textContent = cleanedMarkdown;
@@ -582,7 +657,16 @@
         previewRendered.innerHTML = cleanHtml;
         
         // Generar TOC
-        tocContent.innerHTML = generateTOC(cleanHtml);
+        const {tocHTML, headings} = generateTOC(cleanHtml);
+        tocContent.innerHTML = tocHTML;
+        
+        // Asegurarse de que los encabezados en el preview tengan los mismos IDs
+        headings.forEach((heading, index) => {
+          const previewHeading = previewRendered.querySelector(`h${heading.tagName.substring(1)}:nth-child(${index + 1})`);
+          if (previewHeading && !previewHeading.id) {
+            previewHeading.id = heading.id;
+          }
+        });
         
         // Mostrar la ventana de previsualización
         previewModal.style.display = 'flex';
@@ -618,7 +702,7 @@ function hello() {
 }</code></pre>
 
 <h2>Subtítulo</h2>
-<p>Más contenido de ejemplo con un <a href="https://ejemplo.com">enlace</a>.</p>
+<p>Más contenido de ejemplo con un <a href="/ruta/relativa">enlace relativo</a>.</p>
 
 <h3>Sub-subtítulo</h3>
 <p>Texto adicional para demostrar la tabla de contenidos.</p>`;
