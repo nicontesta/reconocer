@@ -713,6 +713,47 @@ aside#toc .toc-header {
     overflow-y: auto;
   }
 }
+/* Añadir al final del archivo styles.css */
+
+/* Estilos para el botón de descarga en el TOC */
+.toc-nav button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #161616;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.toc-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc-nav button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ededed;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-nav button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
 
 
 
