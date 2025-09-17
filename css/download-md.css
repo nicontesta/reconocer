@@ -21,10 +21,7 @@ aside#toc .download-md-btn:hover {
   background-color: var(--heading-color);
 }
 
-/* Botón flotante original (ahora oculto) */
-.download-md-btn {
-  display: none;
-}
+
 
 /* Indicador de carga */
 .download-md-loading {
