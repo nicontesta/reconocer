@@ -24,25 +24,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
+  // Función para mostrar instrucciones
+  function showInstructions() {
+    const modal = document.createElement('div');
+    modal.className = 'print-instructions-modal';
+    modal.innerHTML = `
+      <div class="print-instructions-content">
+        <h3>Instrucciones para imprimir en formato folleto</h3>
+        <p>Una vez que se descargue el PDF, sigue estos pasos para imprimirlo correctamente:</p>
+        <ol>
+          <li>Abre el PDF con Adobe Acrobat Reader (recomendado)</li>
+          <li>Ve a <strong>Archivo > Imprimir</strong></li>
+          <li>En el diálogo de impresión, selecciona tu impresora</li>
+          <li>Busca la opción <strong>"Folleto"</strong> o <strong>"Booklet"</strong> en la configuración</li>
+          <li>Asegúrate de que está configurado para imprimir a <strong>doble cara</strong></li>
+          <li>Selecciona la opción de <strong>enganche lateral</strong> (para folletos)</li>
+          <li>Haz clic en <strong>Imprimir</strong></li>
+        </ol>
+        <p><strong>Nota:</strong> Algunas impresoras tienen la opción de folleto en el menú de configuración avanzada.</p>
+        <button onclick="this.parentElement.parentElement.remove()">Entendido</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  
   // Función para obtener el contenido HTML formateado
   function getFormattedContent() {
     const mainContent = document.querySelector('main').cloneNode(true);
     
     // Limpiar elementos no deseados
-    const elementsToRemove = mainContent.querySelectorAll('header, nav, aside, footer, .print-booklet-btn, .mobile-toc, #toc');
+    const elementsToRemove = mainContent.querySelectorAll('header, nav, aside, footer, .print-booklet-btn, .mobile-toc, #toc, script, link, style');
     elementsToRemove.forEach(el => el.remove());
     
-    // Añadir estilos de impresión inline
+    // Añadir estilos de impresión
     const style = document.createElement('style');
     style.textContent = `
       body {
         font-family: 'Special Elite', monospace;
         font-size: 12pt;
-        line-height: 1.5;
+        line-height: 1.6;
         color: #000;
         background: #fff;
         margin: 0;
-        padding: 0;
+        padding: 20px;
       }
       h1, h2, h3, h4, h5, h6 {
         page-break-after: avoid;
@@ -54,15 +78,24 @@ document.addEventListener('DOMContentLoaded', function() {
         border: 1px solid #ddd;
         page-break-inside: avoid;
         break-inside: avoid;
+        font-size: 10pt;
+        white-space: pre-wrap;
+        word-wrap: break-word;
       }
       img {
         max-width: 100%;
         height: auto;
+        page-break-inside: avoid;
       }
       table {
         page-break-inside: avoid;
         break-inside: avoid;
         width: 100%;
+        font-size: 10pt;
+      }
+      th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
       }
       a {
         color: #000;
@@ -71,10 +104,22 @@ document.addEventListener('DOMContentLoaded', function() {
       a::after {
         content: " (" attr(href) ")";
         font-size: 0.9em;
+        font-weight: normal;
       }
-      @page {
-        size: A4 landscape;
-        margin: 1cm;
+      blockquote {
+        border-left: 4px solid #ddd;
+        padding-left: 15px;
+        margin-left: 0;
+        font-style: italic;
+      }
+      @media print {
+        body {
+          padding: 15px;
+        }
+        pre, code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
       }
     `;
     
@@ -106,23 +151,43 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.padding = '20px';
         document.body.appendChild(element);
         
+        // Obtener el título del documento para el nombre del archivo
+        const docTitle = document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() || 'folleto';
+        
         // Configuración para html2pdf
         const opt = {
-          margin: 10,
-          filename: 'folleto.pdf',
+          margin: 15,
+          filename: `${docTitle}.pdf`,
           image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+          html2canvas: { 
+            scale: 2, 
+            useCORS: true,
+            logging: false,
+            backgroundColor: '#FFFFFF'
+          },
+          jsPDF: { 
+            unit: 'mm', 
+            format: 'a4', 
+            orientation: 'portrait',
+            compress: true
+          }
         };
         
         // Generar PDF
-        loading.querySelector('div').textContent = 'Generando PDF...';
+        loading.querySelector('div').textContent = 'Generando PDF... Esto puede tardar unos momentos.';
         
+        // Generar el PDF
         html2pdf().set(opt).from(element).save().then(() => {
           // Limpiar
           document.body.removeChild(element);
           hideLoading(loading);
-          alert('PDF generado correctamente. Para imprimir en formato folleto:\n\n1. Abra el PDF con Adobe Acrobat Reader\n2. En Imprimir, seleccione "Folleto" en el menú desplegable de configuración de páginas\n3. Asegúrese de que está configurado para imprimir a doble cara');
+          
+          // Mostrar instrucciones
+          showInstructions();
+        }).catch(error => {
+          console.error('Error al generar PDF:', error);
+          hideLoading(loading);
+          alert('Error al generar el PDF: ' + error.message);
         });
         
       } catch (error) {
