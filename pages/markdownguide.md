@@ -164,14 +164,14 @@ $$
 \int_0^\infty e^{-x} dx = 1
 $$
 
-### 🛠️ Editores recomendados
+### Editores recomendados
 
 - ✅ **Bloc de notas (Notepad)**  
 - 🆗 **Notepad++** (más avanzado, pero fácil de usar)
 
 ---
 
-## Herramientas para ir más allá de la lectura pasiva
+## 🛠️ Herramientas para ir más allá de la lectura pasiva
 
 El uso de Markdown no es un fin en sí mismo, sino una muestra práctica de cómo las tecnologías accesibles pueden simplificar la creación, navegación y publicación de contenido especializado.
 
