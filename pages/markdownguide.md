@@ -171,27 +171,27 @@ $$
 
 ---
 
-## 🌟 Características Avanzadas de Nuestro Entorno Markdown
+## 🌟 Características Avanzadas del Entorno Markdown
 
-Además de los básicos para guardar y ver archivos Markdown, en nuestro sitio hemos implementado características avanzadas que hacen más fácil trabajar con este formato.
+Además de las funciones básicas para guardar y ver archivos Markdown, el entorno incluye características avanzadas que facilitan el trabajo con este formato.
 
 ### 📑 Tabla de Contenidos (TOC) Interactiva
 
-En muchas de nuestras páginas (incluyendo esta guía) verás una **Tabla de Contenidos interactiva** en el lateral (en escritorio) o desplegable (en móviles). Esta TOC se genera automáticamente a partir de los encabezados del documento, permitiéndote navegar rápidamente por las secciones.
+En muchas páginas (incluyendo esta guía) encontrarás una **Tabla de Contenidos interactiva** ubicada en el lateral (en escritorio) o desplegable (en móviles). Esta TOC se genera automáticamente a partir de los encabezados del documento, permitiendo navegar rápidamente entre secciones.
 
 ### 📥 Descarga del Contenido como Markdown
 
-También encontrarás un botón de descarga (📥) que te permite **obtener el contenido completo de la página en formato Markdown**. Esto es útil si quieres guardar el contenido para editarlo localmente o publicarlo en otro lugar. O simplemente saber como fue generada esta misma guía
+Dispones de un botón de descarga (📥) que permite **obtener el contenido completo de la página en formato Markdown**. Esto resulta útil si necesitas guardar el contenido para editarlo localmente o publicarlo en otra plataforma. O simplemente si quieres empezar a aprender la sintaxis de Markdown
 
 ### 🔄 Conversor HTML a Markdown
 
-Para convertir contenido de HTML a Markdown, hemos creado una herramienta especial: [conversor.html](/conversor.html). Puedes usarla para:
+Para convertir contenido de HTML a Markdown, existe disponible una herramienta especial: [conversor.html](/conversor.html). Puedes utilizarla para:
 
-1. Copiar el HTML de cualquier página (usando las herramientas de desarrollador de tu navegador)
+1. Copiar el HTML de cualquier página (usando las herramientas de desarrollador del navegador)
 2. Pegarlo en el conversor
 3. Obtener el código Markdown resultante
 
-¡Te invitamos a probarla!
+¡Anímate a probarla!
 
 ### 🚀 Publicación en bearblog.dev
 
@@ -202,4 +202,3 @@ Una vez que tengas tu contenido en Markdown, publicarlo en [bearblog.dev](https:
 3. Personaliza tu sitio y publica
 
 Bearblog es una plataforma minimalista y centrada en el contenido, ideal para blogs y documentación.
-
