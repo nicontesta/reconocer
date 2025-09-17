@@ -1,145 +1,168 @@
-// print-booklet.js - Funcionalidad para impresión en formato folleto
+// booklet-print.js - Funcionalidad para impresión en formato folleto
 
 document.addEventListener('DOMContentLoaded', function() {
   // Crear y añadir botón de impresión
   const printBtn = document.createElement('button');
-  printBtn.className = 'print-booklet-btn';
+  printBtn.className = 'booklet-print-btn';
   printBtn.textContent = '📘 Imprimir Folleto';
-  printBtn.title = 'Imprimir en formato de folleto/libro';
+  printBtn.title = 'Imprimir en formato de folleto (booklet)';
   document.body.appendChild(printBtn);
   
   // Función para organizar contenido en formato folleto
   printBtn.addEventListener('click', function() {
-    // Crear un iframe para la impresión
-    const iframe = document.createElement('iframe');
-    iframe.style.position = 'absolute';
-    iframe.style.width = '0';
-    iframe.style.height = '0';
-    iframe.style.border = 'none';
-    document.body.appendChild(iframe);
-    
+    prepareBookletPrint();
+  });
+  
+  function prepareBookletPrint() {
     // Obtener el contenido principal
-    const mainContent = document.querySelector('main').innerHTML;
+    const mainContent = document.querySelector('main').cloneNode(true);
     
-    // Preparar el contenido para impresión
-    const printContent = `
+    // Crear contenedor para impresión
+    const printContainer = document.createElement('div');
+    printContainer.className = 'booklet-printing';
+    
+    // Crear contenedor de páginas
+    const pagesContainer = document.createElement('div');
+    pagesContainer.className = 'booklet-pages';
+    
+    // Dividir el contenido en páginas
+    const contentPages = splitContentIntoPages(mainContent);
+    const totalPages = contentPages.length;
+    
+    // Calcular el número total de hojas necesarias (siempre múltiplo de 4)
+    const totalSheets = Math.ceil(totalPages / 4) * 4;
+    
+    // Reorganizar páginas según el formato booklet
+    const bookletPages = reorganizePagesForBooklet(contentPages, totalSheets);
+    
+    // Crear las páginas visuales para el booklet
+    bookletPages.forEach((pageContent, index) => {
+      if (pageContent) {
+        const pageElement = createPageElement(pageContent, index + 1);
+        pagesContainer.appendChild(pageElement);
+      } else {
+        // Página en blanco si es necesario
+        const blankPage = document.createElement('div');
+        blankPage.className = 'booklet-page';
+        pagesContainer.appendChild(blankPage);
+      }
+    });
+    
+    printContainer.appendChild(pagesContainer);
+    
+    // Abrir ventana de impresión
+    printBooklet(printContainer, totalSheets);
+  }
+  
+  function splitContentIntoPages(content) {
+    // Esta es una implementación simplificada
+    // En una implementación real, necesitarías un algoritmo más sofisticado
+    // para dividir el contenido en páginas según la cantidad de texto
+    
+    const pages = [];
+    const elements = content.children;
+    
+    // Agrupar elementos en páginas (simulación)
+    let currentPage = document.createElement('div');
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i].cloneNode(true);
+      
+      // Simular división de contenido (en una implementación real
+      // necesitarías calcular la altura del contenido)
+      if (i > 0 && i % 10 === 0) {
+        pages.push(currentPage);
+        currentPage = document.createElement('div');
+      }
+      
+      currentPage.appendChild(element);
+    }
+    
+    // Añadir la última página
+    if (currentPage.children.length > 0) {
+      pages.push(currentPage);
+    }
+    
+    return pages;
+  }
+  
+  function reorganizePagesForBooklet(pages, totalSheets) {
+    const bookletPages = [];
+    const totalPages = pages.length;
+    
+    // Calcular el orden de las páginas para impresión booklet
+    for (let i = 0; i < totalSheets / 2; i++) {
+      const firstPageIndex = i * 2;
+      const secondPageIndex = i * 2 + 1;
+      
+      // Primera cara de la hoja: última página y primera página
+      const firstSidePage1 = totalPages - 1 - firstPageIndex;
+      const firstSidePage2 = firstPageIndex;
+      
+      // Segunda cara de la hoja: segunda página y penúltima página
+      const secondSidePage1 = secondPageIndex;
+      const secondSidePage2 = totalPages - 1 - secondPageIndex;
+      
+      // Añadir páginas en el orden correcto
+      bookletPages.push(pages[firstSidePage1] || null);
+      bookletPages.push(pages[firstSidePage2] || null);
+      bookletPages.push(pages[secondSidePage1] || null);
+      bookletPages.push(pages[secondSidePage2] || null);
+    }
+    
+    return bookletPages;
+  }
+  
+  function createPageElement(content, pageNumber) {
+    const pageElement = document.createElement('div');
+    pageElement.className = 'booklet-page';
+    
+    // Añadir contenido
+    pageElement.appendChild(content);
+    
+    // Añadir número de página
+    const pageNumberElement = document.createElement('div');
+    pageNumberElement.className = 'booklet-page-number';
+    pageNumberElement.textContent = pageNumber;
+    pageElement.appendChild(pageNumberElement);
+    
+    return pageElement;
+  }
+  
+  function printBooklet(printContainer, totalSheets) {
+    // Crear ventana de impresión
+    const printWindow = window.open('', '_blank');
+    
+    // Escribir el contenido en la ventana
+    printWindow.document.write(`
       <!DOCTYPE html>
       <html>
       <head>
-        <title>${document.title} - Impresión Folleto</title>
+        <title>Impresión en Formato Folleto</title>
         <meta charset="UTF-8">
         <style>
-          @page {
-            size: A4;
-            margin: 0.5cm;
-          }
-          
-          body {
-            font-family: 'Special Elite', monospace;
-            font-size: 10pt;
-            line-height: 1.4;
-            margin: 0;
-            padding: 0;
-            background: white;
-            color: black;
-          }
-          
-          .booklet-page {
-            width: 50%;
-            height: 100vh;
-            float: left;
-            page-break-inside: avoid;
-            box-sizing: border-box;
-            padding: 1cm;
-          }
-          
-          .page-break {
-            page-break-after: always;
-            break-after: page;
-          }
-          
-          img {
-            max-width: 100%;
-            height: auto;
-            page-break-inside: avoid;
-          }
-          
-          pre, code {
-            background-color: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
-            page-break-inside: avoid;
-            font-size: 9pt;
-            white-space: pre-wrap;
-          }
-          
-          h1, h2, h3, h4, h5, h6 {
-            page-break-after: avoid;
-          }
-          
-          ul, ol {
-            page-break-inside: avoid;
-          }
-          
-          table {
-            page-break-inside: avoid;
-            width: 100%;
-            font-size: 9pt;
-          }
-          
-          th, td {
-            padding: 4px;
-            border: 1px solid #ddd;
-          }
-          
-          a {
-            color: black;
-            text-decoration: underline;
-          }
-          
-          a::after {
-            content: " (" attr(href) ")";
-            font-size: 0.9em;
-          }
-          
-          blockquote {
-            border-left: 2px solid #999;
-            padding-left: 1em;
-            margin: 1em 0;
-            font-style: italic;
-          }
+          ${document.querySelector('[href*="booklet-print.css"]') ? '' : '@import url("/css/booklet-print.css");'}
         </style>
       </head>
       <body>
-        <div class="booklet-container">
-          <div class="booklet-page">
-            ${mainContent}
-          </div>
-        </div>
+        ${printContainer.outerHTML}
+        <script>
+          window.onload = function() {
+            // Instrucciones para el usuario
+            alert('Para imprimir en formato folleto, configure su impresora con:\\n- Orientación: Horizontal\\n- Impresión a doble cara\\n- Voltear en el borde corto\\n\\nEl documento tiene ${totalSheets} páginas organizadas para folleto.');
+            
+            // Imprimir
+            window.print();
+            
+            // Cerrar ventana después de imprimir
+            setTimeout(function() {
+              window.close();
+            }, 500);
+          };
+        <\/script>
       </body>
       </html>
-    `;
+    `);
     
-    // Escribir el contenido en el iframe
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    iframeDoc.open();
-    iframeDoc.write(printContent);
-    iframeDoc.close();
-    
-    // Esperar a que el iframe cargue y luego imprimir
-    iframe.onload = function() {
-      // Añadir mensaje instructivo
-      setTimeout(function() {
-        alert('Para imprimir en formato folleto, configure su impresora para:\n- Tamaño de papel: A4\n- Impresión a doble cara\n- Modo folleto/libro (si está disponible)\n\nDespués de imprimir, doble las páginas por la mitad para formar el folleto.');
-        
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-        
-        // Eliminar el iframe después de imprimir
-        setTimeout(function() {
-          document.body.removeChild(iframe);
-        }, 100);
-      }, 500);
-    };
-  });
+    printWindow.document.close();
+  }
 });
