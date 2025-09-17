@@ -4,7 +4,7 @@
 aside#toc .download-md-btn {
   width: calc(100% - 20px);
   padding: 8px 10px;
-  margin: 20px;
+  margin: 10px;
   background-color: var(--link-color);
   color: var(--background-color);
   border: none;
