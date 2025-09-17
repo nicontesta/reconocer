@@ -171,39 +171,46 @@ $$
 
 ---
 
-## 🌟 Características Implementadas para tu Inspiración
+## Herramientas para ir más allá de la lectura pasiva
 
-Este sitio web, generado íntegramente mediante procesos de lenguaje natural, funciona como un complemento expandido a la obra "Coloquio Imposible" y su correspondiente artículo académico. Más allá de servir como repositorio de contenidos, el proyecto demuestra estratégicamente cómo los sistemas de IA pueden utilizarse para crear materiales divulgativos complejos y estructuralmente sólidos. La implementación en Markdown no es un fin en sí mismo, sino una muestra práctica de cómo tecnologías accesibles pueden facilitar la creación, navegación y publicación de contenido especializado.
+El uso de Markdown no es un fin en sí mismo, sino una muestra práctica de cómo las tecnologías accesibles pueden simplificar la creación, navegación y publicación de contenido especializado.
+
+En este sitio encontrarás:
 
 ### 📑 Tabla de Contenidos (TOC) Interactiva
 
-En muchas páginas (incluyendo esta guía) encontrarás una **Tabla de Contenidos interactiva** ubicada en el lateral (en escritorio) o desplegable (en móviles). Esta TOC se genera automáticamente a partir de los encabezados del documento, permitiendo navegar rápidamente entre secciones.
+En muchas páginas de este sitio, incluida esta guía, contarás con una Tabla de Contenidos interactiva. En la versión de escritorio, se encuentra en el lateral, y en dispositivos móviles, se despliega al tocar el icono correspondiente. Esta TOC se genera automáticamente a partir de los encabezados del documento, permitiéndote navegar rápidamente entre las secciones.
 
-### 📥 Descarga del Contenido como Markdown
+### 📥 Descarga del Contenido en Formato Markdown
 
-Dispones de un botón de descarga (📥) que permite **obtener el contenido completo de la página en formato Markdown**. Esto resulta útil si necesitas guardar el contenido para editarlo localmente o publicarlo en otra plataforma. O simplemente si quieres empezar a aprender la sintaxis de Markdown
+Si lo prefieres, puedes descargar el contenido completo de la página en formato Markdown a través del botón de descarga (📥). Esta opción es útil si deseas guardar el contenido para editarlo localmente, publicarlo en otra plataforma, o incluso si estás comenzando a familiarizarte con la sintaxis de Markdown.
 
-### 🔄 Conversor HTML a Markdown
+### 🔄 Conversor de HTML a Markdown
 
-Para convertir contenido de HTML a Markdown, existe disponible una herramienta especial: [conversor.html](/conversor.html). Puedes utilizarla para:
+Si necesitas convertir contenido HTML a Markdown, puedes usar nuestra herramienta [conversor.html](/conversor.html).  
 
-1. Copiar el HTML de cualquier página 
-2. Pegarlo en el conversor
-3. Obtener el código Markdown resultante
-4. Previsualizar el fichero sin instalar nada
+Así es como funciona:  
 
-¡Anímate a probarla!
+1. Copia el HTML de cualquier página.
+2. Pégalo en el conversor.
+3. Obtén el código Markdown resultante.
+4. Previsualiza el archivo sin necesidad de instalar nada.
+
+¡Prueba la herramienta y simplifica el proceso!
 
 ### 🚀 Publicación en bearblog.dev
 
-Una vez que tengas tu contenido en Markdown, publicarlo en [bearblog.dev](https://bearblog.dev) es muy sencillo:
+Una vez que tengas tu contenido en formato Markdown, publicarlo en **bearblog.dev** es muy sencillo:
 
-1. Crea una cuenta en bearblog.dev (gratuita)
-2. Pega tu Markdown en el editor
-3. Personaliza tu sitio y publica
+1. Crea una cuenta gratuita en **bearblog.dev**.
+2. Pega tu archivo Markdown en el editor.
+3. Personaliza tu sitio y publica.
 
-Bearblog es una plataforma minimalista y centrada en el contenido, ideal para blogs y documentación.
+Bearblog es una plataforma minimalista y enfocada en el contenido, ideal para blogs y documentación.
+
+### Conclusión
+
+Estas herramientas están pensadas para inspirarte en la creación de tus propios proyectos. Te demuestran cómo, con recursos accesibles y un enfoque estratégico, puedes generar contenido de calidad, educativo y profesional, sin necesidad de grandes inversiones técnicas o económicas.
 
 ---
 
-Estas implementaciones están diseñadas para inspirarte en tus propios proyectos, mostrando cómo con herramientas accesibles y un enfoque estratégico puedes crear recursos divulgativos de calidad sin necesidad de grandes recursos técnicos o económicos.
