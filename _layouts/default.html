@@ -7,8 +7,9 @@
 
   <!-- Estilos principales -->
   <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/print-booklet.css">
-
+ <!-- Nuestros archivos para descarga de Markdown -->
+<link rel="stylesheet" href="/css/download-md.css">
+  
   <!-- Prism CSS -->
 <link rel="stylesheet" href="/css/prism.css">
 
@@ -31,8 +32,7 @@
     };
   </script>
   <script src="/js/tex-mml-chtml.js" async></script>
-<!-- Librería para generación de PDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </head>
 
 <body class="{% if page.url == '/' %}home{% else %}subpage{% endif %}">
@@ -70,12 +70,12 @@
 
   <!-- Script para generar TOC lateral -->
   <script src="/js/toc.js"></script>
- <!-- Script para imprimir folleto -->
-   <script src="/js/print-booklet.js"></script> 
 
+<script src="/js/download-md.js"></script>
    <p><a id="bottom"></a></p>
 </body>
 </html>
+
 
 
 
