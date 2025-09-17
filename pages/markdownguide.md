@@ -187,7 +187,7 @@ Si lo prefieres, puedes descargar el contenido completo de la página en formato
 
 ### 🔄 Conversor de HTML a Markdown
 
-Si necesitas convertir contenido HTML a Markdown, tienes disponible una herramienta especial:<a title="Conversor de HTML a Markdown" href="/conversor.html/" target="_blank" rel="noopener noreferrer">conversor.html</a>.    
+Si necesitas convertir contenido HTML a Markdown, tienes disponible una herramienta especial:  <a title="Conversor de HTML a Markdown" href="/conversor.html/" target="_blank" rel="noopener noreferrer">conversor.html</a>.    
 
 Así es como funciona:  
 
