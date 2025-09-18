@@ -132,8 +132,8 @@ Para crear citas, usa el símbolo `>` al inicio de la línea:
 
 #### Imágenes  
 Para insertar imágenes:  
-`![Texto alternativo](https://via.placeholder.com/150)`  
-- Ejemplo de imagen: ![Imagen](https://via.placeholder.com/150)
+`![Texto alternativo](https://url.correcta.imagen)`  
+- Ejemplo de imagen: ![Doraemon](https://dn710004.ca.archive.org/0/items/doraemon-pngs/05_15_PERSONAJES_WEB_DORAEMON_BRUSH_BOING_DORAEMON.png)
 
 #### Tablas  
 Markdown permite crear tablas con formato (depende del css):  
